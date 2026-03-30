@@ -5,7 +5,7 @@ const quickLinks = ["Reviews", "Services", "Our Work"];
 
 const contactItems = [
   {
-    label: "Edinburgh, Scotland, UK",
+    label: "Islamabad, Pakistan",
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4">
         <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" />
@@ -23,7 +23,7 @@ const contactItems = [
     ),
   },
   {
-    label: "+44 7555854906",
+    label: "+923127990883",
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2">
         <path d="M20 12.1A8 8 0 1 1 6.4 6.4" />

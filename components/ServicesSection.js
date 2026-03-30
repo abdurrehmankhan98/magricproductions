@@ -85,10 +85,16 @@ function ServiceCard({ service, cardRef }) {
   return (
     <div
       ref={cardRef}
-      className="surface-card group flex min-h-[320px] w-full min-w-0 flex-col items-start gap-5 p-7 opacity-0 transition-all duration-[220ms] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:border-purple-400/25"
+      className="surface-card service-card-spotlight group flex min-h-[320px] w-full min-w-0 flex-col items-start gap-5 p-7 opacity-0 transition-all duration-[220ms] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:border-purple-400/25 relative overflow-hidden"
     >
+      {/* Border Beam Animation */}
+      <div className="border-beam" />
+
+      {/* Spotlight Glow Effect */}
+      <div className="service-card-spotlight-glow" />
+
       <div
-        className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-[#a855f7]"
+        className="relative z-10 flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-[#a855f7]"
       >
         <Image
           src={service.gif}

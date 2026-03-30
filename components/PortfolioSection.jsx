@@ -1,7 +1,68 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+
+function VideoPlayer() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoId = "CJHXwa4B4gE";
+
+  if (isPlaying) {
+    return (
+      <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden bg-black">
+        <iframe
+          width="100%"
+          height="100%"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&showinfo=0&vq=hd1080&loop=1&playlist=${videoId}`}
+          title="Portfolio Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          style={{ display: 'block' }}
+        />
+        
+        {/* Close Button */}
+        <button
+          type="button"
+          onClick={() => setIsPlaying(false)}
+          className="absolute top-4 right-4 z-50 h-10 w-10 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 transition-all shadow-lg"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden bg-black group">
+      {/* Thumbnail Preview */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg')`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* Play Button Overlay */}
+      <button
+        type="button"
+        onClick={() => setIsPlaying(true)}
+        className="absolute inset-0 w-full h-full flex items-center justify-center z-10 group-hover:bg-black/20 transition-colors"
+      >
+        <div className="relative flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-80 blur-xl" style={{width: '96px', height: '96px'}} />
+          <div className="relative h-24 w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg hover:shadow-purple-500/50 hover:shadow-2xl transition-all hover:scale-110">
+            <Play size={48} fill="white" className="text-white ml-1" />
+          </div>
+        </div>
+      </button>
+    </div>
+  );
+}
 
 function DummyCard() {
   return (
@@ -29,36 +90,14 @@ export default function PortfolioSection() {
           </div>
 
           <div className="relative z-10 w-full max-w-[760px]">
-            {/* Neon Glow Background */}
-            <div className="absolute -inset-[12px] rounded-[32px] bg-gradient-to-r from-purple-600 via-blue-500 to-purple-600 opacity-75 blur-3xl" />
-            <div className="absolute -inset-[8px] rounded-[32px] bg-gradient-to-r from-purple-500 via-blue-400 to-purple-500 opacity-60 blur-2xl" />
-            <div className="absolute -inset-[4px] rounded-[32px] bg-gradient-to-r from-purple-500 via-blue-400 to-purple-500 opacity-40 blur-xl" />
+            {/* Neon Glow Background - Deep Purple */}
+            <div className="absolute -inset-[8px] rounded-[32px] bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 opacity-40 blur-2xl" />
+            <div className="absolute -inset-[4px] rounded-[32px] bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 opacity-25 blur-lg" />
+            <div className="absolute -inset-[2px] rounded-[32px] bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 opacity-15 blur-md" />
 
             <article className="portfolio-glass-card relative z-10 w-full rounded-[32px] border border-purple-400/50 bg-[#141d23] p-4 shadow-2xl sm:p-6 backdrop-blur-sm">
               <div className="relative overflow-hidden rounded-[24px] bg-[#0e1822] shadow-inner">
-                <div className="relative aspect-[16/9] w-full">
-                  <Image
-                    src="/Screenshot-2025-02-20-015931-min-e1739999114301.png"
-                    alt="Podcast trailer example"
-                    fill
-                    priority
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.08))]" />
-
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      type="button"
-                      className="portfolio-glass-button group flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-purple-600 text-white shadow-[0_0_50px_rgba(59,130,246,0.6)] transition-all hover:scale-110 hover:shadow-[0_0_80px_rgba(59,130,246,0.8)] hover:from-blue-400 hover:via-purple-400 hover:to-purple-500"
-                    >
-                      <Play
-                        size={32}
-                        fill="currentColor"
-                        className="ml-1 transition-transform group-hover:scale-110"
-                      />
-                    </button>
-                  </div>
-                </div>
+                <VideoPlayer />
               </div>
             </article>
           </div>

@@ -61,9 +61,9 @@ function ReviewRailItem({ name, role, quote, avatarSrc }) {
 }
 
 export default function ReviewsSection() {
-  /* Each row is doubled for seamless marquee loop */
-  const loopedRow1 = [...row1, ...row1, ...row1, ...row1];
-  const loopedRow2 = [...row2, ...row2, ...row2, ...row2];
+  /* Each row is duplicated for seamless marquee loop */
+  const loopedRow1 = [...row1, ...row1, ...row1, ...row1, ...row1, ...row1];
+  const loopedRow2 = [...row2, ...row2, ...row2, ...row2, ...row2, ...row2];
 
   return (
     <section id="reviews" className="section-shell relative overflow-hidden scroll-mt-28">

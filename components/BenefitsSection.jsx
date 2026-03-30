@@ -30,7 +30,7 @@ export default function BenefitsSection() {
             <span className="[text-shadow:0_0_18px_rgba(255,255,255,0.34),0_0_34px_rgba(255,255,255,0.14)]">
               Podcasting, Made
             </span>{" "}
-            <span className="font-medium text-[#c6ff4a] [text-shadow:0_0_16px_rgba(198,255,74,0.58),0_0_34px_rgba(198,255,74,0.22)]">
+            <span className="accent-text font-medium">
               Effortless.
             </span>
           </h2>
@@ -43,13 +43,13 @@ export default function BenefitsSection() {
         <div className="mt-24 grid gap-y-16 md:grid-cols-3 md:gap-x-14">
           {items.map((item) => (
             <article key={item.title} className="flex flex-col items-center text-center">
-              <div className="relative h-[80px] w-[80px] overflow-hidden rounded-[20px] bg-[#c6ff4a]">
+              <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-[#a855f7]">
                 <Image
                   src={item.gif}
                   alt={item.title}
                   fill
                   unoptimized
-                  className="object-cover"
+                  className="object-cover mix-blend-luminosity opacity-90"
                 />
               </div>
 
