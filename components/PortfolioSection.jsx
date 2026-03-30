@@ -1,11 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { Play } from "lucide-react";
 
 function VideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoId = "CJHXwa4B4gE";
+
+  // YouTube URL with optimized parameters:
+  // autoplay=1: Start playing immediately
+  // vq=hd1080: Request HD 1080p quality
+  // rel=0: Hide related videos from other channels
+  // modestbranding=1: Hide YouTube logo
+  // controls=1: Show player controls
+  // fs=1: Allow fullscreen
+  // mute=0: Ensure audio is unmuted (browser may still enforce mute)
+  const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&rel=0&modestbranding=1&controls=1&fs=1&mute=0&showinfo=0`;
 
   if (isPlaying) {
     return (
@@ -13,10 +23,10 @@ function VideoPlayer() {
         <iframe
           width="100%"
           height="100%"
-          src={`https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&showinfo=0&fs=1`}
+          src={youtubeUrl}
           title="Portfolio Video"
           frameBorder="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           style={{ display: 'block' }}
         />
@@ -37,7 +47,7 @@ function VideoPlayer() {
 
   return (
     <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden bg-black">
-      {/* Thumbnail Preview - Preload max quality */}
+      {/* Thumbnail Preview (Facade Pattern - Lazy Loading) */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -49,15 +59,15 @@ function VideoPlayer() {
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Play Button */}
+      {/* Custom Play Button - Click to Initialize Iframe with Autoplay */}
       <button
         type="button"
         onClick={() => setIsPlaying(true)}
-        className="absolute inset-0 w-full h-full flex items-center justify-center z-10 cursor-pointer"
+        className="absolute inset-0 w-full h-full flex items-center justify-center z-10 cursor-pointer transition-opacity duration-200 hover:opacity-90"
       >
         <div className="relative flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-80 blur-xl" style={{width: '96px', height: '96px'}} />
-          <div className="relative h-24 w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg">
+          <div className="relative h-24 w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg hover:shadow-xl transition-shadow">
             <Play size={48} fill="white" className="text-white ml-1" />
           </div>
         </div>
@@ -106,15 +116,6 @@ export default function PortfolioSection() {
 
           <div className="absolute right-[-20%] hidden w-[45%] scale-90 opacity-20 blur-[2px] lg:block">
             <DummyCard />
-          </div>
-
-          <div className="absolute inset-x-0 top-1/2 z-20 flex -translate-y-1/2 justify-between px-2 sm:-mx-6 sm:px-0">
-            <button className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur-md transition-all hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-purple-600 hover:text-white hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]">
-              <ChevronLeft size={24} strokeWidth={2.5} />
-            </button>
-            <button className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white backdrop-blur-md transition-all hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-purple-600 hover:text-white hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]">
-              <ChevronRight size={24} strokeWidth={2.5} />
-            </button>
           </div>
         </div>
       </div>
