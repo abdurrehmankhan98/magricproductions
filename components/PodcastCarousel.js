@@ -5,50 +5,49 @@ const clips = [
   {
     title: "Podcast Clip 01",
     textClass: "text-[#ff7a00]",
-    cardClass:
-      "bg-[radial-gradient(circle_at_80%_20%,rgba(255,120,0,0.6),transparent_18%),linear-gradient(180deg,#080808_0%,#101010_100%)]",
+    cardClass: "bg-[#3d2461]",
     video: "/1.mp4",
   },
   {
     title: "Podcast Clip 02",
     textClass: "text-white",
-    cardClass: "bg-[linear-gradient(180deg,#17141c_0%,#242633_100%)]",
+    cardClass: "bg-[#3d2461]",
     video: "/2.mp4",
   },
   {
     title: "Podcast Clip 03",
     textClass: "text-[#cf5a23]",
-    cardClass: "bg-[linear-gradient(180deg,#f7e39c_0%,#eddca6_42%,#9aabc0_100%)]",
+    cardClass: "bg-[#3d2461]",
     video: "/3.mp4",
   },
   {
     title: "Podcast Clip 04",
     textClass: "text-[#ff3b30]",
-    cardClass: "bg-[linear-gradient(180deg,#413529_0%,#1a1a1a_100%)]",
+    cardClass: "bg-[#3d2461]",
     video: "/4.mp4",
   },
   {
     title: "Podcast Clip 05",
     textClass: "text-[#00d9ff]",
-    cardClass: "bg-[linear-gradient(180deg,#0a3a3f_0%,#1a1a2e_100%)]",
+    cardClass: "bg-[#3d2461]",
     video: "/5.mp4",
   },
   {
     title: "Podcast Clip 06",
     textClass: "text-[#ff00ff]",
-    cardClass: "bg-[linear-gradient(180deg,#2d0a3f_0%,#1a0329_100%)]",
+    cardClass: "bg-[#3d2461]",
     video: "/6.mp4",
   },
   {
     title: "Podcast Clip 07",
     textClass: "text-[#00ff88]",
-    cardClass: "bg-[linear-gradient(180deg,#0a3f1a_0%,#1a2e1a_100%)]",
+    cardClass: "bg-[#3d2461]",
     video: "/7.mp4",
   },
   {
     title: "Podcast Clip 08",
     textClass: "text-[#ffaa00]",
-    cardClass: "bg-[linear-gradient(180deg,#3f2d0a_0%,#2e1a0a_100%)]",
+    cardClass: "bg-[#3d2461]",
     video: "/8.mp4",
   },
 ];
@@ -70,7 +69,7 @@ function ShowcaseCard({ clip, layoutClass, index }) {
   return (
     <div className="flex flex-none flex-col items-center gap-5 px-2 sm:px-3">
       <article
-        className={`group relative overflow-hidden border border-white/10 bg-[#130d1d]/88 shadow-[0_18px_40px_rgba(0,0,0,0.22)] transition-transform duration-300 hover:scale-[1.02] ${layoutClass}`}
+        className={`group relative overflow-hidden border border-white/10 bg-[#3d2461]/88 shadow-[0_18px_40px_rgba(0,0,0,0.22)] transition-transform duration-300 hover:scale-[1.02] ${layoutClass}`}
       >
         <div className={`absolute inset-0 ${clip.cardClass}`} />
         <video
@@ -115,7 +114,7 @@ const PodcastCarousel = () => {
   }, []);
 
   return (
-    <section className="relative -mt-8 w-full overflow-hidden pb-[4.5rem] pt-10 bg-black">
+    <section className="relative -mt-8 w-full overflow-hidden pb-[4.5rem] pt-10 bg-transparent">
       <div className="marquee relative z-10 mt-8 sm:mt-10 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[8%] before:bg-[linear-gradient(to_right,rgba(0,0,0,1),transparent)] before:z-20 before:pointer-events-none after:absolute after:right-0 after:top-0 after:bottom-0 after:w-[8%] after:bg-[linear-gradient(to_left,rgba(0,0,0,1),transparent)] after:z-20 after:pointer-events-none">
         <div
           ref={scrollRef}

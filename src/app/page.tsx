@@ -17,7 +17,7 @@ export default function Home() {
     <main className="page-shell">
       <Navbar />
 
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-black">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <video
             className="h-full w-full object-cover opacity-35 object-[center_-40px]"
@@ -30,8 +30,8 @@ export default function Home() {
           >
             <source src="/video1.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.38)_46%,rgba(0,0,0,0.9)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.76)_0%,rgba(0,0,0,0.28)_18%,rgba(0,0,0,0.2)_62%,rgba(0,0,0,0.82)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.15)_40%,transparent_70%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.76)_0%,rgba(0,0,0,0.28)_18%,transparent_50%)]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-8xl px-4 sm:px-6 lg:px-10">
