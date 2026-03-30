@@ -13,10 +13,10 @@ function VideoPlayer() {
         <iframe
           width="100%"
           height="100%"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&showinfo=0&vq=hd1080&loop=1&playlist=${videoId}`}
+          src={`https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&showinfo=0&fs=1`}
           title="Portfolio Video"
           frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           style={{ display: 'block' }}
         />
@@ -36,26 +36,28 @@ function VideoPlayer() {
   }
 
   return (
-    <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden bg-black group">
-      {/* Thumbnail Preview */}
+    <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden bg-black">
+      {/* Thumbnail Preview - Preload max quality */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url('https://img.youtube.com/vi/${videoId}/maxresdefault.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       >
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Play Button Overlay */}
+      {/* Play Button */}
       <button
         type="button"
         onClick={() => setIsPlaying(true)}
-        className="absolute inset-0 w-full h-full flex items-center justify-center z-10 group-hover:bg-black/20 transition-colors"
+        className="absolute inset-0 w-full h-full flex items-center justify-center z-10 cursor-pointer"
       >
         <div className="relative flex items-center justify-center">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-80 blur-xl" style={{width: '96px', height: '96px'}} />
-          <div className="relative h-24 w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg hover:shadow-purple-500/50 hover:shadow-2xl transition-all hover:scale-110">
+          <div className="relative h-24 w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg">
             <Play size={48} fill="white" className="text-white ml-1" />
           </div>
         </div>

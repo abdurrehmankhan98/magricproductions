@@ -778,7 +778,7 @@ select option:hover {
   padding-inline: 1.25rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(to right, rgb(167 139 250), rgb(168 85 247), rgb(232 121 249));
+  background: #9333ea;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 700;
@@ -787,13 +787,13 @@ select option:hover {
     transform 180ms ease,
     box-shadow 180ms ease,
     filter 180ms ease;
-  box-shadow: 0 14px 36px rgba(168, 85, 247, 0.28);
+  box-shadow: 0 14px 36px rgba(147, 51, 234, 0.4);
 }
 
 .button-primary:hover {
   transform: translateY(-1px);
-  filter: brightness(1.06);
-  box-shadow: 0 18px 44px rgba(168, 85, 247, 0.34);
+  filter: brightness(1.15);
+  box-shadow: 0 18px 44px rgba(147, 51, 234, 0.5);
 }
 
 .button-secondary {

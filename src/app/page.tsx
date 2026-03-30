@@ -20,7 +20,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
           <video
-            className="h-full w-full object-cover opacity-35"
+            className="h-full w-full object-cover opacity-35 object-[center_65px]"
             autoPlay
             loop
             muted
