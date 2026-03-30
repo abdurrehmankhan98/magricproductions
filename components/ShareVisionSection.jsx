@@ -98,10 +98,10 @@ export default function ShareVisionSection() {
                   Service Needed
                 </span>
                 <select className="h-13 rounded-[16px] border border-white/10 bg-white/[0.05] px-4 text-white outline-none transition focus:border-purple-400/45 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)]">
-                  <option className="bg-black">Podcast trailers</option>
-                  <option className="bg-black">Short-form clips</option>
-                  <option className="bg-black">Podcast management</option>
-                  <option className="bg-black">Growth strategy</option>
+                  <option className="bg-white/5 backdrop-blur-md text-white md:bg-[#13111c]">Podcast trailers</option>
+                  <option className="bg-white/5 backdrop-blur-md text-white md:bg-[#13111c]">Short-form clips</option>
+                  <option className="bg-white/5 backdrop-blur-md text-white md:bg-[#13111c]">Podcast management</option>
+                  <option className="bg-white/5 backdrop-blur-md text-white md:bg-[#13111c]">Growth strategy</option>
                 </select>
               </label>
             </div>
@@ -111,10 +111,10 @@ export default function ShareVisionSection() {
                 Budget Range
               </span>
               <select className="h-13 rounded-[16px] border border-white/10 bg-white/[0.05] px-4 text-white outline-none transition focus:border-purple-400/45 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)]">
-                <option className="bg-black">Less than $500/month</option>
-                <option className="bg-black">$500 - $1,500/month</option>
-                <option className="bg-black">$1,500 - $3,000/month</option>
-                <option className="bg-black">$3,000+/month</option>
+                <option className="bg-white/5 backdrop-blur-md text-white md:bg-[#13111c]">Less than $500/month</option>
+                <option className="bg-white/5 backdrop-blur-md text-white md:bg-[#13111c]">$500 - $1,500/month</option>
+                <option className="bg-white/5 backdrop-blur-md text-white md:bg-[#13111c]">$1,500 - $3,000/month</option>
+                <option className="bg-white/5 backdrop-blur-md text-white md:bg-[#13111c]">$3,000+/month</option>
               </select>
             </label>
 

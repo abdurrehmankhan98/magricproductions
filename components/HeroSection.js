@@ -35,6 +35,7 @@ const HeroSection = () => {
       <div className="pointer-events-none absolute left-1/2 top-[-5rem] z-0 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.48)_0%,rgba(107,14,206,0.24)_34%,rgba(107,14,206,0.1)_56%,rgba(107,14,206,0.03)_72%,transparent_84%)] blur-[130px] sm:h-[46rem] sm:w-[46rem]" />
       <div className="pointer-events-none absolute inset-x-0 top-[2rem] z-0 mx-auto h-[16rem] max-w-[78rem] rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.18)_0%,rgba(107,14,206,0.08)_46%,transparent_78%)] blur-[95px]" />
       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.16)_0%,transparent_24%,transparent_72%,rgba(0,0,0,0.2)_100%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-64 bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.9)_100%)]" />
 
       <div className="relative z-10 mx-auto flex max-w-245 flex-col items-center px-4 text-center">
         <div className="relative z-10 flex flex-col items-center text-center">
@@ -42,9 +43,7 @@ const HeroSection = () => {
             ref={titleRef}
             className="hero-title-3d font-display mt-8 text-[3.05rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white opacity-0 sm:text-[4.5rem] lg:text-[6rem]"
           >
-            Edits That Get You
-            <br />
-            <span
+            Edits That Get You <span
               ref={accentRef}
               className="hero-title-3d-accent inline-block bg-[linear-gradient(90deg,#FFFFFF_0%,#B372CF_100%)] bg-clip-text text-transparent opacity-0"
             >

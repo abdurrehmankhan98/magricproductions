@@ -27,15 +27,41 @@ const clips = [
     cardClass: "bg-[linear-gradient(180deg,#413529_0%,#1a1a1a_100%)]",
     video: "/4.mp4",
   },
+  {
+    title: "Podcast Clip 05",
+    textClass: "text-[#00d9ff]",
+    cardClass: "bg-[linear-gradient(180deg,#0a3a3f_0%,#1a1a2e_100%)]",
+    video: "/5.mp4",
+  },
+  {
+    title: "Podcast Clip 06",
+    textClass: "text-[#ff00ff]",
+    cardClass: "bg-[linear-gradient(180deg,#2d0a3f_0%,#1a0329_100%)]",
+    video: "/6.mp4",
+  },
+  {
+    title: "Podcast Clip 07",
+    textClass: "text-[#00ff88]",
+    cardClass: "bg-[linear-gradient(180deg,#0a3f1a_0%,#1a2e1a_100%)]",
+    video: "/7.mp4",
+  },
+  {
+    title: "Podcast Clip 08",
+    textClass: "text-[#ffaa00]",
+    cardClass: "bg-[linear-gradient(180deg,#3f2d0a_0%,#2e1a0a_100%)]",
+    video: "/8.mp4",
+  },
 ];
 
 const cardLayouts = [
-  "mt-6 h-[300px] w-[172px] rotate-[-10deg] rounded-[32px] sm:h-[370px] sm:w-[214px]",
-  "mt-3 h-[242px] w-[144px] rotate-[-7deg] rounded-[26px] sm:h-[296px] sm:w-[174px]",
-  "mt-10 h-[214px] w-[122px] rotate-[-3deg] rounded-[22px] sm:h-[258px] sm:w-[144px]",
-  "mt-10 h-[214px] w-[122px] rotate-[3deg] rounded-[22px] sm:h-[258px] sm:w-[144px]",
-  "mt-3 h-[242px] w-[144px] rotate-[7deg] rounded-[26px] sm:h-[296px] sm:w-[174px]",
-  "mt-6 h-[300px] w-[172px] rotate-[10deg] rounded-[32px] sm:h-[370px] sm:w-[214px]",
+  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
+  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
+  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
+  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
+  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
+  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
+  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
+  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
 ];
 
 const marqueeClips = [...clips, ...clips, ...clips];
@@ -60,15 +86,6 @@ function ShowcaseCard({ clip, layoutClass, index }) {
         </video>
         <div className="absolute inset-0 z-20 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent_40%,rgba(0,0,0,0.18)_100%)]" />
       </article>
-
-      <div className="text-center">
-        <div className="text-[0.9rem] font-semibold tracking-[-0.03em] text-[#f97316] sm:text-[1rem]">
-          #{String((index % clips.length) + 1).padStart(2, "0")}
-        </div>
-        <div className="mt-1 max-w-[11rem] text-[0.86rem] leading-5 tracking-[-0.02em] text-white/68 sm:text-[0.95rem] sm:leading-6">
-          {clip.title}
-        </div>
-      </div>
     </div>
   );
 }
@@ -98,14 +115,11 @@ const PodcastCarousel = () => {
   }, []);
 
   return (
-    <section className="relative -mt-8 w-full overflow-hidden pb-[4.5rem] pt-10">
-      <div className="pointer-events-none absolute left-1/2 top-[-10rem] z-0 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.42)_0%,rgba(107,14,206,0.22)_34%,rgba(107,14,206,0.08)_58%,transparent_82%)] blur-[130px]" />
-      <div className="pointer-events-none absolute inset-x-0 top-[3rem] z-0 mx-auto h-[12rem] max-w-[76rem] rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.18)_0%,rgba(107,14,206,0.07)_48%,transparent_78%)] blur-[90px]" />
-
-      <div className="marquee relative z-10 mt-8 sm:mt-10">
+    <section className="relative -mt-8 w-full overflow-hidden pb-[4.5rem] pt-10 bg-black">
+      <div className="marquee relative z-10 mt-8 sm:mt-10 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[8%] before:bg-[linear-gradient(to_right,rgba(0,0,0,1),transparent)] before:z-20 before:pointer-events-none after:absolute after:right-0 after:top-0 after:bottom-0 after:w-[8%] after:bg-[linear-gradient(to_left,rgba(0,0,0,1),transparent)] after:z-20 after:pointer-events-none">
         <div
           ref={scrollRef}
-          className="marquee-track items-start gap-1 [animation-duration:34s] hover:[animation-play-state:paused]"
+          className="marquee-track items-start gap-1 [animation-duration:48s] hover:[animation-play-state:paused]"
         >
           {marqueeClips.map((clip, index) => (
             <ShowcaseCard

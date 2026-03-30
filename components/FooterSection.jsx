@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 const quickLinks = ["Reviews", "Services", "Our Work"];
 
@@ -13,7 +14,7 @@ const contactItems = [
     ),
   },
   {
-    label: "info@podcutz.co.uk",
+    label: "info@magricproductions.co.uk",
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4">
         <rect x="3.5" y="5.5" width="17" height="13" rx="3" />
@@ -43,11 +44,16 @@ export default function FooterSection() {
       <div className="relative mx-auto max-w-[1120px]">
         <div className="grid gap-y-12 md:grid-cols-[1.1fr_1fr_1.45fr_1fr] md:items-start md:gap-x-10">
           <div className="flex items-start justify-center md:justify-start">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 shadow-[0_10px_28px_rgba(168,85,247,0.24)]">
-                <div className="h-5 w-5 rounded-[4px] bg-white [clip-path:polygon(20%_12%,20%_88%,82%_50%)]" />
+            <div className="flex flex-col items-center md:items-start gap-4 cursor-pointer" onClick={handleScrollToTop}>
+              <div className="relative h-[64px] w-[230px]">
+                <Image
+                  src="/logo.png"
+                  alt="Magric Productions Logo"
+                  fill
+                  className="object-contain object-left"
+                />
               </div>
-              <span className="text-[22px] font-bold tracking-[-0.04em] text-white">Podcutz</span>
+              <span className="text-[22px] font-bold tracking-[-0.04em] text-white">MagricProductions</span>
             </div>
           </div>
 

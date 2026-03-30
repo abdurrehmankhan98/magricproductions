@@ -74,9 +74,11 @@ const services = [
 ];
 
 const bulletIcon = (
-  <svg viewBox="0 0 18 18" className="h-[18px] w-[18px] flex-none text-[#9fc1ff]" fill="currentColor">
-    <path d="M4 2v14h2V9h7l-2-3 2-4H6V2z" />
-  </svg>
+  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#a855f7]">
+    <svg viewBox="0 0 18 18" className="h-3 w-3 flex-none text-white" fill="currentColor">
+      <path d="M4 2v14h2V9h7l-2-3 2-4H6V2z" />
+    </svg>
+  </div>
 );
 
 function ServiceCard({ service, cardRef }) {
@@ -85,13 +87,15 @@ function ServiceCard({ service, cardRef }) {
       ref={cardRef}
       className="surface-card group flex min-h-[320px] w-full min-w-0 flex-col items-start gap-5 p-7 opacity-0 transition-all duration-[220ms] [transition-timing-function:cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 hover:border-purple-400/25"
     >
-      <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] bordertext-white">
+      <div
+        className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-[#a855f7]"
+      >
         <Image
           src={service.gif}
           alt={service.title}
           fill
           unoptimized
-          className="object-cover"
+          className="object-cover mix-blend-luminosity opacity-90"
         />
       </div>
 

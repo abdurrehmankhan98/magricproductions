@@ -42,11 +42,13 @@ export default function Home() {
           <PodcastCarousel />
         </div>
       </section>
-        <StatsStrip />
-        <ServicesSection />
+
+      <PortfolioSection />
+      
+      <StatsStrip />
+      <ServicesSection />
         <BenefitsSection />
         <ReviewsSection />
-        <PortfolioSection />
         <TransformationSection />
         <ProcessSection />
         <FaqSection />

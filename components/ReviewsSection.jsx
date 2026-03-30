@@ -12,14 +12,14 @@ const reviews = [
     name: "Jay Lawrence",
     role: "Podcast Host & Wealth Manager",
     quote:
-      "Podcutz deliver top-quality edits, and excellent client support every time!",
+      "MagricProductions deliver top-quality edits, and excellent client support every time!",
     avatarSrc: "/Adam-Biddlecombe.png",
   },
   {
     name: "Nausheen I. Chen",
     role: "Public Speaking Coach",
     quote:
-      "Podcutz is talented, detail-oriented, high-quality work on time",
+      "MagricProductions is talented, detail-oriented, high-quality work on time",
     avatarSrc: "/Nausheen-I.-Chen.png",
   },
   {
@@ -31,25 +31,27 @@ const reviews = [
   },
 ];
 
+/* Split reviews into two rows */
+const row1 = [reviews[0], reviews[1]];
+const row2 = [reviews[2], reviews[3]];
+
 function ReviewRailItem({ name, role, quote, avatarSrc }) {
   return (
-    <article className="relative grid w-[660px] flex-none grid-cols-[150px_minmax(0,1fr)] items-center gap-6 px-6 py-10 sm:w-[760px] sm:grid-cols-[180px_minmax(0,1fr)] sm:px-8">
-      {/* <div className="pointer-events-none absolute left-[92px] top-0 h-full w-px sm:left-[112px]" /> */}
-
-      <div className="relative z-10 h-[120px] w-[128px] overflow-hidden rounded-[22px] border border-white bg-[#150d1f] shadow-[0_18px_44px_rgba(0,0,0,0.32)] sm:h-[170px] sm:w-[150px]">
+    <article className="relative flex w-[480px] flex-none items-center gap-5 rounded-[24px] border border-white/8 bg-white/[0.03] px-5 py-6 backdrop-blur-sm sm:w-[620px] sm:gap-6 sm:rounded-[28px] sm:px-7 sm:py-8 transition-all duration-300 hover:border-purple-500/20 hover:bg-white/[0.05]">
+      <div className="relative z-10 h-[90px] w-[90px] flex-none overflow-hidden rounded-[18px] border border-white/10 bg-[#150d1f] shadow-[0_14px_36px_rgba(0,0,0,0.32)] sm:h-[120px] sm:w-[120px] sm:rounded-[20px]">
         <Image src={avatarSrc} alt={name} fill className="object-cover" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(107,14,206,0.1),transparent_36%,rgba(0,0,0,0.18)_100%)]" />
       </div>
 
-      <div className="relative z-10 max-w-[26rem] sm:max-w-[30rem] text-left">
-        <p className="text-[1.2rem] leading-[1.5] sm:text-[1.7rem] sm:leading-[1.4] tracking-[-0.03em] text-white ">
-          “{quote}”
+      <div className="relative z-10 min-w-0 flex-1 text-left">
+        <p className="text-[1rem] leading-[1.55] tracking-[-0.02em] text-white/90 sm:text-[1.2rem] sm:leading-[1.5]">
+          &ldquo;{quote}&rdquo;
         </p>
-        <div className="mt-6">
-          <div className="text-[1rem] font-medium tracking-[-0.02em] text-white/92 sm:text-[1.05rem]">
+        <div className="mt-4">
+          <div className="text-[0.92rem] font-medium tracking-[-0.02em] text-white/92 sm:text-[1rem]">
             {name}
           </div>
-          <div className="mt-1 text-[0.84rem] text-white/45 sm:text-[0.9rem]">
+          <div className="mt-0.5 text-[0.8rem] text-white/42 sm:text-[0.85rem]">
             {role}
           </div>
         </div>
@@ -59,7 +61,9 @@ function ReviewRailItem({ name, role, quote, avatarSrc }) {
 }
 
 export default function ReviewsSection() {
-  const loopedReviews = [...reviews, ...reviews, ...reviews];
+  /* Each row is doubled for seamless marquee loop */
+  const loopedRow1 = [...row1, ...row1, ...row1, ...row1];
+  const loopedRow2 = [...row2, ...row2, ...row2, ...row2];
 
   return (
     <section id="reviews" className="section-shell relative overflow-hidden scroll-mt-28">
@@ -72,22 +76,33 @@ export default function ReviewsSection() {
             Hear Directly from our <span className="accent-text">Clients</span>
           </h2>
           <p className="section-copy max-w-[34rem]">
-            Real feedback from creators and brands who trust Podcutz to make their podcast content sharper, faster, and easier to ship.
+            Real feedback from creators and brands who trust MagricProductions to make their podcast content sharper, faster, and easier to ship.
           </p>
         </div>
 
-        <div className="relative mt-[4.5rem] py-8 sm:py-10">
-          <div className="pointer-events-none absolute inset-x-3 top-[22%] h-px bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.18)_18%,rgba(255,255,255,0.18)_82%,transparent_100%)]" />
-          <div className="pointer-events-none absolute inset-x-3 top-[80%] h-px bg-[linear-gradient(90deg,transparent_0%,rgba(255,255,255,0.18)_18%,rgba(255,255,255,0.18)_82%,transparent_100%)]" />
-          <div className="pointer-events-none absolute left-[14%] top-18 bottom-8 w-px bg-[linear-gradient(180deg,transparent_0%,rgba(255,255,255,0.18)_18%,rgba(255,255,255,0.18)_82%,transparent_100%)]" />
-          <div className="pointer-events-none absolute left-[36%] top-8 bottom-8 w-px bg-[linear-gradient(180deg,transparent_0%,rgba(255,255,255,0.18)_18%,rgba(255,255,255,0.18)_82%,transparent_100%)]" />
-          <div className="pointer-events-none absolute left-[63%] top-8 bottom-8 w-px bg-[linear-gradient(180deg,transparent_0%,rgba(255,255,255,0.08)_18%,rgba(255,255,255,0.08)_82%,transparent_100%)]" />
+        <div className="relative mt-[4.5rem] flex flex-col gap-5">
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-24 bg-gradient-to-r from-black to-transparent sm:w-36" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-24 bg-gradient-to-l from-black to-transparent sm:w-36" />
 
-          <div className="marquee relative z-10">
-            <div className="marquee-track items-center gap-0">
-              {loopedReviews.map((review, index) => (
+          {/* Row 1 — slides LEFT (standard direction → visually moves right-to-left) */}
+          <div className="marquee">
+            <div className="marquee-track items-center gap-5 [animation-duration:32s] hover:[animation-play-state:paused]">
+              {loopedRow1.map((review, index) => (
                 <ReviewRailItem
-                  key={`${review.name}-${index}`}
+                  key={`r1-${review.name}-${index}`}
+                  {...review}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2 — slides RIGHT (reverse direction → visually moves left-to-right) */}
+          <div className="marquee">
+            <div className="marquee-track-right items-center gap-5 [animation-duration:36s] hover:[animation-play-state:paused]">
+              {loopedRow2.map((review, index) => (
+                <ReviewRailItem
+                  key={`r2-${review.name}-${index}`}
                   {...review}
                 />
               ))}

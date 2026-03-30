@@ -27,7 +27,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Podcutz",
+  title: "MagricProductions",
   description: "Podcast growth landing page",
 };
 
