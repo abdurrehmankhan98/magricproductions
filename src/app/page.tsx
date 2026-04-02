@@ -11,8 +11,12 @@ import ReviewsSection from "../../components/ReviewsSection";
 import FaqSection from "../../components/FaqSection";
 import ShareVisionSection from "../../components/ShareVisionSection";
 import FooterSection from "../../components/FooterSection";
+import { heroBackgroundVideo } from "../lib/cloudinaryMedia";
 
 export default function Home() {
+  const heroVideoSrc = heroBackgroundVideo.src ?? undefined;
+  const heroVideoPoster = heroBackgroundVideo.poster ?? undefined;
+
   return (
     <main className="page-shell">
       <Navbar />
@@ -26,10 +30,11 @@ export default function Home() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden="true"
+            poster={heroVideoPoster}
           >
-            <source src="/video1.mp4" type="video/mp4" />
+            <source src={heroVideoSrc} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.15)_40%,transparent_70%)]" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.76)_0%,rgba(0,0,0,0.28)_18%,transparent_50%)]" />

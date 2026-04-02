@@ -101,7 +101,7 @@ export default function PortfolioSection() {
             <DummyCard />
           </div>
 
-          <div className="relative z-10 w-full max-w-[760px]">
+          <div className="relative z-10 w-full max-w-[920px]">
             {/* Neon Glow Background - Deep Purple */}
             <div className="absolute -inset-[8px] rounded-[32px] bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 opacity-40 blur-2xl" />
             <div className="absolute -inset-[4px] rounded-[32px] bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 opacity-25 blur-lg" />
