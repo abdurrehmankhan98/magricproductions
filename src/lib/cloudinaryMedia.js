@@ -29,8 +29,18 @@ function createVideoAsset({ publicId }) {
   };
 }
 
-export const heroBackgroundVideo = createVideoAsset({
+function createVideoAssetWithFallback({ publicId, fallbackSrc, fallbackPoster = null }) {
+  const asset = createVideoAsset({ publicId });
+
+  return {
+    src: asset.src ?? fallbackSrc,
+    poster: asset.poster ?? fallbackPoster,
+  };
+}
+
+export const heroBackgroundVideo = createVideoAssetWithFallback({
   publicId: "magricproductions/hero/video1",
+  fallbackSrc: "/video1.mp4",
 });
 
 export const showcaseClips = [
@@ -38,64 +48,72 @@ export const showcaseClips = [
     title: "Podcast Clip 01",
     textClass: "text-[#ff7a00]",
     cardClass: "bg-[#3d2461]",
-    ...createVideoAsset({
+    ...createVideoAssetWithFallback({
       publicId: "magricproductions/showcase/1",
+      fallbackSrc: "/1.mp4",
     }),
   },
   {
     title: "Podcast Clip 02",
     textClass: "text-white",
     cardClass: "bg-[#3d2461]",
-    ...createVideoAsset({
+    ...createVideoAssetWithFallback({
       publicId: "magricproductions/showcase/2",
+      fallbackSrc: "/2.mp4",
     }),
   },
   {
     title: "Podcast Clip 03",
     textClass: "text-[#cf5a23]",
     cardClass: "bg-[#3d2461]",
-    ...createVideoAsset({
+    ...createVideoAssetWithFallback({
       publicId: "magricproductions/showcase/3",
+      fallbackSrc: "/3.mp4",
     }),
   },
   {
     title: "Podcast Clip 04",
     textClass: "text-[#ff3b30]",
     cardClass: "bg-[#3d2461]",
-    ...createVideoAsset({
+    ...createVideoAssetWithFallback({
       publicId: "magricproductions/showcase/4",
+      fallbackSrc: "/4.mp4",
     }),
   },
   {
     title: "Podcast Clip 05",
     textClass: "text-[#00d9ff]",
     cardClass: "bg-[#3d2461]",
-    ...createVideoAsset({
+    ...createVideoAssetWithFallback({
       publicId: "magricproductions/showcase/5",
+      fallbackSrc: "/5.mp4",
     }),
   },
   {
     title: "Podcast Clip 06",
     textClass: "text-[#ff00ff]",
     cardClass: "bg-[#3d2461]",
-    ...createVideoAsset({
+    ...createVideoAssetWithFallback({
       publicId: "magricproductions/showcase/6",
+      fallbackSrc: "/6.mp4",
     }),
   },
   {
     title: "Podcast Clip 07",
     textClass: "text-[#00ff88]",
     cardClass: "bg-[#3d2461]",
-    ...createVideoAsset({
+    ...createVideoAssetWithFallback({
       publicId: "magricproductions/showcase/7",
+      fallbackSrc: "/7.mp4",
     }),
   },
   {
     title: "Podcast Clip 08",
     textClass: "text-[#ffaa00]",
     cardClass: "bg-[#3d2461]",
-    ...createVideoAsset({
+    ...createVideoAssetWithFallback({
       publicId: "magricproductions/showcase/8",
+      fallbackSrc: "/8.mp4",
     }),
   },
 ];
