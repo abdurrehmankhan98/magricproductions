@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomSelect from "./CustomSelect";
 
 export default function ShareVisionSection() {
@@ -30,6 +30,17 @@ export default function ShareVisionSection() {
     { label: "$1,500 - $3,000/month", value: "1500-3000" },
     { label: "$3,000+/month", value: "3000-plus" },
   ];
+
+  // Auto-dismiss success messages after 4 seconds
+  useEffect(() => {
+    if (message.text && message.type === "success") {
+      const timer = setTimeout(() => {
+        setMessage({ type: "", text: "" });
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
 
   // Validation function
   const validateForm = () => {

@@ -46,7 +46,7 @@ function ShowcaseCard({ clip, layoutClass, index }) {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { 
     const video = videoRef.current;
 
     if (!video || !shouldLoadVideo) {
