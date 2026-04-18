@@ -5,12 +5,7 @@ export default function TransformationSection() {
     <section className="section-shell relative overflow-hidden">
       <div className="pointer-events-none absolute left-[-5rem] top-1/2 hidden h-[16rem] w-[16rem] -translate-y-1/2 rounded-full border border-dashed border-purple-400/35 lg:block" />
       <div className="pointer-events-none absolute right-[-5rem] top-1/2 hidden h-[14rem] w-[14rem] -translate-y-1/2 rounded-full border border-dashed border-purple-400/35 lg:block" />
-      <div className="pointer-events-none absolute left-[3rem] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 text-white shadow-[0_14px_36px_rgba(168,85,247,0.26)] lg:flex">
-        <div className="h-4 w-4 bg-current [clip-path:polygon(20%_12%,20%_88%,82%_50%)]" />
-      </div>
-      <div className="pointer-events-none absolute right-[3rem] top-1/2 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 text-white shadow-[0_14px_36px_rgba(168,85,247,0.26)] lg:flex">
-        <div className="h-4 w-4 bg-current [clip-path:polygon(20%_12%,20%_88%,82%_50%)]" />
-      </div>
+
 
       <div className="section-inner">
         <div className="section-stack section-center">

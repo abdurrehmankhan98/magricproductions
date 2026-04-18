@@ -127,7 +127,7 @@ const PodcastCarousel = () => {
 
   return (
     <section className="relative -mt-8 w-full overflow-hidden pb-[4.5rem] pt-10 bg-transparent">
-      <div className="marquee relative z-10 mt-8 sm:mt-10 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[8%] before:bg-[linear-gradient(to_right,rgba(0,0,0,1),transparent)] before:z-20 before:pointer-events-none after:absolute after:right-0 after:top-0 after:bottom-0 after:w-[8%] after:bg-[linear-gradient(to_left,rgba(0,0,0,1),transparent)] after:z-20 after:pointer-events-none">
+      <div className="marquee relative z-10 mt-8 sm:mt-10 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[1%] before:bg-[linear-gradient(to_right,rgba(0,0,0,0.6),transparent)] before:z-20 before:pointer-events-none after:absolute after:right-0 after:top-0 after:bottom-0 after:w-[1%] after:bg-[linear-gradient(to_left,rgba(0,0,0,0.6),transparent)] after:z-20 after:pointer-events-none">
         <div
           ref={scrollRef}
           className="marquee-track items-start gap-1 [animation-duration:48s] hover:[animation-play-state:paused]"

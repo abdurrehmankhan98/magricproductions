@@ -164,18 +164,23 @@ export default function ShareVisionSection() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-[1100px] gap-8 lg:grid-cols-[0.78fr_1.22fr]">
-          <div className="surface-card flex flex-col justify-between gap-8 p-8 sm:p-10">
+        <div className="mx-auto mt-16 flex flex-col items-center max-w-[1100px] gap-8">
+          <div className="surface-card flex flex-col justify-start gap-12 p-8 sm:p-10 w-full lg:max-w-[417px]">
             <div>
               <div className="text-[0.78rem] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.2em] text-white/42">
                 What to expect
               </div>
               <h3 className="mt-4 font-display text-[2rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white">
-                Clean process. Fast replies. No wasted calls.
+                Clean process. <br /> Fast replies. <br /> No wasted calls.
               </h3>
               <p className="mt-5 max-w-[32rem] text-[1rem] leading-7 text-white/68">
                 The form should feel simple and direct. Ask for enough context to qualify the lead, but not so much that completion drops.
               </p>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3">
@@ -183,38 +188,38 @@ export default function ShareVisionSection() {
                 <div className="text-[0.72rem] font-semibold uppercase tracking-[0.08em] sm:tracking-[0.18em] text-white/42">
                   Timeline
                 </div>
-                <div className="mt-2 font-display text-[1.2rem] font-semibold text-white">
-                  24h reply
+                <div className="mt-2 font-display text-[1.2rem] font-bold leading-[1.1] text-white">
+                  24h <br /> reply
                 </div>
               </div>
               <div className="surface-card rounded-[20px] p-4">
                 <div className="text-[0.72rem] font-semibold uppercase tracking-[0.08em] sm:tracking-[0.18em] text-white/42">
                   Fit
                 </div>
-                <div className="mt-2 font-display text-[1.2rem] font-semibold text-white">
-                  Podcast-first
+                <div className="mt-2 font-display text-[1.2rem] font-bold leading-[1.1] text-white">
+                  Podcast- <br /> first
                 </div>
               </div>
               <div className="surface-card rounded-[20px] p-4">
                 <div className="text-[0.72rem] font-semibold uppercase tracking-[0.08em] sm:tracking-[0.18em] text-white/42">
                   Output
                 </div>
-                <div className="mt-2 font-display text-[1.2rem] font-semibold text-white">
-                  Trailers + clips
+                <div className="mt-2 font-display text-[1.2rem] font-bold leading-[1.1] text-white">
+                  Trailers <br /> + clips
                 </div>
               </div>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="surface-panel grid gap-6 p-8 sm:p-10">
+
+          <form onSubmit={handleSubmit} className="surface-panel grid gap-6 p-8 sm:p-10 w-full lg:max-w-[652px]">
             {/* Success/Error Message */}
             {message.text && (
               <div
-                className={`rounded-[16px] px-4 py-3 text-[0.9rem] font-medium ${
-                  message.type === "success"
-                    ? "bg-green-500/20 border border-green-500/40 text-green-200"
-                    : "bg-red-500/20 border border-red-500/40 text-red-200"
-                }`}
+                className={`rounded-[16px] px-4 py-3 text-[0.9rem] font-medium ${message.type === "success"
+                  ? "bg-green-500/20 border border-green-500/40 text-green-200"
+                  : "bg-red-500/20 border border-red-500/40 text-red-200"
+                  }`}
               >
                 {message.text}
               </div>
@@ -224,7 +229,7 @@ export default function ShareVisionSection() {
               <div className="grid gap-2">
                 <label>
                   <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
-                    Full Name {errors.fullName && <span className="text-red-400">*</span>}
+                    Name {errors.fullName && <span className="text-red-400">*</span>}
                   </span>
                 </label>
                 <input
@@ -232,11 +237,10 @@ export default function ShareVisionSection() {
                   value={formData.fullName}
                   onChange={(e) => handleChange("fullName", e.target.value)}
                   placeholder="Your name"
-                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${
-                    errors.fullName
-                      ? "border-red-500/50 focus:border-red-500/70"
-                      : "border-white/10 focus:border-purple-400/45"
-                  }`}
+                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${errors.fullName
+                    ? "border-red-500/50 focus:border-red-500/70"
+                    : "border-white/10 focus:border-purple-400/45"
+                    }`}
                 />
                 {errors.fullName && (
                   <span className="text-[0.75rem] text-red-400">{errors.fullName}</span>
@@ -246,7 +250,7 @@ export default function ShareVisionSection() {
               <div className="grid gap-2">
                 <label>
                   <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
-                    Email {errors.email && <span className="text-red-400">*</span>}
+                    Email Address {errors.email && <span className="text-red-400">*</span>}
                   </span>
                 </label>
                 <input
@@ -254,11 +258,10 @@ export default function ShareVisionSection() {
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   placeholder="you@example.com"
-                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${
-                    errors.email
-                      ? "border-red-500/50 focus:border-red-500/70"
-                      : "border-white/10 focus:border-purple-400/45"
-                  }`}
+                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${errors.email
+                    ? "border-red-500/50 focus:border-red-500/70"
+                    : "border-white/10 focus:border-purple-400/45"
+                    }`}
                 />
                 {errors.email && (
                   <span className="text-[0.75rem] text-red-400">{errors.email}</span>
@@ -270,7 +273,7 @@ export default function ShareVisionSection() {
               <div className="grid gap-2">
                 <label>
                   <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
-                    Podcast / Brand {errors.podcastBrand && <span className="text-red-400">*</span>}
+                    Podcast Brand {errors.podcastBrand && <span className="text-red-400">*</span>}
                   </span>
                 </label>
                 <input
@@ -278,11 +281,10 @@ export default function ShareVisionSection() {
                   value={formData.podcastBrand}
                   onChange={(e) => handleChange("podcastBrand", e.target.value)}
                   placeholder="Show or company name"
-                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${
-                    errors.podcastBrand
-                      ? "border-red-500/50 focus:border-red-500/70"
-                      : "border-white/10 focus:border-purple-400/45"
-                  }`}
+                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${errors.podcastBrand
+                    ? "border-red-500/50 focus:border-red-500/70"
+                    : "border-white/10 focus:border-purple-400/45"
+                    }`}
                 />
                 {errors.podcastBrand && (
                   <span className="text-[0.75rem] text-red-400">{errors.podcastBrand}</span>
@@ -291,7 +293,7 @@ export default function ShareVisionSection() {
 
               <div>
                 <CustomSelect
-                  label={`Service Needed ${errors.serviceNeeded ? " *" : ""}`}
+                  label={`I need help with... ${errors.serviceNeeded ? " *" : ""}`}
                   options={serviceOptions}
                   placeholder="Select a service"
                   value={formData.serviceNeeded}
@@ -305,7 +307,7 @@ export default function ShareVisionSection() {
 
             <div>
               <CustomSelect
-                label={`Budget Range ${errors.budgetRange ? " *" : ""}`}
+                label={`Monthly Budget ${errors.budgetRange ? " *" : ""}`}
                 options={budgetOptions}
                 placeholder="Select your budget"
                 value={formData.budgetRange}
@@ -319,7 +321,7 @@ export default function ShareVisionSection() {
             <div className="grid gap-2">
               <label>
                 <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
-                  Project Details {errors.projectDetails && <span className="text-red-400">*</span>}
+                  How can we help? {errors.projectDetails && <span className="text-red-400">*</span>}
                 </span>
               </label>
               <textarea
@@ -327,11 +329,10 @@ export default function ShareVisionSection() {
                 value={formData.projectDetails}
                 onChange={(e) => handleChange("projectDetails", e.target.value)}
                 placeholder="Tell us about your show, your content goals, posting cadence, and what you want us to handle."
-                className={`min-h-[170px] rounded-[18px] border bg-white/[0.05] px-4 py-3 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${
-                  errors.projectDetails
-                    ? "border-red-500/50 focus:border-red-500/70"
-                    : "border-white/10 focus:border-purple-400/45"
-                }`}
+                className={`min-h-[170px] rounded-[18px] border bg-white/[0.05] px-4 py-3 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${errors.projectDetails
+                  ? "border-red-500/50 focus:border-red-500/70"
+                  : "border-white/10 focus:border-purple-400/45"
+                  }`}
               />
               {errors.projectDetails && (
                 <span className="text-[0.75rem] text-red-400">{errors.projectDetails}</span>
