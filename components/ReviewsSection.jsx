@@ -132,14 +132,13 @@ export default function ReviewsSection() {
           </p>
         </div>
 
-        <div className="relative mt-[4.5rem] flex flex-col gap-5">
-          {/* Fade edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-24 bg-gradient-to-r from-black to-transparent sm:w-36" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-24 bg-gradient-to-l from-black to-transparent sm:w-36" />
+        <div className="relative mt-[4.5rem] flex flex-col gap-5 -mx-[70px] w-[calc(100%+140px)]">
+          {/* Edge fades using mask-image for a more subtle preview feel */}
 
-          {/* Row 1 — slides LEFT (standard direction → visually moves right-to-left) */}
-          <div className="marquee">
-            <div className="marquee-track items-center gap-6 sm:gap-8 [animation-duration:20s] hover:[animation-play-state:paused]">
+
+          {/* Row 1 — slides LEFT */}
+          <div className="marquee before:hidden after:hidden [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,black_5%,black_95%,rgba(0,0,0,0)_100%)]">
+            <div className="marquee-track items-center gap-6 sm:gap-8 [animation-duration:35s] [animation-timing-function:linear] hover:[animation-play-state:paused]">
               {loopedRow1.map((review, index) => (
                 <ReviewRailItem
                   key={`r1-${review.name}-${index}`}
@@ -149,9 +148,9 @@ export default function ReviewsSection() {
             </div>
           </div>
 
-          {/* Row 2 — slides RIGHT (reverse direction → visually moves left-to-right) */}
-          <div className="marquee">
-            <div className="marquee-track-right items-center gap-6 sm:gap-8 [animation-duration:27s] hover:[animation-play-state:paused]">
+          {/* Row 2 — slides RIGHT */}
+          <div className="marquee before:hidden after:hidden [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,black_5%,black_95%,rgba(0,0,0,0)_100%)]">
+            <div className="marquee-track-right items-center gap-6 sm:gap-8 [animation-duration:40s] [animation-timing-function:linear] hover:[animation-play-state:paused]">
               {loopedRow2.map((review, index) => (
                 <ReviewRailItem
                   key={`r2-${review.name}-${index}`}
@@ -160,8 +159,8 @@ export default function ReviewsSection() {
               ))}
             </div>
           </div>
-          <div className="marquee">
-            <div className="marquee-track items-center gap-5 [animation-duration:20s] hover:[animation-play-state:paused]">
+          <div className="marquee before:hidden after:hidden [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,black_5%,black_95%,rgba(0,0,0,0)_100%)]">
+            <div className="marquee-track items-center gap-5 [animation-duration:32s] [animation-timing-function:linear] hover:[animation-play-state:paused]">
               {loopedRow1.map((review, index) => (
                 <ReviewRailItem
                   key={`r1-${review.name}-${index}`}

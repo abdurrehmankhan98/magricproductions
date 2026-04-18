@@ -4,29 +4,29 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "How secure is my podcast data?",
+    question: "What services do you offer?",
     answer:
-      "Your files stay private and organized throughout the workflow. We only work with the assets you share for your project and keep delivery structured and secure.",
+      "We provide video editing and graphic designing services. In editing we provide short form and long form editing and in graphic design we provide thumbnail and poster design.",
   },
   {
-    question: "How fast will I get my edited content?",
+    question: "How long does it take to complete a video project?",
     answer:
-      "Turnaround depends on scope, but most podcast clips and trailers are delivered on a fast weekly cadence so your posting schedule stays consistent.",
+      "Depending on the complexity, most projects are completed within 24-48 hours. You can also request faster turnaround times for urgent projects.",
   },
   {
-    question: "How much time will I save with your service?",
+    question: "Do you offer revisions?",
     answer:
-      "Most clients save multiple hours every week by offloading edit prep, clip cutting, packaging, revisions, and delivery.",
+      "Yes! We offer 3 to 4 revisions per video to ensure it aligns with your vision and expectations.",
   },
   {
-    question: "What if I need changes to my final episode?",
+    question: "What platforms do you create videos for?",
     answer:
-      "Revisions are part of the process. We gather your notes, make the updates, and make sure the final result is aligned with your direction.",
+      "We specialize in creating videos for YouTube, Instagram, TikTok, Facebook, LinkedIn,",
   },
   {
-    question: "Can you help launch my podcast from scratch?",
+    question: "How do I get started?",
     answer:
-      "Yes. We can support launches with branded trailers, short clips, rollout assets, and content systems built to help your show start strong.",
+      "Its simple, just book a call with us where will have discuss about your goals and needs and suggest you package according it. after it you share the raw content and brand guidlines then we will start working on your content",
   },
 ];
 
