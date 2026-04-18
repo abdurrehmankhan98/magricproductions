@@ -29,6 +29,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "MagricProductions",
   description: "Podcast growth landing page",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/logo.png",
+    },
+  },
 };
 
 export default function RootLayout({
