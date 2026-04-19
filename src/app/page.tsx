@@ -17,9 +17,9 @@ import FooterSection from "../../components/FooterSection";
 import { heroBackgroundVideo } from "../lib/cloudinaryMedia";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, ReactNode } from "react";
 
-const MotionSection = ({ children, delay = 0 }) => (
+const MotionSection = ({ children, delay = 0 }: { children: ReactNode; delay?: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
