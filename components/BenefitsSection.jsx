@@ -26,16 +26,16 @@ export default function BenefitsSection() {
     <section className="bg-[#050608] px-4 pb-28 pt-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1240px]">
         <div className="text-center">
-          <h2 className="font-sans text-[56px] font-medium leading-[1.04] tracking-[-0.065em] text-white sm:text-[74px] lg:text-[66px]">
-            <span className="[text-shadow:0_0_18px_rgba(255,255,255,0.34),0_0_34px_rgba(255,255,255,0.14)]">
+          <h2 className="font-display text-[56px] font-bold leading-[1.04] tracking-[-0.065em] text-white sm:text-[74px] lg:text-[66px]">
+            <span>
               Podcasting, Made
             </span>{" "}
-            <span className="accent-text font-medium">
+            <span className="accent-text font-bold">
               Effortless.
             </span>
           </h2>
 
-          <p className="mt-8 text-[20px] font-medium leading-none tracking-[-0.03em] text-white">
+          <p className="mt-8 text-[20px] font-normal leading-none tracking-[-0.03em] text-white">
             You talk. We handle the rest.
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function BenefitsSection() {
                 />
               </div>
 
-              <h3 className="font-bricolage mt-9 max-w-[330px] text-[35px] font-semibold leading-[38px] text-white">
+              <h3 className="font-display mt-9 max-w-[330px] text-[35px] font-bold leading-[38px] text-white">
                 {item.title}
               </h3>
 

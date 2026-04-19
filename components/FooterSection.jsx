@@ -44,13 +44,16 @@ export default function FooterSection() {
       <div className="relative mx-auto max-w-[1120px]">
         <div className="grid gap-y-12 md:grid-cols-[1.1fr_1fr_1.45fr_1fr] md:items-start md:gap-x-10">
           <div className="flex items-start justify-center md:justify-start">
-            <div className="flex flex-col items-center md:items-start gap-4 cursor-pointer" onClick={handleScrollToTop}>
-              <div className="relative h-[64px] w-[230px]">
+            <div 
+              className="flex flex-row items-center gap-4 cursor-pointer md:ml-[-100px]" 
+              onClick={handleScrollToTop}
+            >
+              <div className="relative h-16 w-16">
                 <Image
                   src="/logo.png"
                   alt="Magric Productions Logo"
                   fill
-                  className="object-contain object-left"
+                  className="object-contain"
                 />
               </div>
               <span className="text-[22px] font-bold tracking-[-0.04em] text-white">MagricProductions</span>
@@ -76,7 +79,7 @@ export default function FooterSection() {
           </div>
 
           <div className="text-center md:text-left">
-            <h3 className="bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 bg-clip-text text-[18px] font-semibold tracking-[-0.04em] text-transparent">
+            <h3 className="bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 bg-clip-text text-[18px] font-bold tracking-[-0.04em] text-transparent">
               Contact Details
             </h3>
             <ul className="mt-5 space-y-4">
@@ -93,8 +96,10 @@ export default function FooterSection() {
 
           <div className="flex justify-center md:justify-end">
             <a
-              href="#"
-              className="inline-flex h-[50px] items-center gap-3 rounded-[12px] border border-purple-400/50 bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 px-5 text-[16px] font-semibold tracking-[-0.03em] text-white transition duration-200 hover:brightness-105"
+              href="https://www.linkedin.com/company/magric-productions/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-[50px] items-center gap-3 rounded-[12px] border border-purple-400/50 bg-[#9333ea] px-5 text-[16px] font-bold tracking-[-0.03em] text-white transition duration-200 hover:brightness-105"
             >
               <span>Follow us on</span>
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/90 text-[11px] font-black text-purple-700">
@@ -107,10 +112,10 @@ export default function FooterSection() {
         <button
           type="button"
           onClick={handleScrollToTop}
-          className="fixed bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-400 text-white shadow-[0_10px_28px_rgba(168,85,247,0.28)] transition hover:scale-105 hover:brightness-105"
+          className="fixed bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-[rgba(147,51,234,0.72)] text-white shadow-[0_14px_36px_rgba(147,51,234,0.4)] backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-[rgba(147,51,234,0.85)] active:scale-95 shadow-lg group"
           aria-label="Scroll to top"
         >
-          <span className="mb-[1px] text-[18px] leading-none">⌃</span>
+          <span className="mb-[2px] text-[22px] leading-none transition-transform group-hover:-translate-y-1">⌃</span>
         </button>
       </div>
     </footer>

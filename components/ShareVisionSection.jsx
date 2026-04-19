@@ -165,58 +165,11 @@ export default function ShareVisionSection() {
         </div>
 
         <div className="mx-auto mt-16 flex flex-col items-center max-w-[1100px] gap-8">
-          <div className="surface-card flex flex-col justify-start gap-12 p-8 sm:p-10 w-full lg:max-w-[417px]">
-            <div>
-              <div className="text-[0.78rem] font-semibold uppercase tracking-[0.1em] sm:tracking-[0.2em] text-white/42">
-                What to expect
-              </div>
-              <h3 className="mt-4 font-display text-[2rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white">
-                Clean process. <br /> Fast replies. <br /> No wasted calls.
-              </h3>
-              <p className="mt-5 max-w-[32rem] text-[1rem] leading-7 text-white/68">
-                The form should feel simple and direct. Ask for enough context to qualify the lead, but not so much that completion drops.
-              </p>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              <div className="surface-card rounded-[20px] p-4">
-                <div className="text-[0.72rem] font-semibold uppercase tracking-[0.08em] sm:tracking-[0.18em] text-white/42">
-                  Timeline
-                </div>
-                <div className="mt-2 font-display text-[1.2rem] font-bold leading-[1.1] text-white">
-                  24h <br /> reply
-                </div>
-              </div>
-              <div className="surface-card rounded-[20px] p-4">
-                <div className="text-[0.72rem] font-semibold uppercase tracking-[0.08em] sm:tracking-[0.18em] text-white/42">
-                  Fit
-                </div>
-                <div className="mt-2 font-display text-[1.2rem] font-bold leading-[1.1] text-white">
-                  Podcast- <br /> first
-                </div>
-              </div>
-              <div className="surface-card rounded-[20px] p-4">
-                <div className="text-[0.72rem] font-semibold uppercase tracking-[0.08em] sm:tracking-[0.18em] text-white/42">
-                  Output
-                </div>
-                <div className="mt-2 font-display text-[1.2rem] font-bold leading-[1.1] text-white">
-                  Trailers <br /> + clips
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <form onSubmit={handleSubmit} className="surface-panel grid gap-6 p-8 sm:p-10 w-full lg:max-w-[652px]">
+          <form id="contact-form" onSubmit={handleSubmit} className="surface-panel grid gap-6 p-8 sm:p-10 w-full lg:max-w-[652px] scroll-mt-32">
             {/* Success/Error Message */}
             {message.text && (
               <div
-                className={`rounded-[16px] px-4 py-3 text-[0.9rem] font-medium ${message.type === "success"
+                className={`rounded-[16px] px-4 py-3 text-[0.9rem] font-normal ${message.type === "success"
                   ? "bg-green-500/20 border border-green-500/40 text-green-200"
                   : "bg-red-500/20 border border-red-500/40 text-red-200"
                   }`}
@@ -228,7 +181,7 @@ export default function ShareVisionSection() {
             <div className="grid gap-x-8 gap-y-6 md:grid-cols-2">
               <div className="grid gap-2">
                 <label>
-                  <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
+                  <span className="text-[0.82rem] font-normal uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
                     Name {errors.fullName && <span className="text-red-400">*</span>}
                   </span>
                 </label>
@@ -249,7 +202,7 @@ export default function ShareVisionSection() {
 
               <div className="grid gap-2">
                 <label>
-                  <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
+                  <span className="text-[0.82rem] font-normal uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
                     Email Address {errors.email && <span className="text-red-400">*</span>}
                   </span>
                 </label>
@@ -272,7 +225,7 @@ export default function ShareVisionSection() {
             <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
               <div className="grid gap-2">
                 <label>
-                  <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
+                  <span className="text-[0.82rem] font-normal uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
                     Podcast Brand {errors.podcastBrand && <span className="text-red-400">*</span>}
                   </span>
                 </label>
@@ -320,7 +273,7 @@ export default function ShareVisionSection() {
 
             <div className="grid gap-2">
               <label>
-                <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
+                <span className="text-[0.82rem] font-normal uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
                   How can we help? {errors.projectDetails && <span className="text-red-400">*</span>}
                 </span>
               </label>

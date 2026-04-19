@@ -94,19 +94,19 @@ function ServiceCard({ service, cardRef }) {
       <div className="service-card-spotlight-glow" />
 
       <div
-        className="relative z-10 flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-[#a855f7]"
+        className="relative z-20 flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-[var(--accent-icon-bg)] shadow-[0_8px_16px_-4px_rgba(168,85,247,0.25)]"
       >
         <Image
           src={service.gif}
           alt={service.title}
           fill
           unoptimized
-          className="object-cover mix-blend-luminosity opacity-90"
+          className="object-cover mix-blend-luminosity opacity-90 transition-opacity group-hover:opacity-100"
         />
       </div>
 
       <div className="relative z-10 mt-1">
-        <h3 className="font-display max-w-[14ch] text-[1.9rem] font-semibold leading-[1.04] tracking-[-0.04em] text-white ">
+        <h3 className="font-display text-[1.9rem] font-bold leading-[1.04] tracking-[-0.04em] text-white whitespace-nowrap">
           {service.title}
         </h3>
       </div>
@@ -124,10 +124,14 @@ function ServiceCard({ service, cardRef }) {
 
       <button
         type="button"
-        className="relative z-10 mt-2 inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.08] px-4 py-2 text-[0.92rem] font-medium tracking-[-0.02em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition hover:bg-white/[0.12]"
+        className="relative z-20 mt-4 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] hover:bg-white/[0.12] px-5 py-2.5 text-[0.92rem] font-bold tracking-[-0.01em] text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] backdrop-blur-xl transition-all duration-300 hover:scale-[1.05] hover:border-[#a855f7]/40 active:scale-[0.98]"
       >
-        View Demo
-        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white text-[#0c1c39]">→</span>
+        <span className="relative z-10">View Demo</span>
+        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-white group-hover:bg-[#a855f7] group-hover:text-white transition-colors duration-300">
+          <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+            <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+          </svg>
+        </div>
       </button>
     </div>
   );

@@ -147,7 +147,7 @@ function ReviewColumn({ reviews, duration, direction = 'up', pauseOnHover = true
     >
       <div 
         ref={scope}
-        className="flex flex-col gap-4"
+        className="flex flex-col gap-4 pb-4"
         style={{ willChange: 'transform' }}
       >
         {loopedReviews.map((review, index) => (

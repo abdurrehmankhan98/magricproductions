@@ -8,18 +8,11 @@ function VideoPlayer() {
   const videoId = "CJHXwa4B4gE";
 
   // YouTube URL with optimized parameters:
-  // autoplay=1: Start playing immediately
-  // vq=hd1080: Request HD 1080p quality
-  // rel=0: Hide related videos from other channels
-  // modestbranding=1: Hide YouTube logo
-  // controls=1: Show player controls
-  // fs=1: Allow fullscreen
-  // mute=0: Ensure audio is unmuted (browser may still enforce mute)
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&rel=0&modestbranding=1&controls=1&fs=1&mute=0&showinfo=0`;
 
   if (isPlaying) {
     return (
-      <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden bg-black">
+      <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-black shadow-2xl">
         <iframe
           width="100%"
           height="100%"
@@ -30,7 +23,7 @@ function VideoPlayer() {
           allowFullScreen
           style={{ display: 'block' }}
         />
-        
+
         {/* Close Button */}
         <button
           type="button"
@@ -46,7 +39,7 @@ function VideoPlayer() {
   }
 
   return (
-    <div className="relative w-full aspect-[16/9] rounded-[24px] overflow-hidden bg-black">
+    <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-black">
       {/* Thumbnail Preview (Facade Pattern - Lazy Loading) */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -66,19 +59,13 @@ function VideoPlayer() {
         className="absolute inset-0 w-full h-full flex items-center justify-center z-10 cursor-pointer transition-opacity duration-200 hover:opacity-90"
       >
         <div className="relative flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-80 blur-xl" style={{width: '96px', height: '96px'}} />
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-80 blur-xl" style={{ width: '96px', height: '96px' }} />
           <div className="relative h-24 w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg hover:shadow-xl transition-shadow">
             <Play size={48} fill="white" className="text-white ml-1" />
           </div>
         </div>
       </button>
     </div>
-  );
-}
-
-function DummyCard() {
-  return (
-    <div className="glass-hover-card aspect-[16/9] w-full rounded-[32px] border border-white/5 bg-zinc-900/50" />
   );
 }
 
@@ -97,25 +84,19 @@ export default function PortfolioSection() {
         </div>
 
         <div className="relative mt-16 flex items-center justify-center">
-          <div className="absolute left-[-20%] hidden w-[45%] scale-90 opacity-20 blur-[2px] lg:block">
-            <DummyCard />
+          <div className="absolute left-[-20%] hidden w-[45%] scale-90 opacity-20 blur-[4px] lg:block grayscale">
+            <div className="surface-card aspect-[16/9] w-full rounded-[32px] border border-white/5 bg-zinc-900/50" />
           </div>
 
-          <div className="relative z-10 w-full max-w-[920px]">
-            {/* Neon Glow Background - Deep Purple */}
-            <div className="absolute -inset-[8px] rounded-[32px] bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 opacity-40 blur-2xl" />
-            <div className="absolute -inset-[4px] rounded-[32px] bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 opacity-25 blur-lg" />
-            <div className="absolute -inset-[2px] rounded-[32px] bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 opacity-15 blur-md" />
+          <div className="relative z-10 w-full max-w-[920px] group transition-transform duration-700 hover:scale-[1.02]">
 
-            <article className="portfolio-glass-card relative z-10 w-full rounded-[32px] border border-purple-400/50 bg-[#141d23] p-4 shadow-2xl sm:p-6 backdrop-blur-sm">
-              <div className="relative overflow-hidden rounded-[24px] bg-[#0e1822] shadow-inner">
-                <VideoPlayer />
-              </div>
+            <article className="relative z-10 w-full rounded-xl overflow-hidden border border-[#9333ea]/30 shadow-[0_0_25px_rgba(147,51,234,0.45)] transition-all duration-500">
+              <VideoPlayer />
             </article>
           </div>
 
-          <div className="absolute right-[-20%] hidden w-[45%] scale-90 opacity-20 blur-[2px] lg:block">
-            <DummyCard />
+          <div className="absolute right-[-20%] hidden w-[45%] scale-90 opacity-20 blur-[4px] lg:block grayscale">
+            <div className="surface-card aspect-[16/9] w-full rounded-[32px] border border-white/5 bg-zinc-900/50" />
           </div>
         </div>
       </div>

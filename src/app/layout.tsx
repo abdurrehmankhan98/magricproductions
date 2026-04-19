@@ -1,29 +1,12 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Inter, Montserrat, Outfit } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import BackgroundGlow from "../../components/BackgroundGlow";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const bricolageGrotesque = Bricolage_Grotesque({
-  variable: "--font-bricolage-grotesque",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -48,8 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${montserrat.variable} ${outfit.variable} ${bricolageGrotesque.variable} ${inter.variable} antialiased`}
+        className={`${poppins.variable} antialiased selection:bg-purple-500/30`}
       >
+        <BackgroundGlow />
         {children}
       </body>
     </html>

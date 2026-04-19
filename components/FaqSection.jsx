@@ -32,34 +32,38 @@ const faqs = [
 
 function FaqItem({ item, isOpen, onToggle }) {
   return (
-    <div className="surface-card overflow-hidden rounded-[22px] transition-colors duration-300 hover:border-purple-400/25">
+    <div className="surface-card service-card-spotlight group overflow-hidden rounded-[22px] transition-all duration-300">
+      {/* Dynamic Glass Spotlight */}
+      <div className="service-card-spotlight-glow" />
+
       <button
         type="button"
         onClick={onToggle}
-        className="flex min-h-[84px] w-full items-center justify-between px-6 text-left sm:px-8"
+        className="relative z-10 flex min-h-[84px] w-full items-center justify-between px-6 text-left sm:px-8"
         aria-expanded={isOpen}
       >
-        <span className="font-display text-[1.2rem] font-medium leading-[1.2] tracking-[-0.025em] text-white sm:text-[1.3rem]">
+        <span className="font-display text-[1.2rem] font-bold leading-[1.2] tracking-[-0.025em] text-white sm:text-[1.3rem] group-hover:text-purple-300 transition-colors">
           {item.question}
         </span>
-        <span
-          className={`ml-6 flex-none text-[30px] font-semibold leading-none text-purple-400 transition-transform duration-300 ${
-            isOpen ? "rotate-45" : ""
-          }`}
+        <div
+          className={`ml-6 flex h-8 w-8 flex-none items-center justify-center rounded-full border border-white/10 bg-white/5 text-[24px] font-light leading-none text-purple-400 transition-all duration-300 ${isOpen ? "rotate-45 bg-purple-500 text-white border-purple-400" : "group-hover:border-purple-400/50 group-hover:scale-110"
+            }`}
         >
           +
-        </span>
+        </div>
       </button>
 
       <div
-        className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-        }`}
+        className={`relative z-10 grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+          }`}
       >
         <div className="overflow-hidden">
-          <p className="px-6 pb-6 pt-0 text-[1rem] leading-7 text-white/68 sm:px-8">
-            {item.answer}
-          </p>
+          <div className="px-6 pb-6 pt-2 sm:px-8">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-4" />
+            <p className="text-[1rem] leading-7 text-white/70">
+              {item.answer}
+            </p>
+          </div>
         </div>
       </div>
     </div>
