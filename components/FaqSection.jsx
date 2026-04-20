@@ -46,7 +46,7 @@ function FaqItem({ item, isOpen, onToggle }) {
           {item.question}
         </span>
         <div
-          className={`ml-6 flex h-8 w-8 flex-none items-center justify-center rounded-full border border-white/10 bg-white/5 text-[24px] font-light leading-none text-purple-400 transition-all duration-300 ${isOpen ? "rotate-45 bg-purple-500 text-white border-purple-400" : "group-hover:border-purple-400/50 group-hover:scale-110"
+          className={`ml-6 flex flex-none items-center justify-center text-[32px] font-bold leading-none text-purple-500 transition-all duration-500 ${isOpen ? "rotate-45 text-purple-400" : "group-hover:scale-125 group-hover:text-purple-400"
             }`}
         >
           +

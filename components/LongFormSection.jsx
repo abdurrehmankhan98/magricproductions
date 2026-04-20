@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { Play } from "lucide-react";
+import { motion } from "framer-motion";
 
 const longFormVideos = [
-  { id: "HpVXJLJlheY", title: "Productivity Strategy" },
+  { id: "q_p04Jmdxzs", title: "Productivity Strategy" },
   { id: "CJHXwa4B4gE", title: "Global Expansion" },
   { id: "CJHXwa4B4gE", title: "Financial Systems" },
   { id: "CJHXwa4B4gE", title: "Community Growth" },
@@ -68,7 +69,7 @@ function LongFormVideoPlayer({ videoId }) {
 
 export default function LongFormSection() {
   return (
-    <section id="long-form" className="section-shell scroll-mt-28 relative overflow-hidden">
+    <section id="long-form" className="section-shell scroll-mt-28 relative overflow-hidden bg-black">
       {/* Background Decorative Element */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-20">
         <div className="neon-glow-accent glow-purple top-1/4 left-1/4 scale-[2]" />
@@ -76,29 +77,47 @@ export default function LongFormSection() {
       </div>
 
       <div className="section-inner relative z-10">
-        <div className="section-stack section-center mb-16">
-          <div className="section-eyebrow">Production</div>
-          <h2 className="font-display text-[clamp(2.2rem,5vw,4.5rem)] font-bold leading-[0.9] tracking-[-0.05em] text-white">
-            Long Form <span className="accent-text">Videos</span>
+        <div className="section-stack section-center mb-20 text-center">
+          <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-4">
+             Production
+          </div>
+          <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white leading-tight">
+            High Impact <span className="accent-text italic">Long Form</span>
           </h2>
-          <p className="section-copy mt-6">
-            High-fidelity edits for full-length content that keeps audiences engaged from start to finish.
+          <p className="section-copy mt-6 text-gray-400 max-w-2xl mx-auto overflow-hidden">
+            Engineered assets that drive authority, trust, and conversions for your brand through high-retention editing.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-[1100px] mx-auto">
           {longFormVideos.map((video, index) => (
-            <div key={index} className="group transition-all duration-500 hover:-translate-y-1">
+            <motion.div 
+              key={index} 
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ 
+                y: -10,
+                scale: 1.02,
+                transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+              }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.12,
+                ease: [0.22, 1, 0.36, 1] 
+              }}
+              className="group"
+            >
               <div className="relative">
                 {/* Glow effect only on hover, otherwise kept clean */}
-                <div className="absolute -inset-4 bg-purple-500/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+                <div className="absolute -inset-4 bg-purple-500/15 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
                 <LongFormVideoPlayer videoId={video.id} />
               </div>
-              <div className="mt-5 px-1">
-                <h3 className="text-white font-display text-xl font-medium tracking-tight group-hover:text-purple-400 transition-colors uppercase">{video.title}</h3>
-                <div className="h-0.5 w-12 bg-purple-600 mt-2 rounded-full opacity-50" />
+              <div className="mt-6 px-1">
+                <h3 className="text-white font-display text-2xl font-semibold tracking-tight group-hover:text-purple-400 transition-colors uppercase leading-none">{video.title}</h3>
+                <div className="h-0.5 w-16 bg-gradient-to-r from-purple-600 to-transparent mt-3 rounded-full opacity-60 group-hover:w-24 transition-all duration-500" />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

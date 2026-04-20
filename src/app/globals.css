@@ -1228,6 +1228,5 @@ select option:hover {
   .js-reveal {
     opacity: 1;
     transform: none;
-    transition: none;
   }
 }

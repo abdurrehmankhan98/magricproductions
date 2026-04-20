@@ -140,12 +140,12 @@ function ReviewColumn({ reviews, duration, direction = 'up', pauseOnHover = true
   };
 
   return (
-    <div 
+    <div
       className="relative h-full overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div 
+      <div
         ref={scope}
         className="flex flex-col gap-4 pb-4"
         style={{ willChange: 'transform' }}

@@ -15,11 +15,10 @@ const Navbar = () => {
 
   return (
     <header className={`sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8 transition-all duration-500 ${isScrolled ? "translate-y-0" : "translate-y-2"}`}>
-      <div className={`mx-auto w-full max-w-[1200px] rounded-full border transition-all duration-500 ${
-        isScrolled 
-          ? "border-white/10 bg-[#081117]/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
+      <div className={`mx-auto w-full max-w-[1200px] rounded-full border transition-all duration-500 ${isScrolled
+          ? "border-white/10 bg-[#081117]/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           : "border-transparent bg-transparent backdrop-blur-0"
-      }`}>
+        }`}>
         <div className="mx-auto flex h-[72px] items-center justify-between px-5 sm:px-6">
           <a href="#" className="flex items-center gap-1">
             <div className="relative h-[48px] w-[48px] sm:h-[54px] sm:w-[54px]">
