@@ -9,7 +9,7 @@ export default function TransformationSection() {
       <div className="section-inner">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Before & After</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(1.9rem,4vw,3.7rem)] font-bold leading-[1] tracking-[-0.045em] text-white">
+          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
             Turn your raw videos into <span className="accent-text">masterpieces</span>
           </h2>
           <p className="section-copy max-w-[38rem]">
@@ -20,7 +20,7 @@ export default function TransformationSection() {
         <div className="relative mx-auto mt-16 grid max-w-[860px] gap-8 md:grid-cols-[1fr_auto_1fr] md:items-center">
           {/* Before Column */}
           <div className="flex flex-col items-center group">
-            <article className="relative w-full overflow-hidden rounded-[20px]">
+            <article className="relative w-full overflow-hidden rounded-lg">
               <div className="absolute inset-0 bg-[#0a0a0f]/60 backdrop-blur-[32px] transition-colors duration-500 group-hover:bg-[#0a0a0f]/80" />
               <div className="relative z-10 w-full overflow-hidden bg-black/20">
                 <Image
@@ -34,10 +34,10 @@ export default function TransformationSection() {
               </div>
             </article>
             <div className="mt-8 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">
-              <div className="font-display text-[0.85rem] font-bold uppercase tracking-[0.25em] text-[#a855f7]/80 drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
+              <div className="font-display text-[0.85rem] font-medium uppercase tracking-widest text-[#a855f7]/80 drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
                 Before
               </div>
-              <div className="font-display text-[1.4rem] font-bold tracking-[-0.02em] text-white">
+              <div className="font-display text-[1.4rem] font-semibold tracking-normal text-white">
                 Raw recording
               </div>
             </div>
@@ -55,7 +55,7 @@ export default function TransformationSection() {
 
           {/* After Column */}
           <div className="flex flex-col items-center group">
-            <article className="relative w-full overflow-hidden rounded-[20px]">
+            <article className="relative w-full overflow-hidden rounded-lg">
               <div className="absolute inset-0 bg-[#0a0a0f]/60 backdrop-blur-[32px] transition-colors duration-500 group-hover:bg-[#0a0a0f]/80" />
               <div className="absolute inset-x-0 -top-20 h-40 rounded-full bg-purple-600/15 blur-[80px] opacity-40 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10 w-full overflow-hidden bg-black/20">
@@ -70,10 +70,10 @@ export default function TransformationSection() {
               </div>
             </article>
             <div className="mt-8 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">
-              <div className="font-display text-[0.85rem] font-bold uppercase tracking-[0.25em] text-[#a855f7]/80 drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
+              <div className="font-display text-[0.85rem] font-medium uppercase tracking-widest text-[#a855f7]/80 drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
                 After
               </div>
-              <div className="font-display text-[1.4rem] font-bold tracking-[-0.02em] text-white">
+              <div className="font-display text-[1.4rem] font-semibold tracking-normal text-white">
                 Branded social asset
               </div>
             </div>

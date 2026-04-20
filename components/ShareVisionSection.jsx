@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import CustomSelect from "./CustomSelect";
+import { Mail, MapPin, Instagram, Linkedin, Youtube, Send } from "lucide-react";
 
 export default function ShareVisionSection() {
   const [formData, setFormData] = useState({
@@ -112,7 +113,7 @@ export default function ShareVisionSection() {
       if (response.ok) {
         setMessage({
           type: "success",
-          text: "✓ Inquiry sent successfully! We'll be in touch within 24 hours.",
+          text: "✓ Inquiry sent successfully!",
         });
 
         // Clear form
@@ -151,157 +152,190 @@ export default function ShareVisionSection() {
 
   return (
     <section id="contact" className="section-shell relative overflow-hidden scroll-mt-28">
-      <div className="pointer-events-none absolute inset-x-0 top-[8%] mx-auto h-[420px] max-w-[1080px] rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.22)_0%,rgba(107,14,206,0.1)_38%,transparent_72%)] blur-[120px]" />
+      {/* Background Decorative Glow */}
+      <div className="pointer-events-none absolute inset-x-0 top-[20%] mx-auto h-[600px] max-w-[1200px] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.1)_0%,rgba(124,58,237,0.06)_50%,transparent_100%)] blur-[140px]" />
 
-      <div className="section-inner">
-        <div className="section-stack section-center">
+      <div className="section-inner relative z-10">
+
+        {/* Section Heading — matches FAQ style */}
+        <div className="section-stack section-center mb-16">
           <div className="section-eyebrow">Contact Us</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(1.9rem,4vw,3.7rem)] font-bold leading-[1] tracking-[-0.045em] text-white">
-            Tell us what you want to <span className="accent-text">build</span>.
+          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
+            Tell us what you want to <span className="accent-text">build.</span>
           </h2>
-          <p className="section-copy max-w-[40rem]">
+          <p className="section-copy max-w-[42rem]">
             Share your show, your goals, and the type of content support you need. We&apos;ll come back with a focused plan instead of a generic pitch.
           </p>
         </div>
 
-        <div className="mx-auto mt-16 flex flex-col items-center max-w-[1100px] gap-8">
-          <form id="contact-form" onSubmit={handleSubmit} className="surface-panel grid gap-6 p-8 sm:p-10 w-full lg:max-w-[652px] scroll-mt-32">
-            {/* Success/Error Message */}
-            {message.text && (
-              <div
-                className={`rounded-[16px] px-4 py-3 text-[0.9rem] font-normal ${message.type === "success"
-                  ? "bg-green-500/20 border border-green-500/40 text-green-200"
-                  : "bg-red-500/20 border border-red-500/40 text-red-200"
-                  }`}
-              >
-                {message.text}
-              </div>
-            )}
+        <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-stretch">
+          
+          {/* Left Column: Contact Info */}
+          <div className="contact-surface p-8 lg:p-12 flex flex-col justify-between min-h-[400px]">
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-semibold tracking-normal text-white mb-4">
+                Contact Info
+              </h2>
+              <p className="text-white/40 text-lg lg:text-xl font-normal tracking-normal mb-12">
+                Reach out directly or fill the form.
+              </p>
 
-            <div className="grid gap-x-8 gap-y-6 md:grid-cols-2">
-              <div className="grid gap-2">
-                <label>
-                  <span className="text-[0.82rem] font-normal uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
-                    Name {errors.fullName && <span className="text-red-400">*</span>}
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  value={formData.fullName}
-                  onChange={(e) => handleChange("fullName", e.target.value)}
-                  placeholder="Your name"
-                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${errors.fullName
-                    ? "border-red-500/50 focus:border-red-500/70"
-                    : "border-white/10 focus:border-purple-400/45"
-                    }`}
-                />
-                {errors.fullName && (
-                  <span className="text-[0.75rem] text-red-400">{errors.fullName}</span>
-                )}
-              </div>
+              <div className="space-y-8">
+                {/* Email Info */}
+                <div className="flex items-center gap-5 group">
+                  <div className="contact-info-box">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <span className="contact-label !mb-0.5">Email</span>
+                    <a href="mailto:founder.magricproductions@gmail.com" className="text-white font-medium hover:text-purple-400 transition-colors">
+                      founder.magricproductions@gmail.com
+                    </a>
+                  </div>
+                </div>
 
-              <div className="grid gap-2">
-                <label>
-                  <span className="text-[0.82rem] font-normal uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
-                    Email Address {errors.email && <span className="text-red-400">*</span>}
-                  </span>
-                </label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => handleChange("email", e.target.value)}
-                  placeholder="you@example.com"
-                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${errors.email
-                    ? "border-red-500/50 focus:border-red-500/70"
-                    : "border-white/10 focus:border-purple-400/45"
-                    }`}
-                />
-                {errors.email && (
-                  <span className="text-[0.75rem] text-red-400">{errors.email}</span>
-                )}
+                {/* Location Info */}
+                <div className="flex items-center gap-5 group">
+                  <div className="contact-info-box">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <span className="contact-label !mb-0.5">Location</span>
+                    <p className="text-white font-medium">
+                      Islamabad, Pakistan
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="grid gap-x-5 gap-y-6 md:grid-cols-2">
-              <div className="grid gap-2">
-                <label>
-                  <span className="text-[0.82rem] font-normal uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
-                    Podcast Brand {errors.podcastBrand && <span className="text-red-400">*</span>}
-                  </span>
-                </label>
-                <input
-                  type="text"
-                  value={formData.podcastBrand}
-                  onChange={(e) => handleChange("podcastBrand", e.target.value)}
-                  placeholder="Show or company name"
-                  className={`h-13 rounded-[16px] border bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${errors.podcastBrand
-                    ? "border-red-500/50 focus:border-red-500/70"
-                    : "border-white/10 focus:border-purple-400/45"
-                    }`}
-                />
-                {errors.podcastBrand && (
-                  <span className="text-[0.75rem] text-red-400">{errors.podcastBrand}</span>
-                )}
+            {/* Social Icons */}
+            <div className="mt-12">
+              <div className="flex items-center gap-4">
+                <a href="https://wa.me/923127990883" target="_blank" rel="noopener noreferrer" className="contact-info-box border-white/5 hover:border-white/20">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width={18} height={18}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.121 1.523 5.854L.057 23.882l6.184-1.62A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.806 9.806 0 0 1-5.001-1.368l-.36-.214-3.67.962.979-3.58-.234-.368A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/magricproductions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="contact-info-box border-white/5 hover:border-white/20">
+                  <Instagram size={18} />
+                </a>
+                <a href="https://www.linkedin.com/company/magric-productions/" target="_blank" rel="noopener noreferrer" className="contact-info-box border-white/5 hover:border-white/20">
+                  <Linkedin size={18} />
+                </a>
+                <a href="https://www.youtube.com/@MagricProductions25" target="_blank" rel="noopener noreferrer" className="contact-info-box border-white/5 hover:border-white/20">
+                  <Youtube size={18} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Form Panel */}
+          <div className="contact-surface p-8 lg:p-12">
+            <form onSubmit={handleSubmit} className="grid gap-6">
+              {/* Success/Error Message */}
+              {message.text && (
+                <div
+                  className={`rounded-xl px-4 py-3 text-[0.9rem] font-medium transition-all ${
+                    message.type === "success"
+                      ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                      : "bg-red-500/10 border border-red-500/20 text-red-400"
+                  }`}
+                >
+                  {message.text}
+                </div>
+              )}
+
+              <div className="grid gap-6 md:grid-cols-2">
+                {/* Full Name */}
+                <div className="space-y-0">
+                  <label className="contact-label">Name</label>
+                  <input
+                    type="text"
+                    value={formData.fullName}
+                    onChange={(e) => handleChange("fullName", e.target.value)}
+                    placeholder="Your Name"
+                    className="contact-input"
+                  />
+                  {errors.fullName && <p className="text-[11px] text-red-400 mt-1 ml-1">{errors.fullName}</p>}
+                </div>
+
+                {/* Email */}
+                <div className="space-y-0">
+                  <label className="contact-label">Email</label>
+                  <input
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleChange("email", e.target.value)}
+                    placeholder="your@email.com"
+                    className="contact-input"
+                  />
+                  {errors.email && <p className="text-[11px] text-red-400 mt-1 ml-1">{errors.email}</p>}
+                </div>
               </div>
 
-              <div>
+              {/* Service Selection */}
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-0">
+                  <label className="contact-label">Podcast/Brand</label>
+                  <input
+                    type="text"
+                    value={formData.podcastBrand}
+                    onChange={(e) => handleChange("podcastBrand", e.target.value)}
+                    placeholder="Show or Brand name"
+                    className="contact-input"
+                  />
+                  {errors.podcastBrand && <p className="text-[11px] text-red-400 mt-1 ml-1">{errors.podcastBrand}</p>}
+                </div>
+
                 <CustomSelect
-                  label={`I need help with... ${errors.serviceNeeded ? " *" : ""}`}
+                  label="Service"
                   options={serviceOptions}
                   placeholder="Select a service"
                   value={formData.serviceNeeded}
                   onChange={(value) => handleChange("serviceNeeded", value)}
                 />
-                {errors.serviceNeeded && (
-                  <span className="text-[0.75rem] text-red-400 mt-1 block">{errors.serviceNeeded}</span>
-                )}
               </div>
-            </div>
 
-            <div>
+              {/* Budget Selection */}
               <CustomSelect
-                label={`Monthly Budget ${errors.budgetRange ? " *" : ""}`}
+                label="Monthly Budget"
                 options={budgetOptions}
-                placeholder="Select your budget"
+                placeholder="Select your budget range"
                 value={formData.budgetRange}
                 onChange={(value) => handleChange("budgetRange", value)}
               />
-              {errors.budgetRange && (
-                <span className="text-[0.75rem] text-red-400 mt-1 block">{errors.budgetRange}</span>
-              )}
-            </div>
 
-            <div className="grid gap-2">
-              <label>
-                <span className="text-[0.82rem] font-normal uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
-                  How can we help? {errors.projectDetails && <span className="text-red-400">*</span>}
-                </span>
-              </label>
-              <textarea
-                rows={6}
-                value={formData.projectDetails}
-                onChange={(e) => handleChange("projectDetails", e.target.value)}
-                placeholder="Tell us about your show, your content goals, posting cadence, and what you want us to handle."
-                className={`min-h-[170px] rounded-[18px] border bg-white/[0.05] px-4 py-3 text-white outline-none transition placeholder:text-white/28 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(168,85,247,0.08)] ${errors.projectDetails
-                  ? "border-red-500/50 focus:border-red-500/70"
-                  : "border-white/10 focus:border-purple-400/45"
-                  }`}
-              />
-              {errors.projectDetails && (
-                <span className="text-[0.75rem] text-red-400">{errors.projectDetails}</span>
-              )}
-            </div>
+              {/* Project Details */}
+              <div className="space-y-0">
+                <label className="contact-label">Message</label>
+                <textarea
+                  rows={4}
+                  value={formData.projectDetails}
+                  onChange={(e) => handleChange("projectDetails", e.target.value)}
+                  placeholder="Tell us about your project..."
+                  className="contact-input min-h-[140px] resize-none"
+                />
+                {errors.projectDetails && <p className="text-[11px] text-red-400 mt-1 ml-1">{errors.projectDetails}</p>}
+              </div>
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="button-primary min-w-[12rem] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-              >
-                {isLoading ? "Sending..." : "Send inquiry"}
-              </button>
-            </div>
-          </form>
+              {/* Submit Button */}
+              <div className="mt-4">
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="btn-contact-submit flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed group"
+                >
+                  {isLoading ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <Send size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>

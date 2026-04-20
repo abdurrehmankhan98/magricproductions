@@ -39,7 +39,7 @@ function StepCard({ title, description, index }) {
         className="relative group lg:cursor-pointer"
     >
       {/* The actual glass card */}
-      <article className="surface-card service-card-spotlight relative min-h-[260px] overflow-hidden rounded-[32px] px-6 pb-10 pt-16 text-center sm:min-h-[300px] sm:px-8 shadow-2xl transition-shadow duration-500 group-hover:shadow-[0_20px_50px_-20px_rgba(168,85,247,0.25)]">
+      <article className="surface-card service-card-spotlight relative min-h-[260px] overflow-hidden rounded-xl px-6 pb-10 pt-16 text-center sm:min-h-[300px] sm:px-8 shadow-2xl transition-shadow duration-500 group-hover:shadow-[0_20px_50px_-20px_rgba(168,85,247,0.25)]">
         {/* Dynamic Glass Spotlight */}
         <div className="service-card-spotlight-glow" />
 
@@ -91,8 +91,8 @@ export default function ProcessSection() {
           <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-2">
             How it works
           </div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.2rem,5vw,3.7rem)] font-bold leading-[1] tracking-[-0.045em] text-white">
-            Our Simple <span className="accent-text italic">3-Step</span> Process
+          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.5rem,5.5vw,5rem)] font-bold leading-[1] tracking-[-0.045em] text-white">
+            Our Simple <span className="accent-text">3-Step</span> Process
           </h2>
           <p className="section-copy max-w-[38rem] text-gray-400">
             A workflow designed for clarity and trust, from initial planning to ready-to-post delivery.

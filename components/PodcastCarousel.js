@@ -3,14 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import { showcaseClips as clips } from "../src/lib/cloudinaryMedia";
 
 const cardLayouts = [
-  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
-  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
-  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
-  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
-  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
-  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
-  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
-  "mt-6 h-[320px] w-[180px] rounded-[26px] sm:h-[400px] sm:w-[225px] sm:rounded-[32px]",
+  "mt-6 h-[320px] w-[180px] rounded-lg sm:h-[400px] sm:w-[225px] sm:rounded-xl",
+  "mt-6 h-[320px] w-[180px] rounded-lg sm:h-[400px] sm:w-[225px] sm:rounded-xl",
+  "mt-6 h-[320px] w-[180px] rounded-lg sm:h-[400px] sm:w-[225px] sm:rounded-xl",
+  "mt-6 h-[320px] w-[180px] rounded-lg sm:h-[400px] sm:w-[225px] sm:rounded-xl",
+  "mt-6 h-[320px] w-[180px] rounded-lg sm:h-[400px] sm:w-[225px] sm:rounded-xl",
+  "mt-6 h-[320px] w-[180px] rounded-lg sm:h-[400px] sm:w-[225px] sm:rounded-xl",
+  "mt-6 h-[320px] w-[180px] rounded-lg sm:h-[400px] sm:w-[225px] sm:rounded-xl",
+  "mt-6 h-[320px] w-[180px] rounded-lg sm:h-[400px] sm:w-[225px] sm:rounded-xl",
 ];
 
 const marqueeClips = [...clips, ...clips];

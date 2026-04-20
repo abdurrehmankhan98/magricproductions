@@ -17,7 +17,7 @@ function LongFormVideoPlayer({ videoId }) {
 
   if (isPlaying) {
     return (
-      <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-black shadow-2xl">
+      <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden bg-black shadow-2xl">
         <iframe
           width="100%"
           height="100%"
@@ -45,7 +45,7 @@ function LongFormVideoPlayer({ videoId }) {
   }
 
   return (
-    <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-[#0c0c0c] group cursor-pointer" onClick={() => setIsPlaying(true)}>
+    <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden bg-[#0c0c0c] group cursor-pointer" onClick={() => setIsPlaying(true)}>
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
         style={{
@@ -82,7 +82,7 @@ export default function LongFormSection() {
              Production
           </div>
           <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white leading-tight">
-            High Impact <span className="accent-text italic">Long Form</span>
+            High Impact <span className="accent-text">Long Form</span>
           </h2>
           <p className="section-copy mt-6 text-gray-400 max-w-2xl mx-auto overflow-hidden">
             Engineered assets that drive authority, trust, and conversions for your brand through high-retention editing.
@@ -110,7 +110,7 @@ export default function LongFormSection() {
             >
               <div className="relative">
                 {/* Glow effect only on hover, otherwise kept clean */}
-                <div className="absolute -inset-4 bg-purple-500/15 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+                <div className="absolute -inset-4 bg-purple-500/15 rounded-xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
                 <LongFormVideoPlayer videoId={video.id} />
               </div>
               <div className="mt-6 px-1">

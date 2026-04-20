@@ -54,7 +54,7 @@ const DashboardDemoCard = () => {
                 </div>
 
                 <div className="surface-card p-6 bg-white/[0.02] border-white/5">
-                  <p className="text-sm text-white/70 leading-relaxed italic">
+                  <p className="text-sm text-white/70 leading-relaxed">
                     "The frosted glass effect adds a layer of depth that makes the interface feel tactile and modern. The subtle borders and neon accents create a true dashboard experience."
                   </p>
                 </div>

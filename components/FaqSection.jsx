@@ -42,7 +42,7 @@ function FaqItem({ item, isOpen, onToggle }) {
         className="relative z-10 flex min-h-[84px] w-full items-center justify-between px-6 text-left sm:px-8"
         aria-expanded={isOpen}
       >
-        <span className="font-display text-[1.2rem] font-bold leading-[1.2] tracking-[-0.025em] text-white sm:text-[1.3rem] group-hover:text-purple-300 transition-colors">
+        <span className="font-display text-[1.2rem] font-semibold leading-[1.2] tracking-normal text-white sm:text-[1.3rem] group-hover:text-purple-300 transition-colors">
           {item.question}
         </span>
         <div
@@ -78,12 +78,10 @@ export default function FaqSection() {
       <div className="section-inner max-w-[960px]">
         <div className="section-stack section-center">
           <div className="section-eyebrow">FAQs</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(1.9rem,4vw,3.7rem)] font-bold leading-[1] tracking-[-0.045em] text-white">
+          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
             Got <span className="accent-text">Question</span>? We’ve Answers!
           </h2>
-          <p className="section-copy max-w-[38rem]">
-            We turn your best moments into scroll-stopping trailers that boost engagement.ould reduce friction: speed, process, revisions, and security need to be instantly scannable on desktop and mobile.
-          </p>
+
         </div>
 
         <div className="mx-auto mt-14 max-w-[48rem] space-y-4">

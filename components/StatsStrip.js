@@ -96,14 +96,8 @@ export default function StatsStrip() {
       <div className="section-inner">
         <div 
           ref={containerRef}
-          className="surface-panel service-card-spotlight grid gap-6 px-6 py-12 sm:px-8 lg:grid-cols-3 lg:px-12 relative group overflow-hidden"
+          className="contact-surface grid gap-6 px-6 py-12 sm:px-8 lg:grid-cols-3 lg:px-12"
         >
-          {/* Enhanced Glass Spotlight */}
-          <div className="service-card-spotlight-glow" />
-          
-          {/* Internal Neon Accents */}
-          <div className="neon-glow-accent glow-purple -top-24 -left-24 opacity-0 group-hover:opacity-[0.15] transition-opacity duration-1000" />
-          <div className="neon-glow-accent glow-purple -bottom-24 -right-24 opacity-0 group-hover:opacity-[0.15] transition-opacity duration-1000" />
           
           {stats.map((stat, index) => (
             <div
@@ -117,14 +111,14 @@ export default function StatsStrip() {
             >
               <div
                 data-stat-value
-                className="font-display text-[3.8rem] font-bold leading-none tracking-[-0.06em] text-white opacity-0"
+                className="font-display text-[3.8rem] font-semibold leading-none tracking-normal text-white opacity-0"
               >
                 {counts[index]}
                 <span className="text-[#a855f7]">{stat.suffix}</span>
               </div>
               <div
                 data-stat-label
-                className="text-[0.85rem] font-bold uppercase tracking-[0.25em] text-white/50 opacity-0"
+                className="text-[0.85rem] font-medium uppercase tracking-widest text-white/50 opacity-0"
               >
                 {stat.label}
               </div>

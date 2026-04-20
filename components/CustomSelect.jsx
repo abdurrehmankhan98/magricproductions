@@ -21,8 +21,8 @@ export default function CustomSelect({ label, options, placeholder, value, onCha
   const selectedOption = options.find((opt) => opt.value === value);
 
   return (
-    <label className="grid gap-2 relative">
-      <span className="text-[0.82rem] font-medium uppercase tracking-[0.08em] sm:tracking-[0.16em] text-white/52">
+    <label className="grid gap-2 relative group">
+      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 transition-colors group-focus-within:text-purple-400/80">
         {label}
       </span>
       <div ref={containerRef} className="relative">
@@ -30,14 +30,16 @@ export default function CustomSelect({ label, options, placeholder, value, onCha
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="h-13 w-full rounded-[16px] border border-white/10 bg-white/[0.05] px-4 text-white outline-none transition placeholder:text-white/28 focus:border-[#9333ea]/60 focus:bg-white/[0.07] focus:shadow-[0_0_0_4px_rgba(147,51,234,0.2)] hover:border-[#9333ea]/40 flex items-center justify-between cursor-pointer text-left"
+          className={`h-13 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 text-white outline-none transition-all duration-200 flex items-center justify-between cursor-pointer text-left hover:border-white/20 ${
+            isOpen ? "border-purple-500/40 ring-4 ring-purple-500/5 bg-white/[0.05]" : ""
+          }`}
         >
-          <span className={selectedOption ? "text-white" : "text-white/28"}>
+          <span className={selectedOption ? "text-white font-medium" : "text-white/28"}>
             {selectedOption?.label || placeholder}
           </span>
           <ChevronDown
             size={18}
-            className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
+            className={`text-white/40 transition-transform duration-300 ${isOpen ? "rotate-180 text-purple-400" : ""}`}
           />
         </button>
 

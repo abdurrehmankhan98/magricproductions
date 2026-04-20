@@ -75,7 +75,7 @@ export default function PortfolioSection() {
       <div className="section-inner">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Portfolio</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(1.9rem,4vw,3.7rem)] font-bold leading-[1] tracking-[-0.045em] text-white">
+          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
             What your <span className="accent-text">trailer</span> can feel like.
           </h2>
           <p className="section-copy max-w-[42rem]">
@@ -85,18 +85,18 @@ export default function PortfolioSection() {
 
         <div className="relative mt-16 flex items-center justify-center">
           <div className="absolute left-[-20%] hidden w-[45%] scale-90 opacity-20 blur-[4px] lg:block grayscale">
-            <div className="surface-card aspect-[16/9] w-full rounded-[32px] border border-white/5 bg-zinc-900/50" />
+            <div className="surface-card aspect-[16/9] w-full rounded-xl border border-white/5 bg-zinc-900/50" />
           </div>
 
           <div className="relative z-10 w-full max-w-[920px] group transition-transform duration-700 hover:scale-[1.02]">
 
-            <article className="relative z-10 w-full rounded-xl overflow-hidden border border-[#9333ea]/30 shadow-[0_0_25px_rgba(147,51,234,0.45)] transition-all duration-500">
+            <article className="relative z-10 w-full rounded-lg overflow-hidden border border-[#9333ea]/30 shadow-[0_0_25px_rgba(147,51,234,0.45)] transition-all duration-500">
               <VideoPlayer />
             </article>
           </div>
 
           <div className="absolute right-[-20%] hidden w-[45%] scale-90 opacity-20 blur-[4px] lg:block grayscale">
-            <div className="surface-card aspect-[16/9] w-full rounded-[32px] border border-white/5 bg-zinc-900/50" />
+            <div className="surface-card aspect-[16/9] w-full rounded-xl border border-white/5 bg-zinc-900/50" />
           </div>
         </div>
       </div>

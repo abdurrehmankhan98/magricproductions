@@ -88,17 +88,17 @@ const reviews = [
 
 function ReviewCard({ name, role, quote, avatarSrc }) {
   return (
-    <article className="group relative flex flex-col gap-5 rounded-2xl border border-white/10 bg-[#121212] p-7 shadow-lg">
+    <article className="group relative flex flex-col gap-5 rounded-lg border border-white/10 bg-[#121212] p-7 shadow-lg">
       <div className="flex items-center gap-4">
         <div className="relative h-14 w-14 overflow-hidden rounded-full border border-white/10 shadow-inner">
           <Image src={avatarSrc} alt={name} fill className="object-cover" />
         </div>
         <div className="flex flex-col">
-          <span className="text-[1.1rem] font-bold text-white leading-tight tracking-tight">{name}</span>
-          <span className="text-[0.85rem] text-white/50 font-medium leading-tight mt-1">{role}</span>
+          <span className="text-[1.1rem] font-medium text-white leading-tight tracking-normal">{name}</span>
+          <span className="text-[0.85rem] text-white/50 font-normal leading-tight mt-1 tracking-normal">{role}</span>
         </div>
       </div>
-      <p className="text-[1.05rem] leading-relaxed text-white/80 italic font-medium">
+      <p className="text-[1.05rem] leading-relaxed text-white/80 font-normal">
         &ldquo;{quote}&rdquo;
       </p>
     </article>
@@ -171,7 +171,7 @@ export default function ReviewsSection() {
       <div className="section-inner max-w-[1200px]">
         <div className="section-stack section-center mb-16">
           <div className="section-eyebrow">Proof</div>
-          <h2 className="font-display max-w-none text-[clamp(2.2rem,5vw,4.1rem)] font-bold leading-[0.98] tracking-[-0.05em] text-white">
+          <h2 className="font-display max-w-none text-[clamp(2.5rem,5.5vw,5rem)] font-semibold leading-[1.1] tracking-normal text-white">
             Hear Directly from our <span className="accent-text">Clients</span>
           </h2>
           <p className="section-copy max-w-[34rem]">

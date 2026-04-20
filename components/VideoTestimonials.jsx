@@ -48,7 +48,7 @@ function TestimonialCard({ name, role, quote, videoId }) {
       className="surface-card flex flex-col p-6 min-h-[520px] h-full"
     >
       {/* Video / Thumbnail Area */}
-      <div className="relative aspect-video rounded-xl overflow-hidden bg-black/40 group cursor-pointer mb-8" onClick={() => !isPlaying && setIsPlaying(true)}>
+      <div className="relative aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-8" onClick={() => !isPlaying && setIsPlaying(true)}>
         {isPlaying ? (
           <iframe
             width="100%"
@@ -75,7 +75,7 @@ function TestimonialCard({ name, role, quote, videoId }) {
 
       {/* Quote Area */}
       <div className="flex-1 space-y-6 flex flex-col">
-        <p className="text-xl font-medium leading-relaxed text-white/90 italic">
+        <p className="text-xl font-medium leading-relaxed text-white/90">
           &ldquo;{quote}&rdquo;
         </p>
 
@@ -110,10 +110,10 @@ export default function VideoTestimonials() {
     <section className="section-shell relative overflow-hidden py-32 bg-black">
       <div className="section-inner max-w-[1240px]">
         {/* Header Area */}
-        <div className="mb-20 px-4">
-          <div className="max-w-3xl">
+        <div className="mb-20 px-4 flex flex-col items-center text-center">
+          <div className="max-w-3xl mx-auto">
               <div className="section-eyebrow mb-6">Success Stories</div>
-            <h2 className="text-white text-5xl md:text-7xl font-bold tracking-tight leading-[0.95] font-display">
+            <h2 className="text-white text-[clamp(1.8rem,3.5vw,3.8rem)] font-bold tracking-tight leading-[1.1] font-display whitespace-nowrap">
               Don't just take our word for it, <br />
               <span className="accent-text">real clients, real results.</span>
             </h2>
