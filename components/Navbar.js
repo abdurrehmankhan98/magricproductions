@@ -7,30 +7,22 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Process", href: "#process" },
-    { name: "Services", href: "#services" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "About", href: "#about" },
-    { name: "FAQs", href: "#faqs" },
-  ];
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-black/90 backdrop-blur-md border-b border-white/5 py-3" : "bg-transparent py-5"
-    }`}>
-      <div className="mx-auto w-full max-w-[1400px] px-6 lg:px-10">
-        <div className="flex h-[60px] items-center justify-between">
-          {/* Logo Section */}
-          <a href="#" className="flex items-center gap-0 group">
-            <div className="relative h-28 w-28 transition-transform group-hover:scale-105">
+    <header className={`sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8 transition-all duration-500 ${isScrolled ? "translate-y-0" : "translate-y-2"}`}>
+      <div className={`mx-auto w-full max-w-[1200px] rounded-full border transition-all duration-500 ${
+        isScrolled 
+          ? "border-white/10 bg-[#081117]/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
+          : "border-transparent bg-transparent backdrop-blur-0"
+      }`}>
+        <div className="mx-auto flex h-[72px] items-center justify-between px-5 sm:px-6">
+          <a href="#" className="flex items-center gap-1">
+            <div className="relative h-[48px] w-[48px] sm:h-[54px] sm:w-[54px]">
               <Image
                 src="/logo.png"
                 alt="Magric Productions Logo"
@@ -39,32 +31,24 @@ const Navbar = () => {
                 priority
               />
             </div>
-            <span className="text-2xl font-bold tracking-normal text-white">
-              Magric Productions
-            </span>
+            <span className="text-[18px] sm:text-[22px] font-bold tracking-[-0.04em] text-white">MagricProductions</span>
           </a>
 
-          {/* Right Side: Links + CTA */}
-          <div className="flex items-center gap-8 lg:gap-12">
-            <nav className="hidden items-center gap-8 xl:flex">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-[0.92rem] font-medium text-white/60 transition-colors hover:text-white"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
+          <nav className="hidden items-center gap-8 md:flex">
+            {["Portfolio", "Reviews", "Process", "FAQs"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="relative text-[0.95rem] font-normal text-white/76 transition-colors duration-300 hover:text-white after:absolute after:left-0 after:top-full after:mt-1.5 after:h-px after:w-full after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-violet-400 after:via-purple-500 after:to-fuchsia-400 after:transition-transform after:duration-300 hover:after:scale-x-100"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
 
-            <a
-              href="#contact"
-              className="inline-flex h-11 items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-violet-700 px-7 text-[0.9rem] font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_-5px_rgba(147,51,234,0.5)] active:scale-95"
-            >
-              Let&apos;s Talk
-            </a>
-          </div>
+          <a href="#contact-form" className="button-primary !min-h-[2.6rem] px-5 text-[0.9rem] flex items-center">
+            Book a call
+          </a>
         </div>
       </div>
     </header>
