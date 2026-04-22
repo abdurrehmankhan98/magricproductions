@@ -18,17 +18,16 @@ export default function TransformationSection() {
         </div>
 
         <div className="relative mx-auto mt-16 flex max-w-[900px] flex-col items-center gap-10 md:flex-row md:items-stretch md:justify-center md:gap-6 lg:gap-12">
-          
+
           {/* Before Column */}
           <div className="flex w-full max-w-[340px] flex-col items-center group">
             <article className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0f]/60 shadow-xl transition-all duration-500 group-hover:border-white/20">
-              <div className="absolute inset-0 bg-[#0a0a0f]/40 backdrop-blur-[2px] transition-colors duration-500 group-hover:bg-transparent z-10" />
               <Image
                 src="/beforefull.gif"
                 alt="Raw video"
                 fill
                 unoptimized
-                className="object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+                className="object-cover"
               />
             </article>
             <div className="mt-6 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">

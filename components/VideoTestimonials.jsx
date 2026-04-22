@@ -46,6 +46,7 @@ function TestimonialCard({ name, role, quote, videoId }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       className="surface-card flex flex-col items-center text-center p-6 sm:p-8 min-h-[520px] h-full"
+      style={{ background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, transparent 50%), rgba(18, 18, 24, 0.5)' }}
     >
       {/* Video / Thumbnail Area */}
       <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-8" onClick={() => !isPlaying && setIsPlaying(true)}>
