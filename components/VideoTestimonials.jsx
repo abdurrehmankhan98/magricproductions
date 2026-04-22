@@ -45,10 +45,10 @@ function TestimonialCard({ name, role, quote, videoId }) {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="surface-card flex flex-col p-6 min-h-[520px] h-full"
+      className="surface-card flex flex-col items-center text-center p-6 sm:p-8 min-h-[520px] h-full"
     >
       {/* Video / Thumbnail Area */}
-      <div className="relative aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-8" onClick={() => !isPlaying && setIsPlaying(true)}>
+      <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-8" onClick={() => !isPlaying && setIsPlaying(true)}>
         {isPlaying ? (
           <iframe
             width="100%"
@@ -65,8 +65,8 @@ function TestimonialCard({ name, role, quote, videoId }) {
             <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${thumbnailUrl})` }} />
             <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/20 transition-colors" />
             <div className="absolute inset-0 flex items-center justify-center z-20">
-              <div className="h-16 w-16 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 group-hover:bg-purple-600 transition-all duration-300 group-hover:border-purple-400 group-hover:scale-110 shadow-2xl">
-                <Play size={28} fill="white" className="text-white ml-1" />
+              <div className="h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 group-hover:bg-purple-600 transition-all duration-300 group-hover:border-purple-400 group-hover:scale-110 shadow-2xl">
+                <Play fill="white" className="text-white ml-0.5 sm:ml-1 w-5 h-5 sm:w-7 sm:h-7" />
               </div>
             </div>
           </>
@@ -74,12 +74,12 @@ function TestimonialCard({ name, role, quote, videoId }) {
       </div>
 
       {/* Quote Area */}
-      <div className="flex-1 space-y-6 flex flex-col">
-        <p className="text-xl font-medium leading-relaxed text-white/90">
+      <div className="flex-1 w-full space-y-6 flex flex-col items-center text-center">
+        <p className="text-xl sm:text-2xl font-medium leading-relaxed text-white/90 italic">
           &ldquo;{quote}&rdquo;
         </p>
 
-        <div className="mt-auto pt-6 border-t border-white/5">
+        <div className="mt-auto pt-6 border-t border-white/5 w-full flex flex-col items-center text-center">
           <h4 className="text-lg font-bold text-white tracking-tight leading-none mb-1">{name}</h4>
           <p className="text-sm text-white/40 font-medium uppercase tracking-wider text-[10px]">{role}</p>
         </div>
@@ -90,7 +90,7 @@ function TestimonialCard({ name, role, quote, videoId }) {
 
 export default function VideoTestimonials() {
   const [startIndex, setStartIndex] = useState(0);
-  const itemsPerPage = 2;
+  const itemsPerPage = 1;
 
   const next = () => {
     if (startIndex + itemsPerPage < videoTestimonials.length) {
@@ -111,47 +111,47 @@ export default function VideoTestimonials() {
       <div className="section-inner max-w-[1240px]">
         {/* Header Area */}
         <div className="mb-20 px-4 flex flex-col items-center text-center">
-          <div className="max-w-3xl mx-auto">
-              <div className="section-eyebrow mb-6">Success Stories</div>
-            <h2 className="text-white text-[clamp(1.8rem,3.5vw,3.8rem)] font-bold tracking-tight leading-[1.1] font-display whitespace-nowrap">
-              Don't just take our word for it, <br />
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
+              <div className="section-eyebrow mb-6 mx-auto">Success Stories</div>
+            <h2 className="text-white text-[clamp(1.8rem,4vw,3.8rem)] font-bold tracking-tight leading-[1.2] font-display text-balance">
+              Don't just take our word for it, <br className="hidden sm:block" />
               <span className="accent-text">real clients, real results.</span>
             </h2>
           </div>
         </div>
 
         {/* Testimonials Container */}
-        <div className="relative px-4">
+        <div className="relative max-w-[800px] mx-auto px-4 sm:px-12">
           {/* Navigation Controls - Side Positions */}
-          <div className="absolute -left-4 lg:-left-12 top-1/2 -translate-y-1/2 z-30">
+          <div className="absolute left-0 sm:-left-4 md:-left-8 top-1/2 -translate-y-1/2 z-30">
             <button 
               onClick={prev}
               disabled={startIndex === 0}
-              className={`h-14 w-14 flex items-center justify-center rounded-full border border-purple-400/30 transition-all duration-300 backdrop-blur-md ${
+              className={`h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center rounded-full border border-purple-400/30 transition-all duration-300 backdrop-blur-md ${
                 startIndex === 0 
                 ? "bg-purple-900/20 opacity-20 cursor-not-allowed text-white/50" 
                 : "bg-purple-600 hover:bg-purple-400 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
               }`}
             >
-              <ChevronLeft size={28} />
+              <ChevronLeft size={24} className="sm:w-7 sm:h-7" />
             </button>
           </div>
 
-          <div className="absolute -right-4 lg:-right-12 top-1/2 -translate-y-1/2 z-30">
+          <div className="absolute right-0 sm:-right-4 md:-right-8 top-1/2 -translate-y-1/2 z-30">
             <button 
               onClick={next}
               disabled={startIndex + itemsPerPage >= videoTestimonials.length}
-              className={`h-14 w-14 flex items-center justify-center rounded-full border border-purple-400/30 transition-all duration-300 backdrop-blur-md ${
+              className={`h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center rounded-full border border-purple-400/30 transition-all duration-300 backdrop-blur-md ${
                 startIndex + itemsPerPage >= videoTestimonials.length
                 ? "bg-purple-900/20 opacity-20 cursor-not-allowed text-white/50" 
                 : "bg-purple-600 hover:bg-purple-400 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
               }`}
             >
-              <ChevronRight size={28} />
+              <ChevronRight size={24} className="sm:w-7 sm:h-7" />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative min-h-[520px]">
+          <div className="grid grid-cols-1 max-w-2xl mx-auto gap-8 relative min-h-[520px]">
              <AnimatePresence mode="popLayout">
                 {visibleTestimonials.map((testimonial) => (
                     <motion.div

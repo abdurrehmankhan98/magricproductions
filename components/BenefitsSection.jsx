@@ -1,23 +1,23 @@
-import Image from "next/image";
+import { Layers, Rocket, Sparkles } from "lucide-react";
 
 const items = [
   {
     title: "More Than Just a Podcast",
     description:
       "Repurpose your episodes into clips, and posts to grow your brand everywhere.",
-    gif: "/Nothing-is-unbranded.gif",
+    icon: <Layers className="h-8 w-8 text-white" />,
   },
   {
     title: "Content That Grows Your Brand",
     description:
       "We turn your podcast into a marketing machine that builds your audience.",
-    gif: "/Videos-that-drive-engagements.gif",
+    icon: <Rocket className="h-8 w-8 text-white" />,
   },
   {
     title: "Stress-Free Production",
     description:
       "Editing takes hours. We handle it. You focus on creating.",
-    gif: "/Removing-all-the headaches.gif",
+    icon: <Sparkles className="h-8 w-8 text-white" />,
   },
 ];
 
@@ -43,14 +43,8 @@ export default function BenefitsSection() {
         <div className="mt-24 grid gap-y-16 md:grid-cols-3 md:gap-x-14">
           {items.map((item) => (
             <article key={item.title} className="flex flex-col items-center text-center">
-              <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-[#a855f7]">
-                <Image
-                  src={item.gif}
-                  alt={item.title}
-                  fill
-                  unoptimized
-                  className="object-cover mix-blend-luminosity opacity-90"
-                />
+              <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-[18px] border border-white/10 bg-gradient-to-br from-purple-500 to-violet-600 shadow-lg shadow-purple-500/20">
+                {item.icon}
               </div>
 
               <h3 className="font-display mt-9 max-w-[330px] text-[35px] font-semibold leading-[38px] text-white">

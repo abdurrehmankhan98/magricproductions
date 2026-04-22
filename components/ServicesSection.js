@@ -35,7 +35,7 @@ function ServiceCard({ service, cardRef }) {
   return (
     <div
       ref={cardRef}
-      className="surface-card service-card-spotlight group flex flex-col items-start gap-6 p-8 opacity-0 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 relative overflow-hidden bg-[#0a0c10]"
+      className="surface-card service-card-spotlight group flex flex-col gap-6 p-8 opacity-0 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 relative overflow-hidden bg-[#0a0c10]"
     >
       {/* Border Beam Animation */}
       <div className="border-beam" />

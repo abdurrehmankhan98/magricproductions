@@ -2,6 +2,7 @@
 import Image from "next/image";
 import HeroSection from "../../components/HeroSection";
 import Navbar from "../../components/Navbar";
+import MobileNavbar from "../../components/MobileNavbar";
 import PodcastCarousel from "../../components/PodcastCarousel";
 import StatsStrip from "../../components/StatsStrip";
 import ServicesSection from "../../components/ServicesSection";
@@ -43,7 +44,7 @@ export default function Home() {
   const heroVideoPoster = heroBackgroundVideo.poster ?? undefined;
 
   return (
-    <main className="page-shell relative">
+    <main className="page-shell relative pb-24 md:pb-0">
       <Navbar />
 
       <section className="relative overflow-hidden bg-black">
@@ -135,6 +136,7 @@ export default function Home() {
 
       <FooterSection />
       <ScrollToTopButton />
+      <MobileNavbar />
     </main>
   );
 }

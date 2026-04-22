@@ -30,7 +30,7 @@ export default function ScrollToTopButton() {
     <button
       onClick={handleClick}
       aria-label="Scroll to top"
-      className={`fixed bottom-8 right-8 z-50 h-14 w-14 flex items-center justify-center transition-all duration-500 group
+      className={`hidden md:flex fixed bottom-8 right-8 z-50 h-14 w-14 items-center justify-center transition-all duration-500 group
         ${visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-6 scale-75 pointer-events-none"}`}
     >
       {/* Progress Ring */}

@@ -5,7 +5,7 @@ import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 const longFormVideos = [
-  { id: "q_p04Jmdxzs", title: "Productivity Strategy" },
+  { id: "CJHXwa4B4gE", title: "Productivity Strategy" },
   { id: "CJHXwa4B4gE", title: "Global Expansion" },
   { id: "CJHXwa4B4gE", title: "Financial Systems" },
   { id: "CJHXwa4B4gE", title: "Community Growth" },
@@ -57,9 +57,9 @@ function LongFormVideoPlayer({ videoId }) {
 
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-          <div className="absolute inset-0 bg-purple-500 rounded-full opacity-0 blur-xl group-hover:opacity-60 transition-opacity duration-500" style={{ width: '64px', height: '64px' }} />
-          <div className="relative h-16 w-16 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-2xl transition-all duration-300 group-hover:bg-purple-600 group-hover:border-purple-400">
-            <Play size={28} fill="white" className="text-white ml-1" />
+          <div className="absolute inset-0 bg-purple-500 rounded-full opacity-0 blur-xl group-hover:opacity-60 transition-opacity duration-500 w-12 h-12 sm:w-16 sm:h-16" />
+          <div className="relative h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-2xl transition-all duration-300 group-hover:bg-purple-600 group-hover:border-purple-400">
+            <Play fill="white" className="text-white ml-0.5 sm:ml-1 w-5 h-5 sm:w-7 sm:h-7" />
           </div>
         </div>
       </div>
@@ -113,9 +113,9 @@ export default function LongFormSection() {
                 <div className="absolute -inset-4 bg-purple-500/15 rounded-xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
                 <LongFormVideoPlayer videoId={video.id} />
               </div>
-              <div className="mt-6 px-1">
+              <div className="mt-6 px-1 flex flex-col items-center text-center">
                 <h3 className="text-white font-display text-2xl font-semibold tracking-tight group-hover:text-purple-400 transition-colors uppercase leading-none">{video.title}</h3>
-                <div className="h-0.5 w-16 bg-gradient-to-r from-purple-600 to-transparent mt-3 rounded-full opacity-60 group-hover:w-24 transition-all duration-500" />
+                <div className="h-0.5 w-16 mx-auto bg-gradient-to-r from-purple-600 to-transparent mt-3 rounded-full opacity-60 group-hover:w-24 transition-all duration-500" />
               </div>
             </motion.div>
           ))}

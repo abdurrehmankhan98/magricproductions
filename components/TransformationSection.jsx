@@ -17,23 +17,21 @@ export default function TransformationSection() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-16 grid max-w-[860px] gap-8 md:grid-cols-[1fr_auto_1fr] md:items-center">
+        <div className="relative mx-auto mt-16 flex max-w-[900px] flex-col items-center gap-10 md:flex-row md:items-stretch md:justify-center md:gap-6 lg:gap-12">
+          
           {/* Before Column */}
-          <div className="flex flex-col items-center group">
-            <article className="relative w-full overflow-hidden rounded-lg">
-              <div className="absolute inset-0 bg-[#0a0a0f]/60 backdrop-blur-[32px] transition-colors duration-500 group-hover:bg-[#0a0a0f]/80" />
-              <div className="relative z-10 w-full overflow-hidden bg-black/20">
-                <Image
-                  src="/beforefull.gif"
-                  alt="Raw video"
-                  width={320}
-                  height={564}
-                  unoptimized
-                  className="h-auto w-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100"
-                />
-              </div>
+          <div className="flex w-full max-w-[340px] flex-col items-center group">
+            <article className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0f]/60 shadow-xl transition-all duration-500 group-hover:border-white/20">
+              <div className="absolute inset-0 bg-[#0a0a0f]/40 backdrop-blur-[2px] transition-colors duration-500 group-hover:bg-transparent z-10" />
+              <Image
+                src="/beforefull.gif"
+                alt="Raw video"
+                fill
+                unoptimized
+                className="object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-100"
+              />
             </article>
-            <div className="mt-8 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">
+            <div className="mt-6 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">
               <div className="font-display text-[0.85rem] font-medium uppercase tracking-widest text-[#a855f7]/80 drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
                 Before
               </div>
@@ -44,9 +42,9 @@ export default function TransformationSection() {
           </div>
 
           {/* Transition Arrow */}
-          <div className="flex justify-center relative z-10 -mt-20 sm:mt-0">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/5 bg-white/5 text-purple-400/80 shadow-xl backdrop-blur-md">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <div className="flex shrink-0 items-center justify-center md:mt-[-80px]">
+            <div className="flex h-14 w-14 rotate-90 md:rotate-0 md:h-16 md:w-16 items-center justify-center rounded-full border border-white/10 bg-white/5 text-purple-400 shadow-[0_0_20px_rgba(168,85,247,0.2)] backdrop-blur-md">
+              <svg viewBox="0 0 24 24" className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14" />
                 <path d="m13 5 7 7-7 7" />
               </svg>
@@ -54,22 +52,18 @@ export default function TransformationSection() {
           </div>
 
           {/* After Column */}
-          <div className="flex flex-col items-center group">
-            <article className="relative w-full overflow-hidden rounded-lg">
-              <div className="absolute inset-0 bg-[#0a0a0f]/60 backdrop-blur-[32px] transition-colors duration-500 group-hover:bg-[#0a0a0f]/80" />
-              <div className="absolute inset-x-0 -top-20 h-40 rounded-full bg-purple-600/15 blur-[80px] opacity-40 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10 w-full overflow-hidden bg-black/20">
-                <Image
-                  src="/afterfull.gif"
-                  alt="Edited video"
-                  width={320}
-                  height={569}
-                  unoptimized
-                  className="h-auto w-full object-cover transition-opacity duration-500 opacity-95 group-hover:opacity-100"
-                />
-              </div>
+          <div className="flex w-full max-w-[340px] flex-col items-center group">
+            <article className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl border border-purple-500/30 bg-[#0a0a0f]/60 shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 group-hover:border-purple-400/50 group-hover:shadow-[0_0_40px_rgba(168,85,247,0.3)]">
+              <div className="absolute inset-x-0 -top-20 h-40 rounded-full bg-purple-600/20 blur-[60px] opacity-60 group-hover:opacity-100 transition-opacity z-10 pointer-events-none" />
+              <Image
+                src="/afterfull.gif"
+                alt="Edited video"
+                fill
+                unoptimized
+                className="object-cover opacity-95 transition-opacity duration-500 group-hover:opacity-100"
+              />
             </article>
-            <div className="mt-8 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">
+            <div className="mt-6 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">
               <div className="font-display text-[0.85rem] font-medium uppercase tracking-widest text-[#a855f7]/80 drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
                 After
               </div>
@@ -78,6 +72,7 @@ export default function TransformationSection() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

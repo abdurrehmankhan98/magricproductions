@@ -15,14 +15,13 @@ const Navbar = () => {
 
   return (
     <header className={`sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8 transition-all duration-500 ${isScrolled ? "translate-y-0" : "translate-y-2"}`}>
-      <div className={`mx-auto w-full max-w-[1200px] rounded-full border transition-all duration-500 ${
-        isScrolled 
-          ? "border-white/10 bg-[#081117]/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
-          : "border-transparent bg-transparent backdrop-blur-0"
-      }`}>
-        <div className="mx-auto flex h-[72px] items-center justify-between px-5 sm:px-6">
-          <a href="#" className="flex items-center gap-1">
-            <div className="relative h-[48px] w-[48px] sm:h-[54px] sm:w-[54px]">
+      <div className={`mx-auto w-full max-w-[1200px] rounded-full border transition-all duration-500 ${isScrolled
+        ? "border-white/10 bg-[#081117]/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+        : "border-transparent bg-transparent backdrop-blur-0"
+        }`}>
+        <div className="mx-auto flex h-[72px] items-center justify-between gap-3 px-3 sm:px-6">
+          <a href="#" className="flex items-center gap-0">
+            <div className="relative h-[48px] w-[48px] sm:h-[54px] sm:w-[54px] -ml-1 sm:ml-0">
               <Image
                 src="/logo.png"
                 alt="Magric Productions Logo"
@@ -31,7 +30,7 @@ const Navbar = () => {
                 priority
               />
             </div>
-            <span className="text-[18px] sm:text-[22px] font-bold tracking-[-0.04em] text-white">MagricProductions</span>
+            <span className="text-[16px] sm:text-[22px] font-bold tracking-[-0.04em] text-white -ml-1 sm:ml-0">MagricProductions</span>
           </a>
 
           <nav className="hidden items-center gap-8 md:flex">
@@ -46,7 +45,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <a href="#contact-form" className="button-primary !min-h-[2.6rem] px-5 text-[0.9rem] flex items-center">
+          <a href="#contact" className="button-primary !min-h-[2.2rem] sm:!min-h-[2.6rem] px-2.5 sm:px-5 text-[0.75rem] sm:text-[0.9rem] flex items-center whitespace-nowrap">
             Book a call
           </a>
         </div>

@@ -59,9 +59,9 @@ function VideoPlayer() {
         className="absolute inset-0 w-full h-full flex items-center justify-center z-10 cursor-pointer transition-opacity duration-200 hover:opacity-90"
       >
         <div className="relative flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-80 blur-xl" style={{ width: '96px', height: '96px' }} />
-          <div className="relative h-24 w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg hover:shadow-xl transition-shadow">
-            <Play size={48} fill="white" className="text-white ml-1" />
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-80 blur-xl w-12 h-12 sm:w-[96px] sm:h-[96px] mx-auto my-auto" />
+          <div className="relative h-12 w-12 sm:h-24 sm:w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg hover:shadow-xl transition-shadow">
+            <Play fill="white" className="text-white ml-0.5 sm:ml-1 w-5 h-5 sm:w-12 sm:h-12" />
           </div>
         </div>
       </button>
