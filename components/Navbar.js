@@ -20,17 +20,17 @@ const Navbar = () => {
         : "border-transparent bg-transparent backdrop-blur-0"
         }`}>
         <div className="mx-auto flex h-[72px] items-center justify-between gap-3 px-3 sm:px-6">
-          <a href="#" className="flex items-center gap-0">
-            <div className="relative h-[48px] w-[48px] sm:h-[54px] sm:w-[54px] -ml-1 sm:ml-0">
+          <a href="#" className="flex items-center gap-2">
+            <div className="relative h-[28px] w-[28px] sm:h-[32px] sm:w-[32px] -ml-1 sm:ml-0">
               <Image
-                src="/logo.png"
+                src="/magric-logo.png"
                 alt="Magric Productions Logo"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="text-[16px] sm:text-[22px] font-bold tracking-[-0.04em] text-white -ml-1 sm:ml-0">MagricProductions</span>
+            <span className="text-[16px] sm:text-[22px] font-bold tracking-[-0.04em] text-white">MagricProductions</span>
           </a>
 
           <nav className="hidden items-center gap-8 md:flex">

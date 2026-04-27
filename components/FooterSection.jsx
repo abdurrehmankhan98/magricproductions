@@ -28,10 +28,10 @@ export default function FooterSection() {
           
           {/* Column 1: Logo & Newsletter */}
           <div className="flex flex-col items-center text-center gap-8">
-            <div className="flex items-center justify-center gap-0">
-              <div className="relative h-20 w-20">
+            <div className="flex items-center justify-center gap-3">
+              <div className="relative h-11 w-11">
                 <Image
-                  src="/logo.png"
+                  src="/magric-logo.png"
                   alt="Magric Productions Logo"
                   fill
                   className="object-contain"

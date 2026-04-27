@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: "Magric Productions",
   description: "Podcast growth landing page",
   icons: {
-    icon: "/favicon2.png",
-    shortcut: "/favicon2.png",
-    apple: "/favicon2.png",
+    icon: "/magric-favicon.png",
+    shortcut: "/magric-favicon.png",
+    apple: "/magric-favicon.png",
     other: {
       rel: "apple-touch-icon-precomposed",
-      url: "/favicon2.png",
+      url: "/magric-favicon.png",
     },
   },
 };
