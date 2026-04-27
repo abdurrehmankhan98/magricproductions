@@ -6,9 +6,9 @@ import { Video, Mic, Briefcase, TrendingUp } from "lucide-react";
 
 const services = [
   {
-    title: "Wedding Cinema",
-    description: "Luxury wedding films with advanced color science and emotional storytelling that preserves your moments forever.",
-    points: ["HDR COLOR GRADING", "CINEMATIC STORYTELLING", "IMMERSIVE SOUND"],
+    title: "Short-Form Mastery",
+    description: "Viral Reels, TikToks, and YouTube Shorts engineered to stop the scroll and drive engagement.",
+    points: ["HOOK-DRIVEN EDITS", "PLATFORM-READY PACE", "ENGAGEMENT FOCUS"],
     icon: <Video className="h-6 w-6 text-white" />,
   },
   {
@@ -35,7 +35,7 @@ function ServiceCard({ service, cardRef }) {
   return (
     <div
       ref={cardRef}
-      className="surface-card service-card-spotlight group flex flex-col gap-6 p-8 opacity-0 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 relative overflow-hidden bg-[#0a0c10]"
+      className="surface-card service-card-spotlight group flex flex-col gap-6 p-8 opacity-100 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 relative overflow-hidden bg-[#0a0c10]"
     >
       {/* Border Beam Animation */}
       <div className="border-beam" />
@@ -87,9 +87,8 @@ export default function ServicesSection() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         cards,
-        { opacity: 0, y: 40 },
+        { y: 40 },
         {
-          opacity: 1,
           y: 0,
           duration: 0.7,
           stagger: 0.12,

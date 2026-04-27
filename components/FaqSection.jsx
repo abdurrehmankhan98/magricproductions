@@ -39,10 +39,10 @@ function FaqItem({ item, isOpen, onToggle }) {
       <button
         type="button"
         onClick={onToggle}
-        className="relative z-10 flex min-h-[84px] w-full items-center justify-between px-6 text-center sm:px-8"
+        className="relative z-10 flex min-h-[84px] w-full items-center justify-between px-6 text-left sm:px-8"
         aria-expanded={isOpen}
       >
-        <span className="font-display text-[1.2rem] font-semibold leading-[1.2] tracking-normal text-white sm:text-[1.3rem] group-hover:text-purple-300 transition-colors flex-1 text-center pr-6">
+        <span className="font-display text-[1.2rem] font-semibold leading-[1.2] tracking-normal text-white sm:text-[1.3rem] group-hover:text-purple-300 transition-colors flex-1 text-left pr-6">
           {item.question}
         </span>
         <div
@@ -60,7 +60,7 @@ function FaqItem({ item, isOpen, onToggle }) {
         <div className="overflow-hidden">
           <div className="px-6 pb-6 pt-2 sm:px-8">
             <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-4" />
-            <p className="text-[1rem] leading-7 text-white/70 text-center">
+            <p className="text-[1rem] leading-7 text-white/70 text-left">
               {item.answer}
             </p>
           </div>
