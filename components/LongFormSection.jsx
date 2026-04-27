@@ -5,10 +5,10 @@ import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 const longFormVideos = [
-  { id: "CJHXwa4B4gE", title: "Productivity Strategy" },
-  { id: "CJHXwa4B4gE", title: "Global Expansion" },
-  { id: "CJHXwa4B4gE", title: "Financial Systems" },
-  { id: "CJHXwa4B4gE", title: "Community Growth" },
+  { id: "tg54p4rxiEg", title: "Productivity Strategy" },
+  { id: "TSW3lmltcI8", title: "Global Expansion" },
+  { id: "lAXBdMM9g5g", title: "Financial Systems" },
+  { id: "NRF6aPF5sbI", title: "Community Growth" },
 ];
 
 function LongFormVideoPlayer({ videoId }) {
