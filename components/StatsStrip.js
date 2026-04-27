@@ -105,7 +105,7 @@ export default function StatsStrip() {
               ref={(node) => {
                 itemRefs.current[index] = node;
               }}
-              className={`relative z-10 flex min-h-[112px] flex-col justify-center gap-2 text-center lg:text-left ${
+              className={`relative z-10 flex min-h-[112px] flex-col justify-center gap-2 text-center lg:text-center ${
                 index < stats.length - 1 ? "lg:after:absolute lg:after:right-0 lg:after:top-1/2 lg:after:h-20 lg:after:w-px lg:after:-translate-y-1/2 lg:after:bg-gradient-to-b lg:after:from-transparent lg:after:via-white/10 lg:after:to-transparent" : ""
               }`}
             >
