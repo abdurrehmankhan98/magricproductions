@@ -5,7 +5,7 @@ import { Play } from "lucide-react";
 
 function VideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoId = "CJHXwa4B4gE";
+  const videoId = "i-QhycnlSk0";
 
   // YouTube URL with optimized parameters:
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&rel=0&modestbranding=1&controls=1&fs=1&mute=0&showinfo=0`;
