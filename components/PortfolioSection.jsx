@@ -74,7 +74,7 @@ export default function PortfolioSection() {
     <section id="portfolio" className="section-shell scroll-mt-28">
       <div className="section-inner">
         <div className="section-stack section-center">
-          <div className="section-eyebrow">Portfolio</div>
+          <div className="section-eyebrow">Production</div>
           <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
             What your <span className="accent-text">trailer</span> can feel like.
           </h2>

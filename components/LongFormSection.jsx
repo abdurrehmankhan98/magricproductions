@@ -79,7 +79,7 @@ export default function LongFormSection() {
       <div className="section-inner relative z-10">
         <div className="section-stack section-center mb-20 text-center">
           <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-4">
-             Production
+             Portfolio
           </div>
           <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white leading-tight">
             High Impact <span className="accent-text">Long Form</span>

@@ -8,7 +8,7 @@ export default function FooterSection() {
   }
 
   const quickLinks = [
-    { name: "Portfolio", href: "#portfolio" },
+    { name: "Portfolio", href: "#long-form" },
     { name: "Process", href: "#process" },
     { name: "Services", href: "#services" },
     { name: "Pricing", href: "#pricing" },

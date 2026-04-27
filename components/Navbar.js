@@ -37,7 +37,7 @@ const Navbar = () => {
             {["Portfolio", "Reviews", "Process", "Testimonials", "FAQs"].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={item === "Portfolio" ? "#long-form" : `#${item.toLowerCase()}`}
                 className="relative text-[0.95rem] font-normal text-white/76 transition-colors duration-300 hover:text-white after:absolute after:left-0 after:top-full after:mt-1.5 after:h-px after:w-full after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-violet-400 after:via-purple-500 after:to-fuchsia-400 after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {item}

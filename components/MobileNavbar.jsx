@@ -7,7 +7,7 @@ export default function MobileNavbar() {
 
   const navItems = [
     { id: "home", label: "Home", icon: <Home size={20} />, href: "#" },
-    { id: "portfolio", label: "Portfolio", icon: <Video size={20} />, href: "#portfolio" },
+    { id: "portfolio", label: "Portfolio", icon: <Video size={20} />, href: "#long-form" },
     { id: "process", label: "Process", icon: <Layers size={20} />, href: "#process" },
     { id: "testimonials", label: "Testimonials", icon: <MessageSquare size={20} />, href: "#testimonials" },
     { id: "contact", label: "Contact", icon: <Phone size={20} />, href: "#contact" },
