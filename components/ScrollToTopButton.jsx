@@ -65,7 +65,7 @@ export default function ScrollToTopButton() {
       </svg>
 
       {/* Button Background */}
-      <div className="relative z-10 h-10 w-10 flex items-center justify-center rounded-xl bg-[rgba(15,15,20,0.85)] border border-white/10 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.5)] group-hover:border-purple-500/40 group-hover:shadow-[0_4px_24px_rgba(147,51,234,0.3)] transition-all duration-300">
+      <div className="relative z-10 h-10 w-10 flex items-center justify-center rounded-full bg-[rgba(15,15,20,0.85)] border border-white/10 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.5)] group-hover:border-purple-500/40 group-hover:shadow-[0_4px_24px_rgba(147,51,234,0.3)] transition-all duration-300">
         <ArrowUp
           size={18}
           className="text-white/70 group-hover:text-white group-hover:-translate-y-0.5 transition-all duration-300"

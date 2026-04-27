@@ -108,7 +108,7 @@ export default function VideoTestimonials() {
   const visibleTestimonials = videoTestimonials.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <section className="section-shell relative overflow-hidden py-32 bg-black">
+    <section id="testimonials" className="section-shell relative overflow-hidden py-32 bg-black scroll-mt-28">
       <div className="section-inner max-w-[1240px]">
         {/* Header Area */}
         <div className="mb-20 px-4 flex flex-col items-center text-center">

@@ -34,7 +34,7 @@ const Navbar = () => {
           </a>
 
           <nav className="hidden items-center gap-8 md:flex">
-            {["Portfolio", "Reviews", "Process", "FAQs"].map((item) => (
+            {["Portfolio", "Reviews", "Process", "Testimonials", "FAQs"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
