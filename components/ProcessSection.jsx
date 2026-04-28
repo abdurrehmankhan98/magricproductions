@@ -85,9 +85,9 @@ function StepCard({ title, description, index }) {
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="section-shell scroll-mt-28 bg-black/20">
+    <section className="section-shell bg-black/20">
       <div className="section-inner max-w-[1280px]">
-        <div className="section-stack section-center">
+        <div id="process" className="section-stack section-center scroll-mt-32">
           <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-2">
             How it works
           </div>

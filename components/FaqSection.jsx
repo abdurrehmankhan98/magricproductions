@@ -74,9 +74,9 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState(-1);
 
   return (
-    <section id="faqs" className="section-shell scroll-mt-28">
+    <section className="section-shell">
       <div className="section-inner max-w-[960px]">
-        <div className="section-stack section-center">
+        <div id="faqs" className="section-stack section-center scroll-mt-32">
           <div className="section-eyebrow">FAQs</div>
           <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
             Got <span className="accent-text">Question</span>? We’ve Answers!

@@ -69,7 +69,7 @@ function LongFormVideoPlayer({ videoId }) {
 
 export default function LongFormSection() {
   return (
-    <section id="long-form" className="section-shell scroll-mt-28 relative overflow-hidden bg-black">
+    <section className="section-shell relative overflow-hidden bg-black">
       {/* Background Decorative Element */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-20">
         <div className="neon-glow-accent glow-purple top-1/4 left-1/4 scale-[2]" />
@@ -77,7 +77,7 @@ export default function LongFormSection() {
       </div>
 
       <div className="section-inner relative z-10">
-        <div className="section-stack section-center mb-12 text-center">
+        <div id="long-form" className="section-stack section-center mb-12 text-center scroll-mt-32">
           <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-4">
              Portfolio
           </div>

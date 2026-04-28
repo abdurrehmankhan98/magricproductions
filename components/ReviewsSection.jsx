@@ -8,83 +8,64 @@ const reviews = [
   {
     name: "Bilal Haider",
     role: "Trader & Content Creator",
-    quote:
-      "Great work, easy to collaborate with, Highly recommended!",
+    quote: "Great work, easy to collaborate with, Highly recommended!",
     avatarSrc: "/reviews/Bilal Haider.png",
   },
   {
     name: "Joe Danna",
     role: "Candidate for HCS",
-    quote:
-      "MagricProductions deliver top-quality edits, and excellent client support every time!",
+    quote: "MagricProductions deliver top-quality edits, and excellent client support every time!",
     avatarSrc: "/reviews/Joe Danna.png",
   },
   {
     name: "Muhammad Etisham",
     role: "Amazon PPC & Private Label Expert",
-    quote:
-      "MagricProductions is talented, detail-oriented, high-quality work on time",
+    quote: "MagricProductions is talented, detail-oriented, high-quality work on time",
     avatarSrc: "/reviews/Muhammad Etisham.png",
   },
   {
     name: "Peter Thompson",
     role: "Real Estate Broker",
-    quote:
-      "Professional edits that made my listings stand out. Quick turnaround. Highly recommended!",
+    quote: "Professional edits that made my listings stand out. Quick turnaround. Highly recommended!",
     avatarSrc: "/reviews/Peter Thompson.png",
   },
   {
     name: "Rayan Ghazanfar",
     role: "Digital Marketing Specialist",
-    quote:
-      "Professional service and outstanding results, would definitely work again!",
+    quote: "Professional service and outstanding results, would definitely work again!",
     avatarSrc: "/reviews/Rayan.png",
   },
   {
     name: "Sidra",
     role: "Founder Social Digency",
-    quote:
-      "Professional and efficient with great creative ideas. Highly recommended!",
+    quote: "Professional and efficient with great creative ideas. Highly recommended!",
     avatarSrc: "/reviews/Sidra.png",
   },
   {
     name: "Talha Yaseen",
     role: "Content Creator",
-    quote:
-      "Building MagricProductions with a passion for quality and client satisfaction!",
+    quote: "Working with this team was a game-changer. They didn’t just edit videos — they elevated our entire brand presence",
     avatarSrc: "/reviews/Talha Yaseen.png",
   },
   {
-    name: "Peter Thompson",
-    role: "Real Estate Broker",
-    quote:
-      "Professional edits that made my listings stand out. Quick turnaround. Highly recommended!",
-    avatarSrc: "/reviews/Peter Thompson.png",
+    name: "Janerbik",
+    role: "Youtuber",
+    quote: "Absolutely impressed with the quality and creativity. They understood our vision perfectly and turned raw footage into a high-converting masterpiece. Will definitely work again",
+    avatarSrc: "/reviews/Janerbik.png",
   },
   {
-    name: "Rayan Ghazanfar",
-    role: "Digital Marketing Specialist",
-    quote:
-      "Professional service and outstanding results, would definitely work again!",
-    avatarSrc: "/reviews/Rayan.png",
+    name: "Zain Abbasi",
+    role: "Music Producer",
+    quote: "These guys know exactly how to turn content into conversions. Every detail was handled with precision — from pacing to visuals. Super reliable and easy to work with",
+    avatarSrc: "/reviews/Zain Abbasi.jpeg",
   },
   {
-    name: "Sidra",
-    role: "Founder Social Digency",
-    quote:
-      "Professional and efficient with great creative ideas. Highly recommended!",
-    avatarSrc: "/reviews/Sidra.png",
-  },
-  {
-    name: "Talha Yaseen",
-    role: "Content Creator",
-    quote:
-      "Building MagricProductions with a passion for quality and client satisfaction!",
-    avatarSrc: "/reviews/Talha Yaseen.png",
+    name: "Abdur Rehman",
+    role: "Web Developer",
+    quote: "Incredible experience from start to finish. They took our basic footage and transformed it into a polished, high-impact video that truly stands out. Great communication, fast delivery, and results that exceeded expectations.",
+    avatarSrc: "/reviews/Abdur Rehman.jpeg",
   },
 ];
-
-
 
 import VerifiedBadge from "./VerifiedBadge";
 
@@ -97,8 +78,8 @@ function ReviewCard({ name, role, quote, avatarSrc }) {
         </div>
         <div className="flex flex-col">
           <div className="flex items-center">
-            <span className="text-[1.1rem] font-medium text-white leading-tight tracking-normal">{name}</span>
-            <VerifiedBadge size={30} />
+            <span className="text-[1.1rem] font-semibold text-white leading-tight tracking-normal">{name}</span>
+            <VerifiedBadge size={20} />
           </div>
           <span className="text-[0.85rem] text-white/50 font-normal leading-tight mt-1 tracking-normal">{role}</span>
         </div>
@@ -126,6 +107,7 @@ function ReviewColumn({ reviews, duration, direction = 'up', pauseOnHover = true
         duration: duration,
         repeat: Infinity,
         ease: "linear",
+        autoplay: true,
       }
     );
 
@@ -164,17 +146,17 @@ function ReviewColumn({ reviews, duration, direction = 'up', pauseOnHover = true
 }
 
 export default function ReviewsSection() {
-  // Distribute reviews into 3 columns
-  const col1 = [reviews[0], reviews[1], reviews[2], reviews[3]];
-  const col2 = [reviews[4], reviews[5], reviews[6], reviews[7]];
-  const col3 = [reviews[8], reviews[9], reviews[10], reviews[0]];
+  // Distribute unique reviews across 3 columns with offsets to avoid duplication
+  const col1 = [...reviews];
+  const col2 = [...reviews.slice(3), ...reviews.slice(0, 3)];
+  const col3 = [...reviews.slice(6), ...reviews.slice(0, 6)];
 
   return (
-    <section id="reviews" className="section-shell relative overflow-hidden scroll-mt-28">
+    <section className="section-shell relative overflow-hidden">
       <div className="pointer-events-none absolute inset-x-0 top-[12%] mx-auto h-[22rem] max-w-[58rem] rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.22)_0%,rgba(107,14,206,0.08)_48%,transparent_78%)] blur-[120px]" />
 
       <div className="section-inner max-w-[1200px]">
-        <div className="section-stack section-center mb-16">
+        <div id="reviews" className="section-stack section-center mb-16 scroll-mt-32">
           <div className="section-eyebrow">Reviews</div>
           <h2 className="font-display max-w-none text-[clamp(2.5rem,5.5vw,5rem)] font-semibold leading-[1.1] tracking-normal text-white">
             Hear Directly from our <span className="accent-text">Clients</span>
@@ -195,13 +177,13 @@ export default function ReviewsSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full px-4">
             <div className="h-full">
-              <ReviewColumn reviews={col1} duration={20} direction="up" />
+              <ReviewColumn reviews={col1} duration={50} direction="up" />
             </div>
             <div className="hidden md:block h-full">
-              <ReviewColumn reviews={col2} duration={25} direction="down" />
+              <ReviewColumn reviews={col2} duration={62} direction="down" />
             </div>
             <div className="hidden lg:block h-full">
-              <ReviewColumn reviews={col3} duration={22} direction="up" />
+              <ReviewColumn reviews={col3} duration={55} direction="up" />
             </div>
           </div>
         </div>

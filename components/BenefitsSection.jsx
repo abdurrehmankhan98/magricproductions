@@ -23,7 +23,7 @@ const items = [
 
 export default function BenefitsSection() {
   return (
-    <section className="bg-[#050608] px-4 pb-28 pt-16 sm:px-6 lg:px-8">
+    <section className="bg-[#030303] px-4 pb-28 pt-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-[1240px]">
         <div className="text-center">
           <h2 className="font-display text-[56px] font-semibold leading-[1.04] tracking-normal text-white sm:text-[74px] lg:text-[66px]">

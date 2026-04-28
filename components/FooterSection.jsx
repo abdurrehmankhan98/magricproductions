@@ -27,8 +27,8 @@ export default function FooterSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr] gap-12 lg:gap-16 mb-20">
 
           {/* Column 1: Logo & Newsletter */}
-          <div className="flex flex-col items-center text-center gap-8">
-            <div className="flex items-center justify-center gap-3 mt-16 lg:mt-24">
+          <div className="flex flex-col items-start text-left gap-8">
+            <div className="flex items-center justify-start gap-3">
               <div className="relative h-11 w-11">
                 <Image
                   src="/magric-logo.png"
@@ -39,16 +39,18 @@ export default function FooterSection() {
               </div>
               <span className="text-2xl font-semibold text-white">Magric Productions</span>
             </div>
-
+            <p className="text-[#9CA3AF] text-[1rem] leading-relaxed max-w-[400px]">
+              Transforming raw footage into cinematic digital masterpieces with precision and creativity. Each video is crafted to engage your audience and leave a lasting impression.
+            </p>
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="flex flex-col items-center text-center gap-8">
-            <span className="text-[0.75rem] font-semibold uppercase tracking-widest text-white/40">Quick Links</span>
+          <div className="flex flex-col items-start text-left gap-8">
+            <span className="text-[0.9rem] font-bold uppercase tracking-widest text-[#FFFFFF]">Quick Links</span>
             <ul className="flex flex-col gap-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-white/60 hover:text-white transition-colors text-[1rem]">
+                  <a href={link.href} className="text-[#9CA3AF] hover:text-white transition-colors text-[0.9rem]">
                     {link.name}
                   </a>
                 </li>
@@ -57,12 +59,12 @@ export default function FooterSection() {
           </div>
 
           {/* Column 3: Company */}
-          <div className="flex flex-col items-center text-center gap-8">
-            <span className="text-[0.75rem] font-semibold uppercase tracking-widest text-white/40">Company</span>
+          <div className="flex flex-col items-start text-left gap-8">
+            <span className="text-[0.9rem] font-bold uppercase tracking-widest text-[#FFFFFF]">Company</span>
             <ul className="flex flex-col gap-4">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-white/60 hover:text-white transition-colors text-[1rem]">
+                  <a href={link.href} className="text-[#9CA3AF] hover:text-white transition-colors text-[0.9rem]">
                     {link.name}
                   </a>
                 </li>
@@ -72,19 +74,19 @@ export default function FooterSection() {
 
           {/* Column 4: Get In Touch */}
           <div className="flex flex-col items-start text-left gap-8">
-            <span className="text-[0.75rem] font-semibold uppercase tracking-widest text-white/40">Get In Touch</span>
+            <span className="text-[0.9rem] font-bold uppercase tracking-widest text-[#FFFFFF]">Get In Touch</span>
 
             <div className="w-full space-y-6 text-left">
               <div>
-                <span className="block text-[0.7rem] font-bold text-white/30 uppercase mb-1">Email</span>
-                <a href="mailto:founder.magricproductions@gmail.com" className="text-white font-medium hover:text-purple-400 transition-colors">
+                <span className="block text-[0.7rem] font-bold text-white uppercase mb-1">Email</span>
+                <a href="mailto:founder.magricproductions@gmail.com" className="text-[#9CA3AF] font-medium hover:text-purple-400 transition-colors break-all">
                   founder.magricproductions@gmail.com
                 </a>
               </div>
 
               <div>
-                <span className="block text-[0.7rem] font-bold text-white/30 uppercase mb-1">Address</span>
-                <p className="text-white font-medium">Islamabad, Pakistan</p>
+                <span className="block text-[0.7rem] font-bold text-white uppercase mb-1">Address</span>
+                <p className="text-[#9CA3AF] font-medium">Islamabad, Pakistan</p>
               </div>
             </div>
 

@@ -151,14 +151,14 @@ export default function ShareVisionSection() {
   };
 
   return (
-    <section id="contact" className="section-shell relative overflow-hidden scroll-mt-28">
+    <section className="section-shell relative overflow-hidden">
       {/* Background Decorative Glow */}
       <div className="pointer-events-none absolute inset-x-0 top-[20%] mx-auto h-[600px] max-w-[1200px] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.1)_0%,rgba(124,58,237,0.06)_50%,transparent_100%)] blur-[140px]" />
 
       <div className="section-inner relative z-10">
 
         {/* Section Heading — matches FAQ style */}
-        <div className="section-stack section-center mb-16">
+        <div id="contact" className="section-stack section-center mb-16 scroll-mt-32">
           <div className="section-eyebrow">Contact Us</div>
           <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
             Tell us what you want to <span className="accent-text">build.</span>
@@ -183,12 +183,12 @@ export default function ShareVisionSection() {
               <div className="space-y-8">
                 {/* Email Info */}
                 <div className="flex items-center gap-5 group">
-                  <div className="contact-info-box">
+                  <div className="contact-info-box !rounded-lg">
                     <Mail size={20} />
                   </div>
                   <div>
                     <span className="contact-label !mb-0.5 !ml-0">Email</span>
-                    <a href="mailto:founder.magricproductions@gmail.com" className="text-white font-medium hover:text-purple-400 transition-colors">
+                    <a href="mailto:founder.magricproductions@gmail.com" className="text-white font-medium hover:text-purple-400 transition-colors break-all">
                       founder.magricproductions@gmail.com
                     </a>
                   </div>
@@ -196,7 +196,7 @@ export default function ShareVisionSection() {
 
                 {/* Location Info */}
                 <div className="flex items-center gap-5 group">
-                  <div className="contact-info-box">
+                  <div className="contact-info-box !rounded-lg">
                     <MapPin size={20} />
                   </div>
                   <div>
