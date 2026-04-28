@@ -51,7 +51,7 @@ function TestimonialCard({ name, role, quote, videoId }) {
       style={{ background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, transparent 50%), rgba(18, 18, 24, 0.5)' }}
     >
       {/* Video / Thumbnail Area */}
-      <div className="relative w-full aspect-square sm:aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-5" onClick={() => !isPlaying && setIsPlaying(true)}>
+      <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-5" onClick={() => !isPlaying && setIsPlaying(true)}>
         {isPlaying ? (
           <iframe
             width="100%"

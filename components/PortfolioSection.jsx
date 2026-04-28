@@ -102,9 +102,9 @@ export default function PortfolioSection() {
             <div className="surface-card aspect-[16/9] w-full rounded-xl border border-white/5 bg-zinc-900/50" />
           </div>
 
-          <div className="relative z-10 w-full max-w-[920px] group transition-transform duration-700 hover:scale-[1.02]">
+          <div className="relative z-10 w-[calc(100%+2rem)] -mx-4 md:mx-0 md:w-full md:max-w-[920px] group transition-transform duration-700 hover:scale-[1.02]">
 
-            <article className="relative z-10 w-full rounded-xl overflow-hidden border border-[#9333ea]/30 shadow-[0_0_25px_rgba(147,51,234,0.45)] transition-all duration-500 isolation-auto" style={{ transform: 'translateZ(0)' }}>
+            <article className="relative z-10 w-full rounded-none md:rounded-xl overflow-hidden border-y md:border border-[#9333ea]/30 shadow-[0_0_25px_rgba(147,51,234,0.45)] transition-all duration-500 isolation-auto" style={{ transform: 'translateZ(0)' }}>
               <VideoPlayer />
             </article>
           </div>
