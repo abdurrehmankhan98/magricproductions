@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, ChevronRight, ChevronLeft } from "lucide-react";
 
@@ -26,17 +26,32 @@ function TestimonialCard({ name, role, quote, videoId }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  const uniqueId = `testimonial-${videoId}`;
+
+  useEffect(() => {
+    const handleOtherPlay = (e) => {
+      if (e.detail !== uniqueId) setIsPlaying(false);
+    };
+    window.addEventListener('magric:play-video', handleOtherPlay);
+    return () => window.removeEventListener('magric:play-video', handleOtherPlay);
+  }, [uniqueId]);
+
+  useEffect(() => {
+    if (isPlaying) {
+      window.dispatchEvent(new CustomEvent('magric:play-video', { detail: uniqueId }));
+    }
+  }, [isPlaying, uniqueId]);
 
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="surface-card flex flex-col items-center text-center p-3 sm:p-4 min-h-[400px] h-full"
+      className="surface-card flex flex-col items-center text-center p-2 sm:p-4 min-h-[400px] h-full"
       style={{ background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, transparent 50%), rgba(18, 18, 24, 0.5)' }}
     >
       {/* Video / Thumbnail Area */}
-      <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-5" onClick={() => !isPlaying && setIsPlaying(true)}>
+      <div className="relative w-full aspect-square sm:aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-5" onClick={() => !isPlaying && setIsPlaying(true)}>
         {isPlaying ? (
           <iframe
             width="100%"
@@ -61,7 +76,7 @@ function TestimonialCard({ name, role, quote, videoId }) {
       </div>
 
       {/* Quote Area */}
-      <div className="flex-1 w-full space-y-4 flex flex-col items-center text-center">
+      <div className="flex-1 w-full space-y-4 flex flex-col items-center text-center px-4 sm:px-0">
         <p className="text-[1rem] sm:text-[1.125rem] font-medium leading-relaxed text-white text-balance max-w-[32rem]">
           &ldquo;{quote}&rdquo;
         </p>
@@ -113,15 +128,15 @@ export default function VideoTestimonials() {
         </div>
 
         {/* Testimonials Container */}
-        <div className="relative max-w-[900px] mx-auto px-4 sm:px-10">
+        <div className="relative max-w-[900px] mx-auto px-0 sm:px-10">
           {/* Navigation Controls - Side Positions */}
           <div className="absolute left-0 sm:-left-4 md:-left-8 top-1/2 -translate-y-1/2 z-30">
             <button
               onClick={prev}
               disabled={startIndex === 0}
               className={`h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center rounded-full border border-purple-400/30 transition-all duration-300 backdrop-blur-md ${startIndex === 0
-                  ? "bg-purple-900/20 opacity-20 cursor-not-allowed text-white/50"
-                  : "bg-purple-600 hover:bg-purple-400 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
+                ? "bg-purple-900/20 opacity-20 cursor-not-allowed text-white/50"
+                : "bg-purple-600 hover:bg-purple-400 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
                 }`}
             >
               <ChevronLeft size={24} className="sm:w-7 sm:h-7" />
@@ -133,8 +148,8 @@ export default function VideoTestimonials() {
               onClick={next}
               disabled={startIndex + itemsPerPage >= videoTestimonials.length}
               className={`h-12 w-12 sm:h-14 sm:w-14 flex items-center justify-center rounded-full border border-purple-400/30 transition-all duration-300 backdrop-blur-md ${startIndex + itemsPerPage >= videoTestimonials.length
-                  ? "bg-purple-900/20 opacity-20 cursor-not-allowed text-white/50"
-                  : "bg-purple-600 hover:bg-purple-400 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
+                ? "bg-purple-900/20 opacity-20 cursor-not-allowed text-white/50"
+                : "bg-purple-600 hover:bg-purple-400 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
                 }`}
             >
               <ChevronRight size={24} className="sm:w-7 sm:h-7" />

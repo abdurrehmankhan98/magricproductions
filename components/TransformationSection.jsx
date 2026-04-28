@@ -18,17 +18,18 @@ export default function TransformationSection() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-16 flex max-w-[900px] flex-col items-center gap-10 md:flex-row md:items-stretch md:justify-center md:gap-6 lg:gap-12">
+        <div className="relative mx-auto mt-16 flex flex-col items-center gap-10 md:max-w-[900px] md:flex-row md:items-stretch md:justify-center md:gap-6 lg:gap-12">
 
           {/* Before Column */}
-          <div className="flex w-full max-w-[340px] flex-col items-center group">
-            <article className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0f]/60 shadow-xl transition-all duration-500 group-hover:border-white/20">
-              <Image
-                src="/beforefull.gif"
-                alt="Raw video"
-                fill
-                unoptimized
-                className="object-cover"
+          <div className="flex w-full flex-col items-center group md:max-w-[340px]">
+            <article className="relative w-full aspect-[9/16] overflow-hidden md:rounded-2xl border-y border-white/10 md:border bg-[#0a0a0f]/60 shadow-xl transition-all duration-500 group-hover:border-white/20">
+              <video
+                src="/videos/Before.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
               />
             </article>
             <div className="mt-6 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">
@@ -52,15 +53,16 @@ export default function TransformationSection() {
           </div>
 
           {/* After Column */}
-          <div className="flex w-full max-w-[340px] flex-col items-center group">
-            <article className="relative w-full aspect-[9/16] overflow-hidden rounded-2xl border border-purple-500/30 bg-[#0a0a0f]/60 shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 group-hover:border-purple-400/50 group-hover:shadow-[0_0_40px_rgba(168,85,247,0.3)]">
+          <div className="flex w-full flex-col items-center group md:max-w-[340px]">
+            <article className="relative w-full aspect-[9/16] overflow-hidden md:rounded-2xl border-y border-purple-500/30 md:border bg-[#0a0a0f]/60 shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-500 group-hover:border-purple-400/50 group-hover:shadow-[0_0_40px_rgba(168,85,247,0.3)]">
               <div className="absolute inset-x-0 -top-20 h-40 rounded-full bg-purple-600/20 blur-[60px] opacity-60 group-hover:opacity-100 transition-opacity z-10 pointer-events-none" />
-              <Image
-                src="/afterfull.gif"
-                alt="Edited video"
-                fill
-                unoptimized
-                className="object-cover opacity-95 transition-opacity duration-500 group-hover:opacity-100"
+              <video
+                src="/videos/After.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover opacity-95 transition-opacity duration-500 group-hover:opacity-100"
               />
             </article>
             <div className="mt-6 flex flex-col items-center gap-1 transition-transform duration-500 group-hover:translate-y-[-4px]">

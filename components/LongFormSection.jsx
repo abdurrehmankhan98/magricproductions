@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -14,6 +14,21 @@ const longFormVideos = [
 function LongFormVideoPlayer({ videoId }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&rel=0&modestbranding=1&controls=1&fs=1&mute=0&showinfo=0`;
+  const uniqueId = `long-form-${videoId}`;
+
+  useEffect(() => {
+    const handleOtherPlay = (e) => {
+      if (e.detail !== uniqueId) setIsPlaying(false);
+    };
+    window.addEventListener('magric:play-video', handleOtherPlay);
+    return () => window.removeEventListener('magric:play-video', handleOtherPlay);
+  }, [uniqueId]);
+
+  useEffect(() => {
+    if (isPlaying) {
+      window.dispatchEvent(new CustomEvent('magric:play-video', { detail: uniqueId }));
+    }
+  }, [isPlaying, uniqueId]);
 
   if (isPlaying) {
     return (
@@ -79,7 +94,7 @@ export default function LongFormSection() {
       <div className="section-inner relative z-10">
         <div id="long-form" className="section-stack section-center mb-12 text-center scroll-mt-32">
           <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-4">
-             Portfolio
+            Portfolio
           </div>
           <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white leading-tight">
             High-Impact Storytelling for <br />
@@ -92,20 +107,20 @@ export default function LongFormSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-[1100px] mx-auto">
           {longFormVideos.map((video, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
-              whileHover={{ 
+              whileHover={{
                 y: -10,
                 scale: 1.02,
                 transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: index * 0.12,
-                ease: [0.22, 1, 0.36, 1] 
+                ease: [0.22, 1, 0.36, 1]
               }}
               className="group"
             >
@@ -115,7 +130,7 @@ export default function LongFormSection() {
                 <LongFormVideoPlayer videoId={video.id} />
               </div>
               <div className="mt-6 px-1 flex flex-col items-center text-center">
-                <h3 
+                <h3
                   className="text-white font-display text-2xl font-semibold group-hover:text-purple-400 transition-colors uppercase leading-none"
                   style={{ letterSpacing: '0.025em' }}
                 >

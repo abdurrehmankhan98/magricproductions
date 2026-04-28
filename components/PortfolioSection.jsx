@@ -1,11 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Play } from "lucide-react";
 
 function VideoPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoId = "i-QhycnlSk0";
+  const uniqueId = "portfolio-main";
+
+  useEffect(() => {
+    const handleOtherPlay = (e) => {
+      if (e.detail !== uniqueId) setIsPlaying(false);
+    };
+    window.addEventListener('magric:play-video', handleOtherPlay);
+    return () => window.removeEventListener('magric:play-video', handleOtherPlay);
+  }, [uniqueId]);
+
+  useEffect(() => {
+    if (isPlaying) {
+      window.dispatchEvent(new CustomEvent('magric:play-video', { detail: uniqueId }));
+    }
+  }, [isPlaying, uniqueId]);
 
   // YouTube URL with optimized parameters:
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&vq=hd1080&rel=0&modestbranding=1&controls=1&fs=1&mute=0&showinfo=0`;

@@ -151,11 +151,11 @@ export default function ShareVisionSection() {
   };
 
   return (
-    <section className="section-shell relative overflow-hidden">
+    <section className="section-shell relative overflow-hidden !px-0 sm:!px-[1.25rem]">
       {/* Background Decorative Glow */}
       <div className="pointer-events-none absolute inset-x-0 top-[20%] mx-auto h-[600px] max-w-[1200px] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.1)_0%,rgba(124,58,237,0.06)_50%,transparent_100%)] blur-[140px]" />
 
-      <div className="section-inner relative z-10">
+      <div className="section-inner relative z-10 w-full max-w-none sm:max-w-[1200px] px-0 sm:px-6">
 
         {/* Section Heading — matches FAQ style */}
         <div id="contact" className="section-stack section-center mb-16 scroll-mt-32">

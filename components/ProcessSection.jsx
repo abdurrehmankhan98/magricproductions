@@ -22,21 +22,21 @@ const steps = [
 
 function StepCard({ title, description, index }) {
   return (
-    <motion.div 
-        initial={{ opacity: 0, y: 40, scale: 0.96 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ 
-            duration: 0.5, 
-            delay: index * 0.1,
-            ease: [0.22, 1, 0.36, 1]
-        }}
-        whileHover={{ 
-            y: -6, 
-            scale: 1.02,
-            transition: { duration: 0.3, ease: "easeOut" }
-        }}
-        className="relative group lg:cursor-pointer"
+    <motion.div
+      initial={{ opacity: 0, y: 40, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.1,
+        ease: [0.22, 1, 0.36, 1]
+      }}
+      whileHover={{
+        y: -6,
+        scale: 1.02,
+        transition: { duration: 0.3, ease: "easeOut" }
+      }}
+      className="relative group lg:cursor-pointer"
     >
       {/* The actual glass card */}
       <article className="surface-card service-card-spotlight relative min-h-[260px] overflow-hidden rounded-xl px-6 pb-10 pt-16 text-center sm:min-h-[300px] sm:px-8 shadow-2xl transition-shadow duration-500 group-hover:shadow-[0_20px_50px_-20px_rgba(168,85,247,0.25)]">
@@ -57,21 +57,21 @@ function StepCard({ title, description, index }) {
       </article>
 
       {/* Step Badge - Positioned outside the clipped article */}
-      <motion.div 
+      <motion.div
         initial={{ scale: 1 }}
-        animate={{ 
-            scale: [1, 1.08, 1],
-            boxShadow: [
-                "0 10px 30px -5px rgba(168,85,247,0.4)",
-                "0 10px 40px 0px rgba(168,85,247,0.6)",
-                "0 10px 30px -5px rgba(168,85,247,0.4)"
-            ]
+        animate={{
+          scale: [1, 1.08, 1],
+          boxShadow: [
+            "0 10px 30px -5px rgba(168,85,247,0.4)",
+            "0 10px 40px 0px rgba(168,85,247,0.6)",
+            "0 10px 30px -5px rgba(168,85,247,0.4)"
+          ]
         }}
-        transition={{ 
-            duration: 2, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: index * 0.2 // Stagger the pulses slightly
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: index * 0.2 // Stagger the pulses slightly
         }}
         className="absolute left-1/2 top-0 z-30 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-gradient-to-br from-[#a855f7]/60 to-[#a855f7]/30 backdrop-blur-md transition-all duration-300 group-hover:border-purple-300/50"
       >

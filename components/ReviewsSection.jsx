@@ -65,6 +65,12 @@ const reviews = [
     quote: "Incredible experience from start to finish. They took our basic footage and transformed it into a polished, high-impact video that truly stands out. Great communication, fast delivery, and results that exceeded expectations.",
     avatarSrc: "/reviews/Abdur Rehman.jpeg",
   },
+  {
+    name: "Talha Malik",
+    role: "AI Engineer",
+    quote: "Incredible experience from start to finish. They took our basic footage and transformed it into a polished, high-impact video that truly stands out. Great communication, fast delivery, and results that exceeded expectations.",
+    avatarSrc: "/reviews/Talha Malik.jpeg",
+  },
 ];
 
 import VerifiedBadge from "./VerifiedBadge";
@@ -148,8 +154,8 @@ function ReviewColumn({ reviews, duration, direction = 'up', pauseOnHover = true
 export default function ReviewsSection() {
   // Distribute unique reviews across 3 columns with offsets to avoid duplication
   const col1 = [...reviews];
-  const col2 = [...reviews.slice(3), ...reviews.slice(0, 3)];
-  const col3 = [...reviews.slice(6), ...reviews.slice(0, 6)];
+  const col2 = [...reviews.slice(4), ...reviews.slice(0, 4)];
+  const col3 = [...reviews.slice(8), ...reviews.slice(0, 8)];
 
   return (
     <section className="section-shell relative overflow-hidden">
@@ -177,13 +183,13 @@ export default function ReviewsSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full px-4">
             <div className="h-full">
-              <ReviewColumn reviews={col1} duration={50} direction="up" />
+              <ReviewColumn reviews={col1} duration={60} direction="up" />
             </div>
             <div className="hidden md:block h-full">
-              <ReviewColumn reviews={col2} duration={62} direction="down" />
+              <ReviewColumn reviews={col2} duration={60} direction="down" />
             </div>
             <div className="hidden lg:block h-full">
-              <ReviewColumn reviews={col3} duration={55} direction="up" />
+              <ReviewColumn reviews={col3} duration={60} direction="up" />
             </div>
           </div>
         </div>

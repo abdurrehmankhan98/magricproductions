@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Portfolio", href: "#long-form" },
+    { label: "Portfolio", href: "#portfolio" },
     { label: "Reviews", href: "#reviews" },
     { label: "Process", href: "#process" },
     { label: "Testimonials", href: "#testimonials" },
@@ -49,7 +49,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                href={`/${item.href}`}
+                href={item.href}
                 className="relative text-[0.95rem] font-normal text-white/76 transition-colors duration-300 hover:text-white after:absolute after:left-0 after:top-full after:mt-1.5 after:h-px after:w-full after:origin-left after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-violet-400 after:via-purple-500 after:to-fuchsia-400 after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {item.label}
@@ -58,7 +58,7 @@ const Navbar = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link href="/#contact" className="!hidden md:!flex button-primary !min-h-[2.2rem] sm:!min-h-[2.6rem] px-2.5 sm:px-5 text-[0.75rem] sm:text-[0.9rem] items-center whitespace-nowrap">
+            <Link href="#contact" className="!hidden md:!flex button-primary !min-h-[2.2rem] sm:!min-h-[2.6rem] px-2.5 sm:px-5 text-[0.75rem] sm:text-[0.9rem] items-center whitespace-nowrap">
               Book a call
             </Link>
 
@@ -87,7 +87,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.label}
-                  href={`/${item.href}`}
+                  href={item.href}
                   onClick={() => setIsOpen(false)}
                   className="group relative flex items-center justify-between rounded-lg px-3 py-2 text-base font-medium text-white/80 transition-all hover:bg-white/5 hover:text-white"
                 >
@@ -97,7 +97,7 @@ const Navbar = () => {
               ))}
               <div className="mt-1 pt-2 border-t border-white/5">
                 <Link
-                  href="/#contact"
+                  href="#contact"
                   onClick={() => setIsOpen(false)}
                   className="button-primary w-full text-center py-2.5 text-sm flex items-center justify-center gap-2"
                 >
