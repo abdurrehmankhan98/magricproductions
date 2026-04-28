@@ -22,7 +22,7 @@ export default function CustomSelect({ label, options, placeholder, value, onCha
 
   return (
     <label className="grid gap-2 relative group">
-      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40 transition-colors group-focus-within:text-purple-400/80">
+      <span className="text-[12px] font-black uppercase tracking-[0.2em] text-white ml-4 transition-colors group-focus-within:text-purple-400/80">
         {label}
       </span>
       <div ref={containerRef} className="relative">
@@ -30,8 +30,8 @@ export default function CustomSelect({ label, options, placeholder, value, onCha
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className={`h-13 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 text-white outline-none transition-all duration-200 flex items-center justify-between cursor-pointer text-left hover:border-white/20 ${
-            isOpen ? "border-purple-500/40 ring-4 ring-purple-500/5 bg-white/[0.05]" : ""
+          className={`h-13 w-full rounded-xl border border-white/10 bg-white/[0.06] px-4 text-white outline-none transition-all duration-200 flex items-center justify-between cursor-pointer text-left hover:border-white/20 ${
+            isOpen ? "border-purple-500/40 ring-4 ring-purple-500/5 bg-white/[0.1]" : ""
           }`}
         >
           <span className={selectedOption ? "text-white font-medium" : "text-white/28"}>
@@ -45,7 +45,7 @@ export default function CustomSelect({ label, options, placeholder, value, onCha
 
         {/* Dropdown Menu */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 mt-2 rounded-[16px] border border-white/10 bg-white/[0.05] shadow-2xl overflow-hidden z-50 backdrop-blur-md">
+          <div className="absolute top-full left-0 right-0 mt-2 rounded-[16px] border border-white/10 bg-[#0f0f14]/75 shadow-2xl overflow-hidden z-50 backdrop-blur-[20px]">
             {options.map((option, index) => (
               <button
                 key={option.value}

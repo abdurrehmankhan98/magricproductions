@@ -49,19 +49,17 @@ function VideoPlayer() {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Custom Play Button - Click to Initialize Iframe with Autoplay */}
       <button
         type="button"
         onClick={() => setIsPlaying(true)}
-        className="absolute inset-0 w-full h-full flex items-center justify-center z-10 cursor-pointer transition-opacity duration-200 hover:opacity-90"
+        className="absolute inset-0 w-full h-full flex items-center justify-center z-10 cursor-pointer group"
       >
-        <div className="relative flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full opacity-80 blur-xl w-12 h-12 sm:w-[96px] sm:h-[96px] mx-auto my-auto" />
-          <div className="relative h-12 w-12 sm:h-24 sm:w-24 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 shadow-lg hover:shadow-xl transition-shadow">
-            <Play fill="white" className="text-white ml-0.5 sm:ml-1 w-5 h-5 sm:w-12 sm:h-12" />
+        <div className="relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+          <div className="absolute inset-0 bg-purple-500 rounded-full opacity-0 blur-2xl group-hover:opacity-50 transition-opacity duration-500 w-20 h-20 sm:w-32 sm:h-32" />
+          <div className="relative h-16 w-16 sm:h-24 sm:w-24 flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-md shadow-2xl transition-all duration-300 group-hover:bg-purple-600 group-hover:border-purple-400">
+            <Play fill="white" className="text-white ml-1 sm:ml-1.5 w-7 h-7 sm:w-12 sm:h-12" />
           </div>
         </div>
       </button>
@@ -75,11 +73,12 @@ export default function PortfolioSection() {
       <div className="section-inner">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Production</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
-            What your <span className="accent-text">trailer</span> can feel like.
+          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1.1] tracking-normal text-white">
+            Premium Video Editing for <br />
+            <span className="accent-text">High-Converting Content</span>
           </h2>
           <p className="section-copy max-w-[42rem]">
-            This section should show one strong hero example, then suggest variety around it. That keeps the focus on quality while still signaling range.
+            We craft high-converting videos through strategic editing, storytelling, and performance-driven visuals—tailored to your brand, audience, and goals.
           </p>
         </div>
 
@@ -90,7 +89,7 @@ export default function PortfolioSection() {
 
           <div className="relative z-10 w-full max-w-[920px] group transition-transform duration-700 hover:scale-[1.02]">
 
-            <article className="relative z-10 w-full rounded-lg overflow-hidden border border-[#9333ea]/30 shadow-[0_0_25px_rgba(147,51,234,0.45)] transition-all duration-500">
+            <article className="relative z-10 w-full rounded-xl overflow-hidden border border-[#9333ea]/30 shadow-[0_0_25px_rgba(147,51,234,0.45)] transition-all duration-500 isolation-auto" style={{ transform: 'translateZ(0)' }}>
               <VideoPlayer />
             </article>
           </div>

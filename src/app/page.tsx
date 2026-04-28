@@ -2,7 +2,6 @@
 import Image from "next/image";
 import HeroSection from "../../components/HeroSection";
 import Navbar from "../../components/Navbar";
-import MobileNavbar from "../../components/MobileNavbar";
 import PodcastCarousel from "../../components/PodcastCarousel";
 import StatsStrip from "../../components/StatsStrip";
 import ServicesSection from "../../components/ServicesSection";
@@ -136,7 +135,6 @@ export default function Home() {
 
       <FooterSection />
       <ScrollToTopButton />
-      <MobileNavbar />
     </main>
   );
 }

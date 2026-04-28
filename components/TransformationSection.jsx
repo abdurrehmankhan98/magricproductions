@@ -9,8 +9,9 @@ export default function TransformationSection() {
       <div className="section-inner">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Before & After</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
-            Turn your raw videos into <span className="accent-text">masterpieces</span>
+          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1.1] tracking-normal text-white">
+            Turn your raw videos into <br />
+            <span className="accent-text">masterpieces</span>
           </h2>
           <p className="section-copy max-w-[38rem]">
             Show the contrast clearly: one side feels unpolished, the other feels branded, strategic, and ready to perform on social.

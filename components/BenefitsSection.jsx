@@ -2,15 +2,15 @@ import { Layers, Rocket, Sparkles } from "lucide-react";
 
 const items = [
   {
-    title: "More Than Just a Podcast",
+    title: "More Than Just Content",
     description:
-      "Repurpose your episodes into clips, and posts to grow your brand everywhere.",
+      "Turn your audience into creators. We help you collect, curate, and repurpose authentic user content that builds trust and drives engagement.",
     icon: <Layers className="h-8 w-8 text-white" />,
   },
   {
-    title: "Content That Grows Your Brand",
+    title: "Content That Builds Communities",
     description:
-      "We turn your podcast into a marketing machine that builds your audience.",
+      "We transform user-generated content into a powerful growth engine that strengthens your brand and connects you with your audience.",
     icon: <Rocket className="h-8 w-8 text-white" />,
   },
   {
@@ -27,16 +27,14 @@ export default function BenefitsSection() {
       <div className="mx-auto max-w-[1240px]">
         <div className="text-center">
           <h2 className="font-display text-[56px] font-semibold leading-[1.04] tracking-normal text-white sm:text-[74px] lg:text-[66px]">
-            <span>
-              Podcasting, Made
-            </span>{" "}
+            User-Generated Content, <br />
             <span className="accent-text font-semibold">
-              Effortless.
+              Made Effortless.
             </span>
           </h2>
 
           <p className="mt-8 text-[20px] font-normal leading-none tracking-normal text-white">
-            You talk. We handle the rest.
+            You create. Your audience amplifies. We handle the rest.
           </p>
         </div>
 

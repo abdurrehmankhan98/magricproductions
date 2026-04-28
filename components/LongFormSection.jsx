@@ -5,10 +5,10 @@ import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 const longFormVideos = [
-  { id: "tg54p4rxiEg", title: "Productivity Strategy" },
-  { id: "TSW3lmltcI8", title: "Global Expansion" },
-  { id: "lAXBdMM9g5g", title: "Financial Systems" },
-  { id: "NRF6aPF5sbI", title: "Community Growth" },
+  { id: "tg54p4rxiEg", title: "Talking Head" },
+  { id: "TSW3lmltcI8", title: "Corporate Video" },
+  { id: "lAXBdMM9g5g", title: "Brand Promo" },
+  { id: "NRF6aPF5sbI", title: "CashCow Content" },
 ];
 
 function LongFormVideoPlayer({ videoId }) {
@@ -77,15 +77,16 @@ export default function LongFormSection() {
       </div>
 
       <div className="section-inner relative z-10">
-        <div className="section-stack section-center mb-20 text-center">
+        <div className="section-stack section-center mb-12 text-center">
           <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-4">
              Portfolio
           </div>
           <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white leading-tight">
-            High Impact <span className="accent-text">Long Form</span>
+            High-Impact Storytelling for <br />
+            <span className="accent-text">Long-Form Content</span>
           </h2>
-          <p className="section-copy mt-6 text-gray-400 max-w-2xl mx-auto overflow-hidden">
-            Engineered assets that drive authority, trust, and conversions for your brand through high-retention editing.
+          <p className="section-copy mt-2 text-gray-400 max-w-2xl mx-auto overflow-hidden">
+            Engineered long-form content that blends storytelling, high-retention editing, and strategic pacing to build authority, trust, and drive real conversions.
           </p>
         </div>
 
@@ -114,7 +115,12 @@ export default function LongFormSection() {
                 <LongFormVideoPlayer videoId={video.id} />
               </div>
               <div className="mt-6 px-1 flex flex-col items-center text-center">
-                <h3 className="text-white font-display text-2xl font-semibold tracking-tight group-hover:text-purple-400 transition-colors uppercase leading-none">{video.title}</h3>
+                <h3 
+                  className="text-white font-display text-2xl font-semibold group-hover:text-purple-400 transition-colors uppercase leading-none"
+                  style={{ letterSpacing: '0.025em' }}
+                >
+                  {video.title}
+                </h3>
                 <div className="h-0.5 w-16 mx-auto bg-gradient-to-r from-purple-600 to-transparent mt-3 rounded-full opacity-60 group-hover:w-24 transition-all duration-500" />
               </div>
             </motion.div>

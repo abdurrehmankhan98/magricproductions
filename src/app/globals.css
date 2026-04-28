@@ -1274,7 +1274,7 @@ select option:hover {
 }
 
 .contact-label {
-  @apply text-[10px] font-black uppercase tracking-[0.2em] text-white/40 mb-2 block;
+  @apply text-[12px] font-black uppercase tracking-[0.2em] text-white mb-2 ml-4 block;
 }
 
 .btn-contact-submit {

@@ -6,7 +6,7 @@ import { Video, Mic, Briefcase, TrendingUp } from "lucide-react";
 
 const services = [
   {
-    title: "Short-Form Mastery",
+    title: "Short Form Mastery",
     description: "Viral Reels, TikToks, and YouTube Shorts engineered to stop the scroll and drive engagement.",
     points: ["HOOK-DRIVEN EDITS", "PLATFORM-READY PACE", "ENGAGEMENT FOCUS"],
     icon: <Video className="h-6 w-6 text-white" />,
@@ -51,8 +51,11 @@ function ServiceCard({ service, cardRef }) {
         {service.icon}
       </div>
 
-      <div className="relative z-10 space-y-3">
-        <h3 className="font-display text-[1.6rem] font-bold text-white tracking-tight">
+      <div className="relative z-10 space-y-4">
+        <h3 
+          className="font-display text-[1.6rem] font-bold text-white"
+          style={{ letterSpacing: '0.025em' }}
+        >
           {service.title}
         </h3>
         <p className="text-[0.95rem] leading-relaxed text-white/50 max-w-[28ch]">
@@ -108,7 +111,10 @@ export default function ServicesSection() {
       <div className="section-inner relative z-10">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Our Services</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-bold leading-[1] text-white">
+          <h2 
+            className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-bold leading-[1] text-white"
+            style={{ letterSpacing: '0.025em' }}
+          >
             Transformative <span className="text-purple-500">Service</span> Packages
           </h2>
           <p className="section-copy max-w-[40rem]">

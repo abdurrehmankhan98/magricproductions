@@ -7,33 +7,20 @@ import { Play, ChevronRight, ChevronLeft } from "lucide-react";
 const videoTestimonials = [
   {
     id: 1,
-    name: "William Nazarkewich",
+    name: "Rayan Ghazanfar",
     role: "Content Creator",
-    quote: "My results and online presence went through the roof more or less overnight, mind-blowing!",
-    videoId: "q_p04Jmdxzs",
+    quote: "High-retention editing and strategic pacing that transformed my channel into a growth machine.",
+    videoId: "OrKEviUQdS4",
   },
   {
     id: 2,
-    name: "Scott Henry",
+    name: "Janerbik",
     role: "Lead Generation Consultant",
-    quote: "These guy don't mess around. we saw results from month one. If you want to grow your business, look no further.",
-    videoId: "CJHXwa4B4gE",
+    quote: "Premium visual storytelling that built instant authority and scaled my brand results.",
+    videoId: "gUj0sWZvq6Q",
   },
-  {
-    id: 3,
-    name: "Joe Danna",
-    role: "Candidate for HCS",
-    quote: "MagricProductions deliver top-quality edits, and excellent client support every time!",
-    videoId: "q_p04Jmdxzs", // Placeholder ID
-  },
-  {
-    id: 4,
-    name: "Bilal Haider",
-    role: "Trader & Content Creator",
-    quote: "Great work, easy to collaborate with, Highly recommended!",
-    videoId: "CJHXwa4B4gE", // Placeholder ID
-  }
 ];
+
 
 function TestimonialCard({ name, role, quote, videoId }) {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -45,11 +32,11 @@ function TestimonialCard({ name, role, quote, videoId }) {
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      className="surface-card flex flex-col items-center text-center p-6 sm:p-8 min-h-[520px] h-full"
+      className="surface-card flex flex-col items-center text-center p-5 sm:p-6 min-h-[440px] h-full"
       style={{ background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, transparent 50%), rgba(18, 18, 24, 0.5)' }}
     >
       {/* Video / Thumbnail Area */}
-      <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-8" onClick={() => !isPlaying && setIsPlaying(true)}>
+      <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/40 group cursor-pointer mb-6" onClick={() => !isPlaying && setIsPlaying(true)}>
         {isPlaying ? (
           <iframe
             width="100%"
@@ -63,10 +50,9 @@ function TestimonialCard({ name, role, quote, videoId }) {
           />
         ) : (
           <>
-            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${thumbnailUrl})` }} />
-            <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/20 transition-colors" />
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700" style={{ backgroundImage: `url(${thumbnailUrl})` }} />
             <div className="absolute inset-0 flex items-center justify-center z-20">
-              <div className="h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 group-hover:bg-purple-600 transition-all duration-300 group-hover:border-purple-400 group-hover:scale-110 shadow-2xl">
+              <div className="h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md border border-white/20 transition-all duration-300 shadow-2xl">
                 <Play fill="white" className="text-white ml-0.5 sm:ml-1 w-5 h-5 sm:w-7 sm:h-7" />
               </div>
             </div>
@@ -75,13 +61,18 @@ function TestimonialCard({ name, role, quote, videoId }) {
       </div>
 
       {/* Quote Area */}
-      <div className="flex-1 w-full space-y-6 flex flex-col items-center text-center">
-        <p className="text-xl sm:text-2xl font-medium leading-relaxed text-white/90 italic">
+      <div className="flex-1 w-full space-y-4 flex flex-col items-center text-center">
+        <p className="text-lg sm:text-xl font-medium leading-relaxed text-white/90">
           &ldquo;{quote}&rdquo;
         </p>
 
-        <div className="mt-auto pt-6 border-t border-white/5 w-full flex flex-col items-center text-center">
-          <h4 className="text-lg font-bold text-white tracking-tight leading-none mb-1">{name}</h4>
+        <div className="mt-auto pt-5 border-t border-white/5 w-full flex flex-col items-center text-center">
+          <h4 
+            className="text-lg font-bold text-white leading-none mb-1"
+            style={{ letterSpacing: '0.025em' }}
+          >
+            {name}
+          </h4>
           <p className="text-sm text-white/40 font-medium uppercase tracking-wider text-[10px]">{role}</p>
         </div>
       </div>
@@ -115,8 +106,8 @@ export default function VideoTestimonials() {
           <div className="max-w-3xl mx-auto flex flex-col items-center">
               <div className="section-eyebrow mb-6 mx-auto">Success Stories</div>
             <h2 className="text-white text-[clamp(1.8rem,4vw,3.8rem)] font-bold tracking-tight leading-[1.2] font-display text-balance">
-              Don't just take our word for it, <br className="hidden sm:block" />
-              <span className="accent-text">real clients, real results.</span>
+              Trusted by Real Clients, <br className="hidden sm:block" />
+              <span className="accent-text">Backed by Real Results.</span>
             </h2>
           </div>
         </div>
@@ -152,7 +143,7 @@ export default function VideoTestimonials() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 max-w-2xl mx-auto gap-8 relative min-h-[520px]">
+          <div className="grid grid-cols-1 max-w-2xl mx-auto gap-8 relative min-h-[440px]">
              <AnimatePresence mode="popLayout">
                 {visibleTestimonials.map((testimonial) => (
                     <motion.div
