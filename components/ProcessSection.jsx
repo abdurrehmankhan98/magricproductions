@@ -47,7 +47,7 @@ function StepCard({ title, description, index }) {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-20" />
 
         <div className="relative z-10 flex min-h-[140px] flex-col items-center justify-center mt-2 font-display">
-          <h3 className="whitespace-nowrap text-[1.6rem] font-extrabold leading-[1.1] tracking-[-0.04em] text-white sm:text-[1.85rem] group-hover:text-purple-300 transition-colors duration-300">
+          <h3 className="text-balance text-[1.55rem] font-extrabold leading-[1.12] tracking-normal text-white sm:text-[1.85rem] group-hover:text-purple-300 transition-colors duration-300">
             {title}
           </h3>
           <p className="mx-auto mt-5 max-w-[19rem] text-[1rem] font-normal leading-7 text-white/60 sm:max-w-[22rem] font-sans">
@@ -91,7 +91,7 @@ export default function ProcessSection() {
           <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-2">
             How it works
           </div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.5rem,5.5vw,5rem)] font-bold leading-[1] tracking-[-0.045em] text-white">
+          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none text-[clamp(2.5rem,5.5vw,5rem)] font-bold leading-[1] tracking-normal text-white">
             Our Simple <span className="accent-text">3-Step</span> Process
           </h2>
           <p className="section-copy max-w-[38rem] text-gray-400">

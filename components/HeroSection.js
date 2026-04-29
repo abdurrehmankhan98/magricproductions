@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 
 const HeroSection = () => {
   const containerRef = useRef(null);
@@ -36,7 +35,7 @@ const HeroSection = () => {
         <div className="relative z-20 flex flex-col items-center text-center">
           <h1
             ref={titleRef}
-            className="hero-heading-shadow relative z-20 hero-title-3d font-display mt-8 text-[3.05rem] font-semibold leading-[1.1] text-white opacity-0 sm:text-[4.5rem] lg:text-[6rem]"
+            className="hero-heading-shadow relative z-20 hero-title-3d font-display mt-8 text-[clamp(2.85rem,12vw,3.85rem)] font-semibold leading-[1.08] text-white opacity-0 sm:text-[clamp(4.5rem,9vw,6rem)]"
           >
             Edits That Get You
             <br />
@@ -50,9 +49,9 @@ const HeroSection = () => {
 
           <p
             ref={subRef}
-            className="relative z-20 mt-7 max-w-[42rem] text-[1rem] leading-8 text-white/72 opacity-0 sm:text-[1.1rem]"
+            className="relative z-20 mt-7 max-w-[46rem] text-[1rem] leading-8 text-white/72 opacity-0 sm:text-[1.1rem]"
           >
-            Turning your raw footage into attention-grabbing content!
+            Podcast editing, short-form clips, and branded videos that turn raw footage into attention-grabbing content.
           </p>
         </div>
       </div>

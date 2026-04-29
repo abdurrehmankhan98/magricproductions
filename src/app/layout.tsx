@@ -3,6 +3,40 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import BackgroundGlow from "../../components/BackgroundGlow";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://magricproductions.com";
+const siteName = "Magric Productions";
+const siteDescription =
+  "Podcast and video editing agency turning raw footage into high-retention shorts, long-form videos, trailers, and branded content for creators and businesses.";
+const ogImage = `${siteUrl}/og/home?v=2`;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteName,
+  url: siteUrl,
+  logo: `${siteUrl}/magric-logo.png`,
+  image: ogImage,
+  description: siteDescription,
+  email: "founder.magricproductions@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Islamabad",
+    addressCountry: "PK",
+  },
+  areaServed: "Worldwide",
+  serviceType: [
+    "Podcast editing",
+    "Short-form video editing",
+    "Long-form video editing",
+    "Podcast trailers",
+    "Brand video production",
+  ],
+  sameAs: [
+    "https://www.instagram.com/magricproductions",
+    "https://www.linkedin.com/company/magric-productions/",
+    "https://www.youtube.com/@MagricProductions25",
+  ],
+};
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -10,8 +44,62 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Magric Productions",
-  description: "Podcast growth landing page",
+  metadataBase: new URL(siteUrl),
+  applicationName: siteName,
+  title: {
+    default: `${siteName} | Podcast & Video Editing Agency`,
+    template: `%s | ${siteName}`,
+  },
+  description: siteDescription,
+  keywords: [
+    "podcast editing",
+    "video editing agency",
+    "short form video editing",
+    "YouTube video editing",
+    "podcast trailers",
+    "social media video editing",
+    "Magric Productions",
+  ],
+  authors: [{ name: siteName }],
+  creator: siteName,
+  publisher: siteName,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName,
+    title: `${siteName} | Podcast & Video Editing Agency`,
+    description: siteDescription,
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteName} professional podcast and video editing preview`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteName} | Podcast & Video Editing Agency`,
+    description: siteDescription,
+    images: [ogImage],
+  },
+  category: "video production",
   icons: {
     icon: "/magric-favicon.png",
     shortcut: "/magric-favicon.png",
@@ -33,6 +121,10 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased selection:bg-purple-500/30`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <BackgroundGlow />
         {children}
       </body>

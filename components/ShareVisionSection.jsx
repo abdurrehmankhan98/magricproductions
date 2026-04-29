@@ -132,7 +132,7 @@ export default function ShareVisionSection() {
           text: "Failed to send inquiry. Please try again.",
         });
       }
-    } catch (error) {
+    } catch {
       setMessage({
         type: "error",
         text: "An error occurred. Please try again later.",

@@ -23,7 +23,7 @@ const items = [
 
 export default function BenefitsSection() {
   return (
-    <section className="bg-[#030303] px-4 pb-28 pt-16 sm:px-6 lg:px-8">
+    <section id="about" className="bg-[#030303] px-4 pb-28 pt-16 sm:px-6 lg:px-8 scroll-mt-28">
       <div className="mx-auto max-w-[1240px]">
         <div className="text-center">
           <h2 className="font-display text-[56px] font-semibold leading-[1.04] tracking-normal text-white sm:text-[74px] lg:text-[66px]">
@@ -33,8 +33,8 @@ export default function BenefitsSection() {
             </span>
           </h2>
 
-          <p className="mt-8 text-[20px] font-normal leading-none tracking-normal text-white">
-            You create. Your audience amplifies. We handle the rest.
+          <p className="mx-auto mt-8 max-w-[42rem] text-[clamp(1rem,3.8vw,1.25rem)] font-normal leading-relaxed tracking-normal text-white">
+            You record the ideas. We shape the clips, episodes, and visuals that help your audience keep watching.
           </p>
         </div>
 
@@ -45,11 +45,11 @@ export default function BenefitsSection() {
                 {item.icon}
               </div>
 
-              <h3 className="font-display mt-9 max-w-[330px] text-[35px] font-semibold leading-[38px] text-white">
+              <h3 className="font-display mt-9 max-w-[330px] text-[clamp(1.75rem,7vw,2.2rem)] font-semibold leading-tight text-white">
                 {item.title}
               </h3>
 
-              <p className="mt-6 max-w-[390px] text-[20px] font-normal leading-[1.28] tracking-normal text-white">
+              <p className="mt-6 max-w-[390px] text-[clamp(1rem,4vw,1.25rem)] font-normal leading-relaxed tracking-normal text-white">
                 {item.description}
               </p>
             </article>

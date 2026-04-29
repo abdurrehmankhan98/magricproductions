@@ -1,17 +1,13 @@
 "use client";
 import Image from "next/image";
-import { Instagram, Linkedin, Youtube, ArrowUp } from "lucide-react";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 
 export default function FooterSection() {
-  function handleScrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
   const quickLinks = [
-    { name: "Portfolio", href: "#long-form" },
+    { name: "Portfolio", href: "#portfolio" },
     { name: "Process", href: "#process" },
     { name: "Services", href: "#services" },
-    { name: "Pricing", href: "#pricing" },
+    { name: "Reviews", href: "#reviews" },
   ];
 
   const companyLinks = [

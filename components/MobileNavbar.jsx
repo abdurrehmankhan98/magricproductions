@@ -1,6 +1,6 @@
 "use client";
 import { Home, Video, Layers, Phone, MessageSquare } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function MobileNavbar() {
   const [active, setActive] = useState("home");

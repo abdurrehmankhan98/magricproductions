@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { animate, useAnimate } from "framer-motion";
 
 const reviews = [
@@ -97,8 +97,8 @@ function ReviewCard({ name, role, quote, avatarSrc }) {
   );
 }
 
-function ReviewColumn({ reviews, duration, direction = 'up', pauseOnHover = true }) {
-  const [scope, animateScope] = useAnimate();
+function ReviewColumn({ reviews, duration, direction = 'up' }) {
+  const [scope] = useAnimate();
   const animationRef = useRef(null);
   const loopedReviews = [...reviews, ...reviews];
 

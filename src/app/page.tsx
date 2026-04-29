@@ -17,10 +17,8 @@ import ShareVisionSection from "../../components/ShareVisionSection";
 import FooterSection from "../../components/FooterSection";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
 
-import { heroBackgroundVideo } from "../lib/cloudinaryMedia";
-
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, ReactNode } from "react";
+import { ReactNode } from "react";
 
 const MotionSection = ({ children, delay = 0 }: { children: ReactNode; delay?: number }) => (
   <motion.div
@@ -38,9 +36,6 @@ export default function Home() {
   const { scrollYProgress } = useScroll();
   const yParallaxFast = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const yParallaxSlow = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
-  const heroVideoSrc = heroBackgroundVideo.src ?? undefined;
-  const heroVideoPoster = heroBackgroundVideo.poster ?? undefined;
 
   return (
     <main className="page-shell relative pb-24 md:pb-0">

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function TransformationSection() {
   return (
     <section className="section-shell relative overflow-hidden">
