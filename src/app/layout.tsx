@@ -7,7 +7,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://magricproductions.c
 const siteName = "Magric Productions";
 const siteDescription =
   "Podcast and video editing agency turning raw footage into high-retention shorts, long-form videos, trailers, and branded content for creators and businesses.";
-const ogImage = `${siteUrl}/og/home?v=2`;
+const ogImage = `${siteUrl}/og/home.png?v=3`;
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
