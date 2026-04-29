@@ -13,7 +13,8 @@
   --muted: rgba(230, 236, 238, 0.72);
   --muted-strong: rgba(230, 236, 238, 0.88);
   --grid-max: 1200px;
-  --section-space: clamp(4.5rem, 9vw, 8rem);
+  --section-space: clamp(4rem, 7vw, 6.5rem);
+  --section-content-gap: clamp(2.75rem, 5vw, 4.5rem);
   --radius-lg: 12px;
   --radius-md: 8px;
   --radius-sm: 4px;
@@ -119,7 +120,7 @@ h6,
 .font-display {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.035em;
 }
 
 a {
@@ -333,7 +334,7 @@ a {
 .section-stack {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2vw, 1.35rem);
 }
 
 .section-eyebrow {
@@ -358,8 +359,8 @@ a {
   font-family: var(--font-outfit), Arial, Helvetica, sans-serif;
   font-size: clamp(2.4rem, 5vw, 4.75rem);
   font-weight: 700;
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
@@ -371,8 +372,8 @@ a {
   max-width: 42rem;
   color: var(--muted);
   font-size: clamp(1rem, 1.6vw, 1.125rem);
-  line-height: 1.75;
-  letter-spacing: -0.01em;
+  line-height: 1.7;
+  letter-spacing: normal;
   text-wrap: balance;
 }
 

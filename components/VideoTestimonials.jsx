@@ -114,10 +114,10 @@ export default function VideoTestimonials() {
   const visibleTestimonials = videoTestimonials.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <section className="section-shell relative overflow-hidden py-32 bg-black">
+    <section className="section-shell relative overflow-hidden bg-black">
       <div className="section-inner max-w-[1240px]">
         {/* Header Area */}
-        <div id="testimonials" className="mb-20 px-4 flex flex-col items-center text-center scroll-mt-32">
+        <div id="testimonials" className="mb-[var(--section-content-gap)] px-4 flex flex-col items-center text-center scroll-mt-32">
           <div className="max-w-3xl mx-auto flex flex-col items-center">
             <div className="section-eyebrow mb-6 mx-auto">Success Stories</div>
             <h2 className="text-white text-[clamp(1.8rem,4vw,3.8rem)] font-bold tracking-tight leading-[1.2] font-display text-balance">
@@ -174,7 +174,7 @@ export default function VideoTestimonials() {
           </div>
 
           {/* Pagination Indicators - Bottom Center */}
-          <div className="flex items-center justify-center gap-2 mt-16">
+          <div className="flex items-center justify-center gap-2 mt-10 sm:mt-12">
             {Array.from({ length: videoTestimonials.length - itemsPerPage + 1 }).map((_, i) => (
               <div
                 key={i}

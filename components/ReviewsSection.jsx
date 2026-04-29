@@ -162,7 +162,7 @@ export default function ReviewsSection() {
       <div className="pointer-events-none absolute inset-x-0 top-[12%] mx-auto h-[22rem] max-w-[58rem] rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.22)_0%,rgba(107,14,206,0.08)_48%,transparent_78%)] blur-[120px]" />
 
       <div className="section-inner max-w-[1200px]">
-        <div id="reviews" className="section-stack section-center mb-16 scroll-mt-32">
+        <div id="reviews" className="section-stack section-center mb-[var(--section-content-gap)] scroll-mt-32">
           <div className="section-eyebrow">Reviews</div>
           <h2 className="font-display max-w-none text-[clamp(2.5rem,5.5vw,5rem)] font-semibold leading-[1.1] tracking-normal text-white">
             Hear Directly from our <span className="accent-text">Clients</span>

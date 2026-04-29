@@ -99,7 +99,7 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        <div className="mx-auto mt-24 grid max-w-[1200px] gap-10 md:grid-cols-3">
+        <div className="mx-auto mt-[var(--section-content-gap)] grid max-w-[1200px] gap-8 md:grid-cols-3 lg:gap-10">
           {steps.map((step, index) => (
             <StepCard key={step.title} index={index} {...step} />
           ))}

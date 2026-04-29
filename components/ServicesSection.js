@@ -122,7 +122,7 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="mt-16 grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+        <div className="mt-[var(--section-content-gap)] grid w-full grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
           {services.map((service, index) => (
             <ServiceCard
               key={service.title}

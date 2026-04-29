@@ -92,20 +92,20 @@ export default function LongFormSection() {
       </div>
 
       <div className="section-inner relative z-10">
-        <div id="long-form" className="section-stack section-center mb-12 text-center scroll-mt-32">
-          <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block mb-4">
+        <div id="long-form" className="section-stack section-center mb-[var(--section-content-gap)] text-center scroll-mt-32">
+          <div className="section-eyebrow px-4 py-1.5 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold uppercase tracking-widest inline-block">
             Portfolio
           </div>
           <h2 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white leading-tight">
             High-Impact Storytelling for <br />
             <span className="accent-text">Long-Form Content</span>
           </h2>
-          <p className="section-copy mt-2 text-gray-400 max-w-2xl mx-auto overflow-hidden">
+          <p className="section-copy text-gray-400 max-w-2xl mx-auto overflow-hidden">
             Engineered long-form content that blends storytelling, high-retention editing, and strategic pacing to build authority, trust, and drive real conversions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-[1100px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 lg:gap-x-12 lg:gap-y-14 max-w-[1100px] mx-auto">
           {longFormVideos.map((video, index) => (
             <motion.div
               key={index}

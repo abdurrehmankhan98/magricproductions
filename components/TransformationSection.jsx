@@ -16,7 +16,7 @@ export default function TransformationSection() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-16 flex flex-col items-center gap-10 md:max-w-[900px] md:flex-row md:items-stretch md:justify-center md:gap-6 lg:gap-12">
+        <div className="relative mx-auto mt-[var(--section-content-gap)] flex flex-col items-center gap-10 md:max-w-[900px] md:flex-row md:items-stretch md:justify-center md:gap-6 lg:gap-12">
 
           {/* Before Column */}
           <div className="flex w-full flex-col items-center group md:max-w-[340px]">

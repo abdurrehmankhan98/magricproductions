@@ -84,7 +84,7 @@ export default function FaqSection() {
 
         </div>
 
-        <div className="mx-auto mt-14 max-w-[48rem] space-y-4">
+        <div className="mx-auto mt-[var(--section-content-gap)] max-w-[48rem] space-y-4">
           {faqs.map((item, index) => (
             <FaqItem
               key={item.question}

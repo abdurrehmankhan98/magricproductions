@@ -158,7 +158,7 @@ export default function ShareVisionSection() {
       <div className="section-inner relative z-10 w-full max-w-none sm:max-w-[1200px] px-0 sm:px-6">
 
         {/* Section Heading — matches FAQ style */}
-        <div id="contact" className="section-stack section-center mb-16 scroll-mt-32">
+        <div id="contact" className="section-stack section-center mb-[var(--section-content-gap)] scroll-mt-32">
           <div className="section-eyebrow">Contact Us</div>
           <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
             Tell us what you want to <span className="accent-text">build.</span>

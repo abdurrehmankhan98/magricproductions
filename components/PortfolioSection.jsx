@@ -97,7 +97,7 @@ export default function PortfolioSection() {
           </p>
         </div>
 
-        <div className="relative mt-16 flex items-center justify-center">
+        <div className="relative mt-[var(--section-content-gap)] flex items-center justify-center">
           <div className="absolute left-[-20%] hidden w-[45%] scale-90 opacity-20 blur-[4px] lg:block grayscale">
             <div className="surface-card aspect-[16/9] w-full rounded-xl border border-white/5 bg-zinc-900/50" />
           </div>
