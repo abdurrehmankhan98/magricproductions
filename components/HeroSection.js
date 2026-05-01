@@ -35,7 +35,7 @@ const HeroSection = () => {
         <div className="relative z-20 flex flex-col items-center text-center">
           <h1
             ref={titleRef}
-            className="hero-heading-shadow relative z-20 hero-title-3d font-inter mt-8  font-bold leading-[0.86] tracking-[-0.08em] text-white opacity-0 sm:text-[clamp(4.6rem,9vw,6.2rem)]"
+            className="hero-heading-shadow relative z-20 hero-title-3d font-inter mt-8 font-bold text-[clamp(2.6rem,8vw,3.2rem)] leading-[1.05] tracking-[-0.04em] text-white opacity-0 sm:text-[clamp(4.6rem,9vw,6.2rem)] sm:leading-[0.86] sm:tracking-[-0.08em]"
           >
             Edits That Get You
             <br />
@@ -49,7 +49,7 @@ const HeroSection = () => {
 
           <p
             ref={subRef}
-            className="relative z-20 mt-7 max-w-[46rem] text-[1rem] leading-8 text-white/72 opacity-0 sm:text-[1.1rem]"
+            className="relative z-20 mt-7 max-w-[46rem] text-[1rem] leading-[1.65] text-white/72 opacity-0 sm:text-[1.1rem] sm:leading-8"
           >
             Podcast editing, short-form clips, and branded videos that turn raw footage into attention-grabbing content.
           </p>
