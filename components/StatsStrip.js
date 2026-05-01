@@ -92,7 +92,7 @@ export default function StatsStrip() {
   }, [isInView]);
 
   return (
-    <section className="section-shell pt-4">
+    <section className="section-shell">
       <div className="section-inner">
         <div 
           ref={containerRef}

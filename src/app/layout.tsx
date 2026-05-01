@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import BackgroundGlow from "../../components/BackgroundGlow";
 
@@ -37,8 +37,8 @@ const structuredData = {
   ],
 };
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
@@ -119,7 +119,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${poppins.variable} antialiased selection:bg-purple-500/30`}
+        className={`${inter.variable} antialiased selection:bg-purple-500/30`}
       >
         <script
           type="application/ld+json"

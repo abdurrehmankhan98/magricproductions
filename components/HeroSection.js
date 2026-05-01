@@ -35,13 +35,13 @@ const HeroSection = () => {
         <div className="relative z-20 flex flex-col items-center text-center">
           <h1
             ref={titleRef}
-            className="hero-heading-shadow relative z-20 hero-title-3d font-display mt-8 text-[clamp(2.85rem,12vw,3.85rem)] font-semibold leading-[1.08] text-white opacity-0 sm:text-[clamp(4.5rem,9vw,6rem)]"
+            className="hero-heading-shadow relative z-20 hero-title-3d font-inter mt-8  font-bold leading-[0.86] tracking-[-0.08em] text-white opacity-0 sm:text-[clamp(4.6rem,9vw,6.2rem)]"
           >
             Edits That Get You
             <br />
             <span
               ref={accentRef}
-              className="hero-title-3d-accent inline-block bg-[linear-gradient(180deg,#FFFFFF_0%,#F8ECFF_46%,#B372CF_74%,#09040D_128%)] bg-clip-text text-transparent opacity-0"
+              className="hero-title-3d-accent mt-2 inline-block text-transparent"
             >
               Noticed
             </span>

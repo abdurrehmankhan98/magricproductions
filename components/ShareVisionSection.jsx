@@ -151,7 +151,7 @@ export default function ShareVisionSection() {
   };
 
   return (
-    <section className="section-shell relative overflow-hidden !px-0 sm:!px-[1.25rem]">
+    <section className="section-shell relative overflow-hidden">
       {/* Background Decorative Glow */}
       <div className="pointer-events-none absolute inset-x-0 top-[20%] mx-auto h-[600px] max-w-[1200px] rounded-full bg-[radial-gradient(circle,rgba(147,51,234,0.1)_0%,rgba(124,58,237,0.06)_50%,transparent_100%)] blur-[140px]" />
 
