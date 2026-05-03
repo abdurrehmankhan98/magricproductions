@@ -49,7 +49,7 @@ const HeroSection = () => {
 
           <p
             ref={subRef}
-            className="relative z-20 mt-7 max-w-[46rem] text-[1rem] leading-[1.65] text-white/72 opacity-0 sm:text-[1.1rem] sm:leading-8"
+            className="relative z-20 mt-7 max-w-[46rem] text-[1rem] leading-[1.65] text-white/60 opacity-0 sm:text-[1.1rem] sm:leading-8"
           >
             Podcast editing, short-form clips, and branded videos that turn raw footage into attention-grabbing content.
           </p>

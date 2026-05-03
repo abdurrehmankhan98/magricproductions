@@ -9,14 +9,14 @@ const videoTestimonials = [
     id: 1,
     name: "Rayan Ghazanfar",
     role: "Content Creator",
-    quote: "High-retention editing and strategic pacing that transformed my channel into a growth machine.",
+    // quote: "High-retention editing and strategic pacing that transformed my channel into a growth machine.",
     videoId: "OrKEviUQdS4",
   },
   {
     id: 2,
     name: "Janerbik",
     role: "Youtuber",
-    quote: "Absolutely impressed with the quality and creativity. They understood our vision perfectly and turned raw footage into a high-converting masterpiece. Will definitely work again",
+    // quote: "Absolutely impressed with the quality and creativity. They understood our vision perfectly and turned raw footage into a high-converting masterpiece. Will definitely work again",
     videoId: "gUj0sWZvq6Q",
   },
   {
@@ -110,16 +110,16 @@ function TestimonialCard({ name, role, quote, videoId, isActive }) {
           isActive ? "opacity-100" : "opacity-0"
         }`}
       >
-        <p className="text-[0.84rem] font-medium leading-relaxed text-white/90 text-balance">
+        {/* <p className="text-[0.84rem] font-medium leading-relaxed text-white/90 text-balance">
           &ldquo;{quote}&rdquo;
-        </p>
+        </p> */}
         <div className="pt-3 border-t border-white/5 w-full flex flex-col items-center">
-          <h4
+          {/* <h4
             className="text-base font-bold text-white leading-none mb-1"
             style={{ letterSpacing: "0.025em" }}
           >
             {name}
-          </h4>
+          </h4> */}
           <p className="text-[10px] text-white/40 font-medium uppercase tracking-wider">
             {role}
           </p>
