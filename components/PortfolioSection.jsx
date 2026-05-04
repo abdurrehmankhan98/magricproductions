@@ -84,7 +84,7 @@ function VideoPlayer() {
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="section-shell scroll-mt-28">
+    <section id="production" className="section-shell scroll-mt-28">
       <div className="section-inner">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Production</div>
