@@ -104,7 +104,11 @@ export default function PortfolioSection() {
 
           <div className="relative z-10 w-[calc(100%+2rem)] -mx-4 md:mx-0 md:w-full md:max-w-[920px] group transition-transform duration-700 hover:scale-[1.02]">
 
-            <article className="relative z-10 w-full rounded-none md:rounded-xl overflow-hidden border-y md:border border-[#9333ea]/30 shadow-[0_0_25px_rgba(147,51,234,0.45)] transition-all duration-500 isolation-auto" style={{ transform: 'translateZ(0)' }}>
+            {/* Glow layers behind the video */}
+            <div className="pointer-events-none absolute -inset-4 -z-10 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.35)_0%,rgba(107,14,206,0.18)_40%,transparent_70%)] blur-2xl" />
+            <div className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.15)_0%,transparent_65%)] blur-3xl transition-opacity duration-700" />
+
+            <article className="relative z-10 w-full rounded-none md:rounded-xl overflow-hidden border-y md:border border-[#9333ea]/35 shadow-[0_0_40px_rgba(147,51,234,0.45),0_0_80px_rgba(107,14,206,0.22)] transition-all duration-500 isolation-auto" style={{ transform: 'translateZ(0)' }}>
               <VideoPlayer />
             </article>
           </div>

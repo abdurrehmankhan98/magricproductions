@@ -33,7 +33,7 @@ const CARD_W = 620;
 const SLOT_PAD = 20;       // horizontal padding each side of the slot
 const SLOT_W = CARD_W + SLOT_PAD * 2; // 660px per slot
 
-function TestimonialCard({ name, role, quote, videoId, isActive }) {
+function TestimonialCard({ name, role, videoId, isActive }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
@@ -203,7 +203,7 @@ export default function VideoTestimonials() {
           {/* Left nav — overlaps left partial card */}
           <button
             onClick={prev}
-            className="absolute left-3 top-[35%] -translate-y-1/2 z-30 h-12 w-12 flex items-center justify-center rounded-full border border-purple-400/30 bg-purple-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-md transition-all duration-300 hover:bg-purple-400 hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
+            className="absolute left-3 top-[41%] -translate-y-1/2 z-30 h-12 w-12 flex items-center justify-center rounded-full border border-purple-400/30 bg-purple-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-md transition-all duration-300 hover:bg-purple-400 hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
           >
             <ChevronLeft size={24} />
           </button>
@@ -211,7 +211,7 @@ export default function VideoTestimonials() {
           {/* Right nav — overlaps right partial card */}
           <button
             onClick={next}
-            className="absolute right-3 top-[35%] -translate-y-1/2 z-30 h-12 w-12 flex items-center justify-center rounded-full border border-purple-400/30 bg-purple-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-md transition-all duration-300 hover:bg-purple-400 hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
+            className="absolute right-3 top-[41%] -translate-y-1/2 z-30 h-12 w-12 flex items-center justify-center rounded-full border border-purple-400/30 bg-purple-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-md transition-all duration-300 hover:bg-purple-400 hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
           >
             <ChevronRight size={24} />
           </button>
