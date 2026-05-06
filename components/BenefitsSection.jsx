@@ -4,19 +4,19 @@ const items = [
   {
     title: "More Than Just Content",
     description:
-      "Turn your audience into creators—collect, curate, and repurpose authentic content that builds trust and drives engagement.",
+      "Turn fans into creators curate authentic content that builds trust and drives engagement.",
     icon: <Layers className="h-8 w-8 text-white" />,
   },
   {
     title: "Content That Builds Communities",
     description:
-      "We turn user-generated content into a growth engine that strengthens your brand and connects with your audience.",
+      "We turn user generated content into a growth engine that strengthens your brand.",
     icon: <Rocket className="h-8 w-8 text-white" />,
   },
   {
     title: "Stress-Free Production",
     description:
-      "Editing takes hours we handle the entire process with precision and creativity, so you can stay focused on creating and growing your content.",
+      "Editing takes hours. we handle it with precision and creativity, so you stay focused on growing.",
     icon: <Sparkles className="h-8 w-8 text-white" />,
   },
 ];
