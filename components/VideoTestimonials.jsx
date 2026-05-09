@@ -2,79 +2,63 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Play, ChevronRight, ChevronLeft } from "lucide-react";
 
-const videoTestimonials = [
+const items = [
   {
     id: 1,
-    name: "Rayan Ghazanfar",
-    role: "Content Creator",
-    // quote: "High-retention editing and strategic pacing that transformed my channel into a growth machine.",
     videoId: "OrKEviUQdS4",
+    thumbnail: "https://img.youtube.com/vi/OrKEviUQdS4/maxresdefault.jpg",
   },
   {
     id: 2,
-    name: "Janerbik",
-    role: "Youtuber",
-    // quote: "Absolutely impressed with the quality and creativity. They understood our vision perfectly and turned raw footage into a high-converting masterpiece. Will definitely work again",
     videoId: "gUj0sWZvq6Q",
+    thumbnail: "https://img.youtube.com/vi/gUj0sWZvq6Q/maxresdefault.jpg",
   },
   {
     id: 3,
-    name: "Creative Partner",
-    role: "Brand Client",
-    quote: "The final edit felt sharp, polished, and ready for the audience. Every cut, transition, and visual choice made the story easier to watch and remember.",
     videoId: "X7-m-Ai-ChQ",
+    thumbnail: "https://img.youtube.com/vi/X7-m-Ai-ChQ/maxresdefault.jpg",
   },
 ];
 
-// Card geometry constants (px)
-const CARD_W = 620;
-const SLOT_PAD = 20;       // horizontal padding each side of the slot
-const SLOT_W = CARD_W + SLOT_PAD * 2; // 660px per slot
+// 10 sets of items for a super-long buffer to handle fast clicking without hitting boundaries
+const videoTestimonials = Array(10).fill(items).flat();
+const TOTAL_REAL = items.length;
+const START_INDEX = TOTAL_REAL * 5; // Start in the absolute middle
 
-function TestimonialCard({ name, role, videoId, isActive }) {
+const CARD_W = 860;
+const MARGIN = 40;
+const SLOT_W = CARD_W + MARGIN;
+
+function TestimonialCard({ videoId, thumbnail, isActive }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-  const uniqueId = `testimonial-${videoId}`;
+  const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&controls=1`;
 
-  // Pause when card leaves center
   useEffect(() => {
     if (!isActive) setIsPlaying(false);
   }, [isActive]);
 
-  useEffect(() => {
-    const handleOtherPlay = (e) => {
-      if (e.detail !== uniqueId) setIsPlaying(false);
-    };
-    window.addEventListener("magric:play-video", handleOtherPlay);
-    return () => window.removeEventListener("magric:play-video", handleOtherPlay);
-  }, [uniqueId]);
-
-  useEffect(() => {
-    if (isPlaying) {
-      window.dispatchEvent(new CustomEvent("magric:play-video", { detail: uniqueId }));
-    }
-  }, [isPlaying, uniqueId]);
-
   return (
     <div
-      className={`rounded-2xl overflow-hidden flex flex-col transition-opacity duration-500 ${
-        isActive
-          ? "border-2 border-purple-500 opacity-100"
-          : "border border-white/10 opacity-50 pointer-events-none"
-      }`}
+      className="relative"
       style={{
         width: `${CARD_W}px`,
-        background:
-          "linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 50%), rgba(18,18,24,0.5)",
+        aspectRatio: "16 / 9.5",
       }}
     >
-      {/* Portrait 9:16 video */}
+      {/* Refined Light Spread (Reduced to 1/3) */}
+      {isActive && (
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -inset-3 -z-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.4)_0%,rgba(107,14,206,0.15)_40%,transparent_75%)] blur-lg opacity-100" />
+          <div className="absolute -inset-5 -z-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.2)_0%,transparent_70%)] blur-xl opacity-100" />
+        </div>
+      )}
+
       <div
-        className="relative w-full bg-black group aspect-[21/9]"
-        style={{ cursor: isActive ? "pointer" : "default" }}
+        className={`relative z-10 w-full h-full rounded-[24px] overflow-hidden bg-black group cursor-pointer transition-all duration-500 ${isActive
+          ? "border border-[#9333ea]/35 shadow-[0_0_15px_rgba(147,51,234,0.4),0_0_35px_rgba(107,14,206,0.2)]"
+          : "border-white/5 opacity-40 blur-[2px]"
+          }`}
         onClick={() => isActive && !isPlaying && setIsPlaying(true)}
       >
         {isPlaying ? (
@@ -82,155 +66,151 @@ function TestimonialCard({ name, role, videoId, isActive }) {
             width="100%"
             height="100%"
             src={youtubeUrl}
-            title={name}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="absolute inset-0"
+            className="absolute inset-0 z-10"
           />
         ) : (
           <>
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]"
-              style={{ backgroundImage: `url(${thumbnailUrl})` }}
+            <img
+              src={thumbnail}
+              alt="Testimonial"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
             />
-            {isActive && (
-              <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-purple-600 shadow-[0_0_30px_rgba(168,85,247,0.6)] transition-transform duration-300 group-hover:scale-110">
-                  <Play fill="white" className="ml-1 w-7 h-7" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10" />
+            <div className="absolute inset-0 flex items-center justify-center z-30">
+              {isActive && (
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 78 78" fill="none">
+                    <circle cx="39" cy="39" r="39" fill="#a855f7" fillOpacity="0.9"></circle>
+                    <path d="M57.5 36.4019C59.5 37.5566 59.5 40.4434 57.5 41.5981L32 56.3205C30 57.4752 27.5 56.0318 27.5 53.7224L27.5 24.2776C27.5 21.9682 30 20.5248 32 21.6795L57.5 36.4019Z" fill="white"></path>
+                  </svg>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </>
         )}
-      </div>
-
-      {/* Content below video — always in DOM to avoid height jumps, opacity fades in/out */}
-      <div
-        className={`flex flex-col items-center text-center px-5 py-4 gap-3 transition-opacity duration-400 ${
-          isActive ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        {/* <p className="text-[0.84rem] font-medium leading-relaxed text-white/90 text-balance">
-          &ldquo;{quote}&rdquo;
-        </p> */}
-        <div className="pt-3 border-t border-white/5 w-full flex flex-col items-center">
-          {/* <h4
-            className="text-base font-bold text-white leading-none mb-1"
-            style={{ letterSpacing: "0.025em" }}
-          >
-            {name}
-          </h4> */}
-          <p className="text-[10px] text-white/40 font-medium uppercase tracking-wider">
-            {role}
-          </p>
-        </div>
       </div>
     </div>
   );
 }
 
 export default function VideoTestimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const viewportRef = useRef(null);
-  const [viewportW, setViewportW] = useState(1040);
+  const [activeIndex, setActiveIndex] = useState(START_INDEX);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const containerRef = useRef(null);
+  const [containerW, setContainerW] = useState(0);
 
-  // Keep track x calculation responsive to container width
   useEffect(() => {
-    const el = viewportRef.current;
-    if (!el) return;
-    setViewportW(el.offsetWidth);
-    const ro = new ResizeObserver(() => setViewportW(el.offsetWidth));
-    ro.observe(el);
-    return () => ro.disconnect();
+    const update = () => {
+      if (containerRef.current) setContainerW(containerRef.current.offsetWidth);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
-  const next = () => {
-    setActiveIndex((i) => (i + 1) % videoTestimonials.length);
-  };
-  const prev = () => {
-    setActiveIndex((i) => (i - 1 + videoTestimonials.length) % videoTestimonials.length);
+  const handleNext = () => {
+    setIsTransitioning(true);
+    setActiveIndex((prev) => prev + 1);
   };
 
-  const previousIndex = (activeIndex - 1 + videoTestimonials.length) % videoTestimonials.length;
-  const nextIndex = (activeIndex + 1) % videoTestimonials.length;
-  const visibleTestimonials = [
-    videoTestimonials[previousIndex],
-    videoTestimonials[activeIndex],
-    videoTestimonials[nextIndex],
-  ];
+  const handlePrev = () => {
+    setIsTransitioning(true);
+    setActiveIndex((prev) => prev - 1);
+  };
 
-  // Center the active card inside the viewport
-  const trackX = viewportW / 2 - (SLOT_W + SLOT_W / 2);
+  const handleTransitionEnd = () => {
+    // Only jump back to middle if we've moved far away from it
+    // This makes the jump rare and completely invisible
+    if (activeIndex >= TOTAL_REAL * 8 || activeIndex <= TOTAL_REAL * 2) {
+      setIsTransitioning(false);
+      const offset = activeIndex % TOTAL_REAL;
+      setActiveIndex(TOTAL_REAL * 5 + offset);
+    }
+  };
+
+  const trackX = containerW / 2 - (activeIndex * SLOT_W + CARD_W / 2);
 
   return (
-    <section className="section-shell relative overflow-hidden bg-black">
-      <div className="section-inner max-w-[1240px]">
+    <section className="relative overflow-hidden bg-black py-28">
+      <div className="max-w-[1600px] mx-auto px-4">
 
-        {/* Header */}
-        <div
-          id="testimonials"
-          className="mb-[var(--section-content-gap)] flex flex-col items-center text-center scroll-mt-32"
-        >
-          <div className="max-w-3xl mx-auto flex flex-col items-center gap-[clamp(1rem,2vw,1.35rem)]">
-            <div className="section-eyebrow mx-auto">Success Stories</div>
-            <h2 className="text-white text-[clamp(1.8rem,4vw,3.8rem)] font-bold tracking-tight leading-[1.2] font-display text-balance">
-              Trusted by Real Clients,{" "}
-              <br className="hidden sm:block" />
-              <span className="accent-text">Backed by Real Results.</span>
-            </h2>
+        <div id="testimonials" className="mb-20 flex flex-col items-center text-center">
+          <div className="px-8 py-3 border border-purple-500/30 rounded-full bg-purple-900/10 text-white text-sm font-bold uppercase tracking-wider mb-10">
+            Success Stories
+          </div>
+          <h2 className="text-white text-[clamp(2.5rem,6vw,5.5rem)] font-black tracking-tighter leading-[1] mb-6">
+            Trusted by Real Clients, <br />
+            <span className="text-purple-500">Backed by Real Results.</span>
+          </h2>
+        </div>
+
+        <div className="relative w-full py-24" ref={containerRef}>
+          <div className="overflow-hidden py-10 -my-10">
+            <motion.div
+              className="flex items-center"
+              initial={false}
+              animate={{ x: trackX }}
+              onAnimationComplete={handleTransitionEnd}
+              transition={{
+                duration: isTransitioning ? 0.8 : 0,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+            >
+              {videoTestimonials.map((t, i) => (
+                <div key={i} style={{ marginRight: `${MARGIN}px`, flexShrink: 0 }}>
+                  <TestimonialCard {...t} isActive={activeIndex === i} />
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="relative h-full w-full max-w-[1300px] mx-auto">
+              <button
+                onClick={handlePrev}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-40 pointer-events-auto transition-all duration-300 active:scale-90"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 60 60" fill="none">
+                  <circle cx="30" cy="30" r="30" transform="matrix(-1 0 0 1 60 0)" fill="#a855f7"></circle>
+                  <path d="M37.3971 19.9688C38.2696 19.2316 38.3485 17.9146 37.5702 17.0785L36.9686 16.4322C36.2276 15.6362 34.9864 15.5782 34.1744 16.3015L20.6563 28.3438C19.7706 29.1328 19.7623 30.5149 20.6385 31.3145L34.1018 43.6005C34.9393 44.3648 36.2441 44.2807 36.9766 43.4151L37.7071 42.5519C38.421 41.7083 38.3154 40.4456 37.4712 39.7323L27.5475 31.3469C26.602 30.548 26.602 29.0906 27.5475 28.2916L37.3971 19.9688Z" fill="#0A0A0A"></path>
+                </svg>
+              </button>
+
+              <button
+                onClick={handleNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-40 pointer-events-auto transition-all duration-300 active:scale-90"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 60 60" fill="none">
+                  <circle cx="30" cy="30" r="30" fill="#a855f7"></circle>
+                  <path d="M22.6029 19.9688C21.7304 19.2316 21.6515 17.9146 22.4298 17.0785L23.0314 16.4322C23.7724 15.6362 25.0136 15.5782 25.8256 16.3015L39.3437 28.3438C40.2294 29.1328 40.2377 30.5149 39.3615 31.3145L25.8982 43.6005C25.0607 44.3648 23.7559 44.2807 23.0234 43.4151L22.2929 42.5519C21.579 41.7083 21.6846 40.4456 22.5288 39.7323L32.4525 31.3469C33.398 30.548 33.398 29.0906 32.4525 28.2916L22.6029 19.9688Z" fill="#0A0A0A"></path>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Carousel viewport — clips side cards */}
-        <div
-          ref={viewportRef}
-          className="relative mx-auto overflow-hidden"
-          style={{ maxWidth: "1040px" }}
-        >
-          {/* Sliding track */}
-          <motion.div
-            className="flex"
-            animate={{ x: trackX }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {visibleTestimonials.map((testimonial, i) => (
-              <div key={`${testimonial.id}-${i}`} style={{ padding: `0 ${SLOT_PAD}px`, flexShrink: 0 }}>
-                <TestimonialCard {...testimonial} isActive={i === 1} />
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Left nav — overlaps left partial card */}
-          <button
-            onClick={prev}
-            className="absolute left-3 top-[41%] -translate-y-1/2 z-30 h-12 w-12 flex items-center justify-center rounded-full border border-purple-400/30 bg-purple-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-md transition-all duration-300 hover:bg-purple-400 hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          {/* Right nav — overlaps right partial card */}
-          <button
-            onClick={next}
-            className="absolute right-3 top-[41%] -translate-y-1/2 z-30 h-12 w-12 flex items-center justify-center rounded-full border border-purple-400/30 bg-purple-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-md transition-all duration-300 hover:bg-purple-400 hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </div>
-
-        {/* Pagination dots */}
-        <div className="flex items-center justify-center gap-2 mt-10 sm:mt-12">
-          {videoTestimonials.map((_, i) => (
-            <div
-              key={i}
-              className={`h-1.5 transition-all duration-500 rounded-full ${
-                activeIndex === i
-                  ? "w-10 bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.5)]"
-                  : "w-1.5 bg-white/20"
-              }`}
-            />
-          ))}
+        <div className="flex items-center justify-center gap-4 mt-16">
+          {items.map((_, i) => {
+            const isCurrent = (activeIndex % TOTAL_REAL) === i;
+            return (
+              <button
+                key={i}
+                onClick={() => {
+                  setIsTransitioning(true);
+                  setActiveIndex(TOTAL_REAL * 5 + i);
+                }}
+                className={`h-2 transition-all duration-700 rounded-full ${isCurrent ? "w-16 bg-purple-500" : "w-3 bg-white/10 hover:bg-white/20"
+                  }`}
+              />
+            );
+          })}
         </div>
       </div>
+
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-purple-900/5 blur-[180px] rounded-full pointer-events-none z-0" />
     </section>
   );
 }
