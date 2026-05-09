@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const items = [
   {
@@ -35,7 +36,10 @@ function TestimonialCard({ videoId, thumbnail, isActive }) {
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&controls=1`;
 
   useEffect(() => {
-    if (!isActive) setIsPlaying(false);
+    if (!isActive) {
+      const timeoutId = window.setTimeout(() => setIsPlaying(false), 0);
+      return () => window.clearTimeout(timeoutId);
+    }
   }, [isActive]);
 
   return (
@@ -46,17 +50,15 @@ function TestimonialCard({ videoId, thumbnail, isActive }) {
         aspectRatio: "16 / 9.5",
       }}
     >
-      {/* Refined Light Spread (Reduced to 1/3) */}
       {isActive && (
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -inset-3 -z-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.4)_0%,rgba(107,14,206,0.15)_40%,transparent_75%)] blur-lg opacity-100" />
-          <div className="absolute -inset-5 -z-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.2)_0%,transparent_70%)] blur-xl opacity-100" />
+          <div className="absolute -inset-3 -z-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(147,51,234,0.28)_0%,rgba(107,14,206,0.1)_40%,transparent_75%)] blur-lg opacity-100" />
         </div>
       )}
 
       <div
         className={`relative z-10 w-full h-full rounded-[24px] overflow-hidden bg-black group cursor-pointer transition-all duration-500 ${isActive
-          ? "border border-[#9333ea]/35 shadow-[0_0_15px_rgba(147,51,234,0.4),0_0_35px_rgba(107,14,206,0.2)]"
+          ? "border border-[#9333ea]/35 shadow-[0_0_15px_rgba(147,51,234,0.28),0_0_24px_rgba(107,14,206,0.14)]"
           : "border-white/5 opacity-40 blur-[2px]"
           }`}
         onClick={() => isActive && !isPlaying && setIsPlaying(true)}
@@ -72,10 +74,12 @@ function TestimonialCard({ videoId, thumbnail, isActive }) {
           />
         ) : (
           <>
-            <img
+            <Image
               src={thumbnail}
               alt="Testimonial"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 860px"
+              className="absolute inset-0 h-full w-full object-cover"
               loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10" />
@@ -138,10 +142,10 @@ export default function VideoTestimonials() {
       <div className="max-w-[1600px] mx-auto px-4">
 
         <div id="testimonials" className="mb-12 flex flex-col items-center text-center">
-          <div className="px-8 py-3 border border-purple-500/30 rounded-full bg-purple-900/10 text-white text-sm font-bold uppercase tracking-wider mb-10">
+          <div className="section-eyebrow mb-10">
             Success Stories
           </div>
-          <h2 className="text-white text-[clamp(2.5rem,6vw,5.5rem)] font-black tracking-tighter leading-[1] mb-6">
+          <h2 className="section-title section-title--wide mb-6 max-w-none text-white">
             Trusted by Real Clients, <br />
             <span className="text-purple-500">Backed by Real Results.</span>
           </h2>
@@ -208,7 +212,7 @@ export default function VideoTestimonials() {
         </div>
       </div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-purple-900/5 blur-[180px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-purple-900/4 blur-[180px] rounded-full pointer-events-none z-0" />
     </section>
   );
 }

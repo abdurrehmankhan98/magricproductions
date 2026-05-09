@@ -35,23 +35,36 @@ const HeroSection = () => {
         <div className="relative z-20 flex flex-col items-center text-center">
           <h1
             ref={titleRef}
-            className="hero-heading-shadow relative z-20 hero-title-3d font-inter mt-8 font-bold text-[clamp(2.6rem,8vw,3.2rem)] leading-[1.05] tracking-[-0.04em] text-white opacity-0 sm:text-[clamp(4.6rem,9vw,6.2rem)] sm:leading-[0.86] sm:tracking-[-0.08em]"
+            className="hero-heading-shadow relative z-20 hero-title-3d font-inter mt-8 font-semibold text-[clamp(2.4rem,8vw,3.4rem)] leading-[1.02] tracking-[-0.045em] text-white opacity-0 sm:text-[clamp(4.2rem,8.8vw,5.8rem)] sm:leading-[0.9] sm:tracking-[-0.065em]"
           >
-            Edits That Get You
+            Premium Podcast & Video
             <br />
             <span
               ref={accentRef}
               className="hero-title-3d-accent mt-2 inline-block text-transparent"
             >
-              Noticed
+              Editing That Converts
             </span>
           </h1>
 
           <p
             ref={subRef}
-            className="relative z-20 mt-7 max-w-[46rem] text-[1rem] leading-[1.65] text-white/60 opacity-0 sm:text-[1.1rem] sm:leading-8"
+            className="relative z-20 mt-7 max-w-[44rem] text-[1rem] leading-[1.75] text-white/72 opacity-0 sm:text-[1.08rem] sm:leading-8"
           >
-            Podcast editing, short-form clips, and branded videos that turn raw footage into attention-grabbing content.
+            We turn raw footage into platform-ready episodes, shorts, and brand videos that build trust, increase retention, and drive qualified leads.
+          </p>
+
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <a href="#contact" className="button-primary px-6 sm:px-7">
+              Book a call
+            </a>
+            <a href="#portfolio" className="button-secondary px-6 sm:px-7">
+              View work
+            </a>
+          </div>
+
+          <p className="mt-4 text-[0.78rem] font-medium uppercase tracking-[0.14em] text-white/45 sm:text-[0.8rem]">
+            Trusted by creators, coaches, and growth-focused brands
           </p>
         </div>
       </div>

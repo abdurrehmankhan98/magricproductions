@@ -32,21 +32,18 @@ const faqs = [
 
 function FaqItem({ item, isOpen, onToggle }) {
   return (
-    <div className="surface-card service-card-spotlight group overflow-hidden rounded-[22px] transition-all duration-300">
-      {/* Dynamic Glass Spotlight */}
-      <div className="service-card-spotlight-glow" />
-
+    <div className="surface-card group overflow-hidden rounded-[22px] transition-all duration-300">
       <button
         type="button"
         onClick={onToggle}
         className="relative z-10 flex min-h-[84px] w-full items-center justify-between px-6 text-left sm:px-8"
         aria-expanded={isOpen}
       >
-        <span className="font-display text-[1.2rem] font-semibold leading-[1.2] tracking-normal text-white sm:text-[1.3rem] group-hover:text-purple-300 transition-colors flex-1 text-left pr-6">
+        <span className="font-display text-[1.12rem] font-semibold leading-[1.2] tracking-[-0.01em] text-white sm:text-[1.2rem] transition-colors flex-1 text-left pr-6">
           {item.question}
         </span>
         <div
-          className={`ml-6 flex flex-none items-center justify-center text-[32px] font-bold leading-none text-purple-500 transition-all duration-500 ${isOpen ? "rotate-45 text-purple-400" : "group-hover:scale-125 group-hover:text-purple-400"
+          className={`ml-6 flex flex-none items-center justify-center text-[28px] font-bold leading-none text-purple-500 transition-all duration-300 ${isOpen ? "rotate-45 text-purple-400" : "group-hover:text-purple-400"
             }`}
         >
           +
@@ -57,13 +54,13 @@ function FaqItem({ item, isOpen, onToggle }) {
         className={`relative z-10 grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
           }`}
       >
-        <div className="overflow-hidden">
-          <div className="px-6 pb-6 pt-2 sm:px-8">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-4" />
-            <p className="text-[1rem] leading-7 text-white/70 text-left">
-              {item.answer}
-            </p>
-          </div>
+          <div className="overflow-hidden">
+            <div className="px-6 pb-6 pt-2 sm:px-8">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-4" />
+              <p className="text-[0.98rem] leading-7 text-white/74 text-left">
+                {item.answer}
+              </p>
+            </div>
         </div>
       </div>
     </div>
@@ -78,8 +75,8 @@ export default function FaqSection() {
       <div className="section-inner max-w-[960px]">
         <div id="faqs" className="section-stack section-center scroll-mt-32">
           <div className="section-eyebrow">FAQs</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1] tracking-normal text-white">
-            Got <span className="accent-text">Question</span>? We’ve Answers!
+          <h2 className="section-title max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-white">
+            Got <span className="accent-text">questions</span>? We have answers.
           </h2>
 
         </div>

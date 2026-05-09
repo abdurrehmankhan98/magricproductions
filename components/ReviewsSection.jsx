@@ -77,7 +77,7 @@ import VerifiedBadge from "./VerifiedBadge";
 
 function ReviewCard({ name, role, quote, avatarSrc }) {
   return (
-    <article className="group relative flex flex-col gap-5 rounded-lg border border-white/10 bg-[#121212] p-7 shadow-lg">
+    <article className="group relative flex flex-col gap-5 rounded-lg border border-white/10 bg-[#121212] p-7">
       <div className="flex items-center gap-4">
         <div className="relative h-14 w-14 overflow-hidden rounded-full border border-white/10 shadow-inner">
           <Image src={avatarSrc} alt={name} fill className="object-cover" />
@@ -87,10 +87,10 @@ function ReviewCard({ name, role, quote, avatarSrc }) {
             <span className="text-[1.1rem] font-semibold text-white leading-tight tracking-normal">{name}</span>
             <VerifiedBadge size={20} />
           </div>
-          <span className="text-[0.85rem] text-white/50 font-normal leading-tight mt-1 tracking-normal">{role}</span>
+          <span className="text-[0.82rem] text-white/58 font-normal leading-tight mt-1 tracking-normal">{role}</span>
         </div>
       </div>
-      <p className="text-[1.05rem] leading-relaxed text-white/80 font-normal">
+      <p className="text-[1rem] leading-relaxed text-white/78 font-normal">
         &ldquo;{quote}&rdquo;
       </p>
     </article>
@@ -159,12 +159,12 @@ export default function ReviewsSection() {
 
   return (
     <section className="section-shell relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-x-0 top-[12%] mx-auto h-[22rem] max-w-[58rem] rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.22)_0%,rgba(107,14,206,0.08)_48%,transparent_78%)] blur-[120px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-[12%] mx-auto h-[20rem] max-w-[58rem] rounded-full bg-[radial-gradient(circle,rgba(107,14,206,0.14)_0%,rgba(107,14,206,0.05)_48%,transparent_78%)] blur-[120px]" />
 
       <div className="section-inner max-w-[1200px]">
         <div id="reviews" className="section-stack section-center mb-[var(--section-content-gap)] scroll-mt-32">
           <div className="section-eyebrow">Reviews</div>
-          <h2 className="font-display max-w-none text-[clamp(2.5rem,5.5vw,5rem)] font-semibold leading-[1.1] tracking-normal text-white">
+          <h2 className="section-title section-title--wide max-w-none text-white">
             Hear Directly from our <span className="accent-text">Clients</span>
           </h2>
           <p className="section-copy max-w-[34rem]">

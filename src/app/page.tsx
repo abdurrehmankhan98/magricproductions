@@ -16,16 +16,17 @@ import VideoTestimonials from "../../components/VideoTestimonials";
 import ShareVisionSection from "../../components/ShareVisionSection";
 import FooterSection from "../../components/FooterSection";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
+import LetsTalkBanner from "../../components/LetsTalkBanner";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ReactNode } from "react";
 
 const MotionSection = ({ children, delay = 0 }: { children: ReactNode; delay?: number }) => (
   <motion.div
-    initial={{ opacity: 0, y: 30 }}
+    initial={{ opacity: 0, y: 18 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+    transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
   >
     {children}
   </motion.div>
@@ -91,15 +92,15 @@ export default function Home() {
       </section>
 
       <MotionSection>
-        <PortfolioSection />
+        <StatsStrip />
       </MotionSection>
 
       <MotionSection delay={0.1}>
-        <LongFormSection />
+        <PortfolioSection />
       </MotionSection>
 
       <MotionSection>
-        <StatsStrip />
+        <LongFormSection />
       </MotionSection>
 
       <MotionSection>
@@ -111,15 +112,11 @@ export default function Home() {
       </MotionSection>
 
       <MotionSection>
-        <ReviewsSection />
+        <ProcessSection />
       </MotionSection>
 
       <MotionSection delay={0.1}>
-        <TransformationSection />
-      </MotionSection>
-
-      <MotionSection>
-        <ProcessSection />
+        <ReviewsSection />
       </MotionSection>
 
       <MotionSection>
@@ -127,7 +124,15 @@ export default function Home() {
       </MotionSection>
 
       <MotionSection>
+        <TransformationSection />
+      </MotionSection>
+
+      <MotionSection>
         <FaqSection />
+      </MotionSection>
+
+      <MotionSection>
+        <LetsTalkBanner />
       </MotionSection>
 
       <MotionSection>

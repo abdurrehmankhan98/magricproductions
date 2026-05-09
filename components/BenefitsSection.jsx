@@ -26,14 +26,14 @@ export default function BenefitsSection() {
     <section id="about" className="section-shell bg-[#030303] scroll-mt-28">
       <div className="section-inner max-w-[1240px]">
         <div className="section-stack section-center">
-          <h2 className="font-display text-[clamp(2rem,10vw,3rem)] sm:text-[clamp(3.5rem,9vw,5.5rem)] font-black leading-[1.1] sm:leading-[1.02] tracking-tighter text-white text-center">
+          <h2 className="section-title section-title--wide max-w-none text-white text-center">
             User-Generated Content, <br />
             <span className="accent-text">
               Made Effortless.
             </span>
           </h2>
 
-          <p className="mx-auto max-w-[42rem] text-[clamp(0.95rem,4vw,1.25rem)] font-normal leading-relaxed tracking-normal text-white/90 text-center">
+          <p className="section-copy mx-auto max-w-[42rem] text-center">
             You record the ideas. We shape the clips, episodes, and visuals that help your audience keep watching.
           </p>
         </div>

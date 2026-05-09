@@ -2,9 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { target: 10, suffix: "X", label: "Credibility" },
-  { target: 78, suffix: "M+", label: "Organic Views" },
-  { target: 200, suffix: "+", label: "hrs/ month Time Saved" },
+  { target: 10, suffix: "x", label: "Audience trust growth" },
+  { target: 78, suffix: "M+", label: "Organic views generated" },
+  { target: 200, suffix: "+", label: "Hours saved per month" },
 ];
 
 export default function StatsStrip() {
@@ -92,11 +92,17 @@ export default function StatsStrip() {
   }, [isInView]);
 
   return (
-    <section className="section-shell">
+    <section id="portfolio" className="section-shell scroll-mt-28">
       <div className="section-inner">
+        <div className="section-stack section-center mb-10">
+          <div className="section-eyebrow">Proof</div>
+          <h2 className="section-title section-title--wide max-w-[14ch] text-white">
+            Outcomes our clients can measure
+          </h2>
+        </div>
         <div 
           ref={containerRef}
-          className="contact-surface grid gap-6 px-6 py-12 sm:px-8 lg:grid-cols-3 lg:px-12"
+          className="contact-surface grid gap-6 px-6 py-10 sm:px-8 lg:grid-cols-3 lg:px-12"
         >
           
           {stats.map((stat, index) => (
@@ -111,14 +117,14 @@ export default function StatsStrip() {
             >
               <div
                 data-stat-value
-                className="font-display text-[3.8rem] font-semibold leading-none tracking-normal text-white opacity-0"
+                className="font-display text-[3.2rem] font-semibold leading-none tracking-[-0.02em] text-white opacity-0 sm:text-[3.6rem]"
               >
                 {counts[index]}
                 <span className="text-[#a855f7]">{stat.suffix}</span>
               </div>
               <div
                 data-stat-label
-                className="text-[0.85rem] font-medium uppercase tracking-widest text-white/50 opacity-0"
+                className="text-[0.74rem] font-semibold uppercase tracking-[0.15em] text-white/58 opacity-0"
               >
                 {stat.label}
               </div>

@@ -35,30 +35,19 @@ function ServiceCard({ service, cardRef }) {
   return (
     <div
       ref={cardRef}
-      className="surface-card service-card-spotlight group flex flex-col gap-6 p-8 opacity-100 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 relative overflow-hidden bg-[#0a0c10]"
+      className="surface-card group flex flex-col gap-6 p-8 opacity-100 transition-all duration-300 relative overflow-hidden bg-[#0a0c10]"
     >
-      {/* Border Beam Animation */}
-      <div className="border-beam" />
-
-      {/* Spotlight Glow Effect */}
-      <div className="service-card-spotlight-glow" />
-
-      {/* Background Subtle Glow */}
-      <div className="absolute top-0 right-0 h-32 w-32 bg-purple-600/5 blur-[80px] rounded-full pointer-events-none" />
-
-      {/* Icon Container with Gradient */}
-      <div className="relative z-20 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 shadow-lg shadow-purple-500/10 border border-white/10">
+      <div className="relative z-20 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 border border-white/10">
         {service.icon}
       </div>
 
       <div className="relative z-10 space-y-4">
         <h3
-          className="font-display text-[1.6rem] font-bold text-white"
-          style={{ letterSpacing: '0.025em' }}
+          className="font-display text-[1.4rem] font-semibold leading-tight tracking-[-0.02em] text-white"
         >
           {service.title}
         </h3>
-        <p className="text-[0.95rem] leading-relaxed text-white/50 max-w-[28ch]">
+        <p className="text-[0.95rem] leading-relaxed text-white/68 max-w-[30ch]">
           {service.description}
         </p>
       </div>
@@ -66,8 +55,8 @@ function ServiceCard({ service, cardRef }) {
       <div className="relative z-10 mt-2 space-y-2.5">
         {service.points.map((point) => (
           <div key={point} className="flex items-center gap-3">
-            <div className="h-1.5 w-1.5 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
-            <span className="text-[0.75rem] font-bold tracking-widest text-[#c084fc] uppercase">
+            <div className="h-1.5 w-1.5 rounded-full bg-purple-400" />
+            <span className="text-[0.7rem] font-semibold tracking-[0.14em] text-[#c084fc] uppercase">
               {point}
             </span>
           </div>
@@ -105,20 +94,16 @@ export default function ServicesSection() {
 
   return (
     <section id="services" className="section-shell relative overflow-hidden">
-      {/* Optional Page Glow */}
-      <div className="absolute top-[20%] left-[-10%] h-[600px] w-[600px] bg-purple-600/5 blur-[120px] rounded-full pointer-events-none" />
-
       <div className="section-inner relative z-10">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Our Services</div>
           <h2
-            className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-bold leading-[1] text-white"
-            style={{ letterSpacing: '0.025em' }}
+            className="section-title max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-white"
           >
-            Transformative <span className="text-purple-500">Service</span> Packages
+            Service packages built for <span className="accent-text">real growth</span>
           </h2>
           <p className="section-copy max-w-[40rem]">
-            Tailored production solutions designed to elevate your brand presence and drive meaningful engagement across every platform.
+            High-retention editing systems tailored to your format, your audience, and your publishing goals.
           </p>
         </div>
 

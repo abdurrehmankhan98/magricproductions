@@ -84,11 +84,11 @@ function VideoPlayer() {
 
 export default function PortfolioSection() {
   return (
-    <section id="production" className="section-shell scroll-mt-28">
+    <section id="production" className="section-shell">
       <div className="section-inner">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Production</div>
-          <h2 className="font-display max-w-[14ch] text-balance sm:max-w-none text-[clamp(2.3rem,4.5vw,4.5rem)] font-semibold leading-[1.1] tracking-normal text-white">
+          <h2 className="section-title max-w-[14ch] text-balance sm:max-w-none text-white">
             Premium Video Editing for <br />
             <span className="accent-text">High-Converting Content</span>
           </h2>

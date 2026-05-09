@@ -77,10 +77,10 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="md:hidden mt-3 mx-auto w-[92%] max-w-[320px] overflow-hidden rounded-2xl border border-white/10 bg-[#081117]/40 backdrop-blur-3xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
           >
             <div className="flex flex-col gap-1 p-3">
@@ -108,6 +108,15 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <div className="fixed inset-x-0 bottom-4 z-40 px-4 md:hidden">
+        <a
+          href="#contact"
+          className="button-primary mx-auto flex h-12 w-full max-w-[340px] items-center justify-center text-[0.84rem] uppercase tracking-[0.12em]"
+        >
+          Book a call
+        </a>
+      </div>
     </header>
   );
 };

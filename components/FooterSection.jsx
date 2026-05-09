@@ -17,7 +17,7 @@ export default function FooterSection() {
   ];
 
   return (
-    <footer className="bg-[#050608] border-t border-white/5 pt-20 pb-10 px-6 lg:px-10">
+    <footer className="bg-[#050608] border-t border-white/5 pt-16 pb-10 px-6 lg:px-10">
       <div className="mx-auto max-w-[1400px]">
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr] gap-12 lg:gap-16 mb-20">
@@ -35,18 +35,18 @@ export default function FooterSection() {
               </div>
               <span className="text-2xl font-semibold text-white">Magric Productions</span>
             </div>
-            <p className="text-[#9CA3AF] text-[1rem] leading-relaxed max-w-[400px]">
+            <p className="text-[#9CA3AF] text-[0.98rem] leading-relaxed max-w-[400px]">
               Transforming raw footage into cinematic digital masterpieces with precision and creativity. Each video is crafted to engage your audience and leave a lasting impression.
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col items-start text-left gap-8">
-            <span className="text-[0.9rem] font-bold uppercase tracking-widest text-[#FFFFFF]">Quick Links</span>
+             <span className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#FFFFFF]">Quick Links</span>
             <ul className="flex flex-col gap-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-[#9CA3AF] hover:text-white transition-colors text-[0.9rem]">
+                    <a href={link.href} className="text-[#9CA3AF] hover:text-white transition-colors text-[0.88rem]">
                     {link.name}
                   </a>
                 </li>
@@ -56,11 +56,11 @@ export default function FooterSection() {
 
           {/* Column 3: Company */}
           <div className="flex flex-col items-start text-left gap-8">
-            <span className="text-[0.9rem] font-bold uppercase tracking-widest text-[#FFFFFF]">Company</span>
+             <span className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#FFFFFF]">Company</span>
             <ul className="flex flex-col gap-4">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-[#9CA3AF] hover:text-white transition-colors text-[0.9rem]">
+                    <a href={link.href} className="text-[#9CA3AF] hover:text-white transition-colors text-[0.88rem]">
                     {link.name}
                   </a>
                 </li>
@@ -70,7 +70,7 @@ export default function FooterSection() {
 
           {/* Column 4: Get In Touch */}
           <div className="flex flex-col items-start text-left gap-8">
-            <span className="text-[0.9rem] font-bold uppercase tracking-widest text-[#FFFFFF]">Get In Touch</span>
+            <span className="text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#FFFFFF]">Get In Touch</span>
 
             <div className="w-full space-y-6 text-left">
               <div>
