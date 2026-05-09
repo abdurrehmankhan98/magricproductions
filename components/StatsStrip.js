@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const stats = [
   { target: 10, suffix: "X", label: "Audience Trust Growth" },
   { target: 78, suffix: "M+", label: "Organic Views Generated" },
-  { target: 200, suffix: "+", label: "Monthly Hours Saved" },
+  { target: 200, suffix: "+", label: "Total Monthly Hours Saved" },
 ];
 
 export default function StatsStrip() {

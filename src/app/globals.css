@@ -1242,20 +1242,30 @@ select option:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0ms !important;
-    scroll-behavior: auto !important;
-  }
-
   .marquee-track,
   .marquee-track-right,
   .marquee-vertical-track--up,
-  .marquee-vertical-track--down {
+  .marquee-vertical-track--down,
+  .cursor-ring-spin,
+  .cursor-ring-spin-alt,
+  .cursor-ring-grid,
+  .cursor-ring-orbit,
+  .cursor-dot-pulse,
+  .border-beam {
     animation: none !important;
+  }
+
+  .surface-card,
+  .surface-panel,
+  .button-primary,
+  .button-secondary,
+  .service-card-spotlight-glow,
+  .glass-hover-card,
+  .cursor-layer,
+  .cursor-aura,
+  .cursor-ring,
+  .cursor-dot {
+    transition-duration: 0ms !important;
   }
 
   .js-reveal {

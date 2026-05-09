@@ -109,14 +109,14 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      <div className={`fixed inset-x-0 bottom-4 z-40 px-4 md:hidden ${isOpen ? "hidden" : "block"}`}>
+      <nav aria-label="Call to action" className={`fixed inset-x-0 bottom-4 z-40 px-4 md:hidden ${isOpen ? "hidden" : "block"}`}>
         <a
           href="#contact"
           className="button-primary mx-auto flex h-12 w-full max-w-[340px] items-center justify-center text-[0.84rem] uppercase tracking-[0.12em]"
         >
           Book a call
         </a>
-      </div>
+      </nav>
     </header>
   );
 };
