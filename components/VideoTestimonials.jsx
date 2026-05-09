@@ -34,11 +34,12 @@ const SLOT_W = CARD_W + MARGIN;
 function TestimonialCard({ videoId, thumbnail, isActive }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&controls=1`;
+  const shouldShowVideo = isActive && isPlaying;
 
   useEffect(() => {
     if (!isActive) {
-      const timeoutId = window.setTimeout(() => setIsPlaying(false), 0);
-      return () => window.clearTimeout(timeoutId);
+      const frame = requestAnimationFrame(() => setIsPlaying(false));
+      return () => cancelAnimationFrame(frame);
     }
   }, [isActive]);
 
@@ -61,9 +62,9 @@ function TestimonialCard({ videoId, thumbnail, isActive }) {
           ? "border border-[#9333ea]/35 shadow-[0_0_15px_rgba(147,51,234,0.28),0_0_24px_rgba(107,14,206,0.14)]"
           : "border-white/5 opacity-40 blur-[2px]"
           }`}
-        onClick={() => isActive && !isPlaying && setIsPlaying(true)}
+        onClick={() => isActive && !shouldShowVideo && setIsPlaying(true)}
       >
-        {isPlaying ? (
+        {shouldShowVideo ? (
           <iframe
             width="100%"
             height="100%"
@@ -76,7 +77,7 @@ function TestimonialCard({ videoId, thumbnail, isActive }) {
           <>
             <Image
               src={thumbnail}
-              alt="Testimonial"
+              alt={`Video testimonial preview ${videoId}`}
               fill
               sizes="(max-width: 768px) 100vw, 860px"
               className="absolute inset-0 h-full w-full object-cover"

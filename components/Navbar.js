@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Portfolio", href: "#portfolio" },
+    { label: "Proof", href: "#proof" },
     { label: "Reviews", href: "#reviews" },
     { label: "Process", href: "#process" },
     { label: "Testimonials", href: "#testimonials" },
@@ -109,7 +109,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      <div className="fixed inset-x-0 bottom-4 z-40 px-4 md:hidden">
+      <div className={`fixed inset-x-0 bottom-4 z-40 px-4 md:hidden ${isOpen ? "hidden" : "block"}`}>
         <a
           href="#contact"
           className="button-primary mx-auto flex h-12 w-full max-w-[340px] items-center justify-center text-[0.84rem] uppercase tracking-[0.12em]"

@@ -2,9 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { target: 10, suffix: "x", label: "Audience trust growth" },
-  { target: 78, suffix: "M+", label: "Organic views generated" },
-  { target: 200, suffix: "+", label: "Hours saved per month" },
+  { target: 10, suffix: "X", label: "Audience Trust Growth" },
+  { target: 78, suffix: "M+", label: "Organic Views Generated" },
+  { target: 200, suffix: "+", label: "Monthly Hours Saved" },
 ];
 
 export default function StatsStrip() {
@@ -92,7 +92,7 @@ export default function StatsStrip() {
   }, [isInView]);
 
   return (
-    <section id="portfolio" className="section-shell scroll-mt-28">
+    <section id="proof" className="section-shell scroll-mt-28">
       <div className="section-inner">
         <div className="section-stack section-center mb-10">
           <div className="section-eyebrow">Proof</div>

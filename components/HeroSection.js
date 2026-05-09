@@ -38,10 +38,9 @@ const HeroSection = () => {
             className="hero-heading-shadow relative z-20 hero-title-3d font-inter mt-8 font-semibold text-[clamp(2.4rem,8vw,3.4rem)] leading-[1.02] tracking-[-0.045em] text-white opacity-0 sm:text-[clamp(4.2rem,8.8vw,5.8rem)] sm:leading-[0.9] sm:tracking-[-0.065em]"
           >
             Premium Podcast & Video
-            <br />
             <span
               ref={accentRef}
-              className="hero-title-3d-accent mt-2 inline-block text-transparent"
+              className="hero-title-3d-accent mt-2 block text-transparent"
             >
               Editing That Converts
             </span>

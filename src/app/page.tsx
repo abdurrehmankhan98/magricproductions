@@ -39,7 +39,7 @@ export default function Home() {
   const yParallaxSlow = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
-    <main className="page-shell relative pb-24 md:pb-0">
+    <main className="page-shell relative pb-32 md:pb-0">
       <Navbar />
 
       <section className="relative overflow-hidden bg-black">
