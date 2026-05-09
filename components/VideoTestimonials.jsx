@@ -82,7 +82,7 @@ function TestimonialCard({ videoId, thumbnail, isActive }) {
             <div className="absolute inset-0 flex items-center justify-center z-30">
               {isActive && (
                 <div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 78 78" fill="none">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 78" fill="none" className="w-[60px] h-[60px] md:w-[90px] md:h-[90px]">
                     <circle cx="39" cy="39" r="39" fill="#a855f7" fillOpacity="0.9"></circle>
                     <path d="M57.5 36.4019C59.5 37.5566 59.5 40.4434 57.5 41.5981L32 56.3205C30 57.4752 27.5 56.0318 27.5 53.7224L27.5 24.2776C27.5 21.9682 30 20.5248 32 21.6795L57.5 36.4019Z" fill="white"></path>
                   </svg>
@@ -137,7 +137,7 @@ export default function VideoTestimonials() {
     <section className="relative overflow-hidden bg-black py-28">
       <div className="max-w-[1600px] mx-auto px-4">
 
-        <div id="testimonials" className="mb-20 flex flex-col items-center text-center">
+        <div id="testimonials" className="mb-12 flex flex-col items-center text-center">
           <div className="px-8 py-3 border border-purple-500/30 rounded-full bg-purple-900/10 text-white text-sm font-bold uppercase tracking-wider mb-10">
             Success Stories
           </div>
@@ -147,7 +147,7 @@ export default function VideoTestimonials() {
           </h2>
         </div>
 
-        <div className="relative w-full py-24" ref={containerRef}>
+        <div className="relative w-full pt-10 pb-24" ref={containerRef}>
           <div className="overflow-hidden py-10 -my-10">
             <motion.div
               className="flex items-center"
@@ -171,21 +171,19 @@ export default function VideoTestimonials() {
             <div className="relative h-full w-full max-w-[1300px] mx-auto">
               <button
                 onClick={handlePrev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-40 pointer-events-auto transition-all duration-300 active:scale-90"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-40 pointer-events-auto flex items-center justify-center rounded-full bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 hover:border-purple-500/50 w-[48px] h-[48px] md:w-[80px] md:h-[80px] transition-all duration-300 active:scale-90 group"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 60 60" fill="none">
-                  <circle cx="30" cy="30" r="30" transform="matrix(-1 0 0 1 60 0)" fill="#a855f7"></circle>
-                  <path d="M37.3971 19.9688C38.2696 19.2316 38.3485 17.9146 37.5702 17.0785L36.9686 16.4322C36.2276 15.6362 34.9864 15.5782 34.1744 16.3015L20.6563 28.3438C19.7706 29.1328 19.7623 30.5149 20.6385 31.3145L34.1018 43.6005C34.9393 44.3648 36.2441 44.2807 36.9766 43.4151L37.7071 42.5519C38.421 41.7083 38.3154 40.4456 37.4712 39.7323L27.5475 31.3469C26.602 30.548 26.602 29.0906 27.5475 28.2916L37.3971 19.9688Z" fill="#0A0A0A"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none" className="w-[32px] h-[32px] md:w-[52px] md:h-[52px]">
+                  <path d="M37.3971 19.9688C38.2696 19.2316 38.3485 17.9146 37.5702 17.0785L36.9686 16.4322C36.2276 15.6362 34.9864 15.5782 34.1744 16.3015L20.6563 28.3438C19.7706 29.1328 19.7623 30.5149 20.6385 31.3145L34.1018 43.6005C34.9393 44.3648 36.2441 44.2807 36.9766 43.4151L37.7071 42.5519C38.421 41.7083 38.3154 40.4456 37.4712 39.7323L27.5475 31.3469C26.602 30.548 26.602 29.0906 27.5475 28.2916L37.3971 19.9688Z" fill="#a855f7"></path>
                 </svg>
               </button>
 
               <button
                 onClick={handleNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-40 pointer-events-auto transition-all duration-300 active:scale-90"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-40 pointer-events-auto flex items-center justify-center rounded-full bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 hover:border-purple-500/50 w-[48px] h-[48px] md:w-[80px] md:h-[80px] transition-all duration-300 active:scale-90 group"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 60 60" fill="none">
-                  <circle cx="30" cy="30" r="30" fill="#a855f7"></circle>
-                  <path d="M22.6029 19.9688C21.7304 19.2316 21.6515 17.9146 22.4298 17.0785L23.0314 16.4322C23.7724 15.6362 25.0136 15.5782 25.8256 16.3015L39.3437 28.3438C40.2294 29.1328 40.2377 30.5149 39.3615 31.3145L25.8982 43.6005C25.0607 44.3648 23.7559 44.2807 23.0234 43.4151L22.2929 42.5519C21.579 41.7083 21.6846 40.4456 22.5288 39.7323L32.4525 31.3469C33.398 30.548 33.398 29.0906 32.4525 28.2916L22.6029 19.9688Z" fill="#0A0A0A"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none" className="w-[32px] h-[32px] md:w-[52px] md:h-[52px]">
+                  <path d="M22.6029 19.9688C21.7304 19.2316 21.6515 17.9146 22.4298 17.0785L23.0314 16.4322C23.7724 15.6362 25.0136 15.5782 25.8256 16.3015L39.3437 28.3438C40.2294 29.1328 40.2377 30.5149 39.3615 31.3145L25.8982 43.6005C25.0607 44.3648 23.7559 44.2807 23.0234 43.4151L22.2929 42.5519C21.579 41.7083 21.6846 40.4456 22.5288 39.7323L32.4525 31.3469C33.398 30.548 33.398 29.0906 32.4525 28.2916L22.6029 19.9688Z" fill="#a855f7"></path>
                 </svg>
               </button>
             </div>
