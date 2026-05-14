@@ -52,7 +52,7 @@ function ServiceCard({ service, cardRef }) {
       </div>
 
       <div className="relative z-10 space-y-4">
-        <h3 
+        <h3
           className="font-display text-[1.6rem] font-bold text-white"
           style={{ letterSpacing: '0.025em' }}
         >
@@ -111,7 +111,7 @@ export default function ServicesSection() {
       <div className="section-inner relative z-10">
         <div className="section-stack section-center">
           <div className="section-eyebrow">Our Services</div>
-          <h2 
+          <h2
             className="font-display max-w-[14ch] text-balance sm:max-w-none sm:whitespace-nowrap text-[clamp(2.3rem,4.5vw,4.5rem)] font-bold leading-[1] text-white"
             style={{ letterSpacing: '0.025em' }}
           >
